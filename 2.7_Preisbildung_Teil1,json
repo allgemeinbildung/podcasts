@@ -1,0 +1,292 @@
+{
+  "learning_goals": [
+    "Understand the basic principles of price formation through supply and demand.",
+    "Identify different types of needs and goods in an economy.",
+    "Explain the concept of market equilibrium and how it is affected by changes in supply and demand.",
+    "Describe the simple and extended circular flow of the economy and the roles of different economic actors.",
+    "Recognize the three sectors of the economy and the factors of production."
+  ],
+  "target_audience": "High school students learning basic economics and business concepts in a Swiss context.",
+  "key_theme": "Price Formation and Basic Economic Principles: Understanding Supply, Demand, and the Economic Cycle",
+  "content_mapping": [
+    {
+      "subtopic": "Needs and Demand (Bedürfnisse und Nachfrage)",
+      "pages": [73, 74],
+      "key_points": [
+        "Needs as a desire to fulfill a deficiency.",
+        "Maslow's Hierarchy of Needs (Lebensnotwendiges, Sicherheit, Dazugehörigkeit, Anerkennung, Selbstverwirklichung).",
+        "Types of needs: Existenzbedürfnisse, Wahlbedürfnisse, Individualbedürfnisse, Kollektivbedürfnisse, Materielle Bedürfnisse, Immaterielle Bedürfnisse.",
+        "Utility and the Law of Demand: Lower price increases demand, higher price decreases demand.",
+        "Demand curve illustration."
+      ],
+      "connections": [
+        "This is the foundation for understanding how prices are influenced by consumer desires.",
+        "Leads into the concept of supply as the other side of price formation."
+      ]
+    },
+    {
+      "subtopic": "Supply (Angebot)",
+      "pages": [75],
+      "key_points": [
+        "Goods are used to satisfy needs.",
+        "Types of goods: Economic vs. Free goods, Tangible (Sachgüter) vs. Services (Dienstleistungen), Consumer (Konsumgüter) vs. Investment goods (Investitionsgüter), Durable (Gebrauchsgüter) vs. Non-durable goods (Verbrauchsgüter).",
+        "Law of Supply: Higher price increases supply, lower price decreases supply.",
+        "Supply curve illustration."
+      ],
+      "connections": [
+        "Building upon demand, this introduces the producer side and how they react to prices.",
+        "Essential for understanding market interaction and equilibrium."
+      ]
+    },
+    {
+      "subtopic": "Market and Market Equilibrium (Markt und Marktgleichgewicht)",
+      "pages": [76, 77],
+      "key_points": [
+        "Market as a place where supply and demand meet.",
+        "Price formation through supply and demand interactions.",
+        "Market equilibrium: Point where supply and demand curves intersect.",
+        "Conditions for a functioning free market: competition, consumer information.",
+        "Shifts in demand and supply curves and their impact on market equilibrium (price and quantity)."
+      ],
+      "connections": [
+        "Combines demand and supply to explain how prices are determined in a market.",
+        "Sets the stage for understanding the broader economic system."
+      ]
+    },
+    {
+      "subtopic": "Simple Circular Flow of the Economy (Einfacher Wirtschaftskreislauf)",
+      "pages": [78],
+      "key_points": [
+        "Basic model of the economy with households and firms.",
+        "Flow of goods and services vs. flow of money.",
+        "Households provide factors of production (labor, capital, land) and consume goods/services.",
+        "Firms produce goods/services and pay for factors of production (wages, rent, interest)."
+      ],
+      "connections": [
+        "Expands the view from single markets to the overall economy.",
+        "Simplifies the complex economic interactions into a basic flow."
+      ]
+    },
+    {
+      "subtopic": "Extended Circular Flow of the Economy (Erweiterter Wirtschaftskreislauf)",
+      "pages": [79, 80],
+      "key_points": [
+        "More complex model including the state, banks, and foreign sector.",
+        "Role of the state: Taxes, government spending, subsidies.",
+        "Role of banks: Intermediation of savings and loans, interest rates.",
+        "Role of foreign sector: Imports and exports, international trade."
+      ],
+      "connections": [
+        "Adds realism to the circular flow by including key institutions and international aspects.",
+        "Provides a more comprehensive picture of the economy."
+      ]
+    },
+    {
+      "subtopic": "Factors of Production (Produktionsfaktoren)",
+      "pages": [81],
+      "key_points": [
+        "Basic inputs for production: Land/Environment (Boden/Umwelt), Labor/Knowledge (Arbeit/Wissen), Capital (Kapital).",
+        "Evolution of the concept of 'Boden' to 'Umwelt'.",
+        "Human capital as knowledge and skills of labor.",
+        "Types of capital: Money capital (Geldkapital) and Real capital (Sachkapital)."
+      ],
+      "connections": [
+        "Explains the fundamental resources used in the production processes discussed in supply and circular flow.",
+        "Links resources to economic activity."
+      ]
+    },
+    {
+      "subtopic": "Economic Sectors (Wirtschaftssektoren)",
+      "pages": [82],
+      "key_points": [
+        "Division of the economy into three sectors: Primary (1. Sektor), Secondary (2. Sektor), and Tertiary (3. Sektor).",
+        "Activities in each sector: Raw materials, Manufacturing, Services.",
+        "Examples of industries in each sector.",
+        "Structural change (Strukturwandel) over time: shift from agrarian to industrial to service society in Switzerland."
+      ],
+      "connections": [
+        "Categorizes economic activities and illustrates the changing structure of economies.",
+        "Shows the evolution of economic focus from production to services."
+      ]
+    }
+  ],
+  "segment_plan": {
+    "introduction": {
+      "hook": "Imagine you are at a market looking at prices for fruits and vegetables. Why are some items more expensive than others? Let's explore the forces behind price formation!",
+      "roadmap": [
+        "What are needs and how do they drive demand?",
+        "How does supply work, and what types of goods are there?",
+        "How do supply and demand meet in the market to set prices?",
+        "What is the simple circular flow of the economy?",
+        "How does the extended circular flow include the state, banks, and foreign trade?",
+        "What are the fundamental factors of production?",
+        "How is the economy divided into sectors, and how has this changed over time?"
+      ]
+    },
+    "deep_dives": [
+      {
+        "subtopic": "Needs and Demand",
+        "pages": [73, 74],
+        "metaphors": [
+          "Needs are like items on a shopping list – things we desire.",
+          "Maslow's pyramid is like climbing stairs – you focus on lower needs first."
+        ],
+        "interactive_element": "Think about your last purchase. Was it a need or a want? Where would it fit on Maslow's pyramid?",
+        "textbook_references": {
+          "quotes": [
+            "«Das Verlangen der Menschen, einen Mangel zu beheben, wird als Bedürfnis bezeichnet.» (The desire of people to eliminate a deficiency is called a need.)"
+          ],
+          "definitions": [
+            "Bedürfnis (Need): The desire to eliminate a deficiency or lack."
+          ]
+        }
+      },
+      {
+        "subtopic": "Supply",
+        "pages": [75],
+        "metaphors": [
+          "Supply is like a factory producing goods – more production if prices are good.",
+          "Different types of goods are like different products a factory can make."
+        ],
+        "interactive_element": "Why do companies usually produce more of a product when its price increases? Think like a business owner!",
+        "textbook_references": {
+          "quotes": [
+            "«Steigt der Preis für ein Produkt, lohnt es sich für die Produzenten, mehr von diesem Gut anzubieten...» (If the price of a product increases, it is worthwhile for producers to offer more of this good...)"
+          ],
+          "definitions": [
+            "Wirtschaftliche Güter (Economic Goods): Limited availability, have a price.",
+            "Freie Güter (Free Goods): Abundantly available, free, no price."
+          ]
+        }
+      },
+      {
+        "subtopic": "Market and Market Equilibrium",
+        "pages": [76, 77],
+        "metaphors": [
+          "Market equilibrium is like a balanced scale – supply and demand are in balance.",
+          "Price is like a signal – telling producers and consumers about scarcity."
+        ],
+        "interactive_element": "What happens to the price of gasoline when there's a sudden increase in demand but supply stays the same? Predict the market reaction!",
+        "textbook_references": {
+          "quotes": [
+            "«Dort, wo sich Angebots- und Nachfrageverhalten treffen, herrscht Marktgleichgewicht...» (Where supply and demand behavior meet, market equilibrium prevails...)"
+          ],
+          "definitions": [
+            "Marktgleichgewicht (Market Equilibrium): State where quantity supplied equals quantity demanded."
+          ]
+        }
+      },
+      {
+        "subtopic": "Simple Circular Flow",
+        "pages": [78],
+        "metaphors": [
+          "The circular flow is like a money river flowing between households and businesses.",
+          "Households and firms are like two main islands connected by this flow."
+        ],
+        "interactive_element": "Where does your household's money come from, and where does it go in this simple economic circle?",
+        "textbook_references": {
+          "quotes": [
+            "«Der einfache Wirtschaftskreislauf beschreibt das Zusammenwirken der wichtigsten Wirtschaftsteilnehmer: der Unternehmen und der Haushalte.» (The simple circular flow of the economy describes the interaction of the most important economic actors: businesses and households.)"
+          ],
+          "definitions": [
+            "Wirtschaftskreislauf (Circular Flow): Model showing the exchange of goods, services, and money in an economy."
+          ]
+        }
+      },
+      {
+        "subtopic": "Extended Circular Flow",
+        "pages": [79, 80],
+        "metaphors": [
+          "The extended circular flow is like adding more channels and connections to our money river – including the state, banks, and other countries.",
+          "These additional actors are like other islands influencing the main flow."
+        ],
+        "interactive_element": "How does the government influence the circular flow through taxes and spending? Consider examples from Switzerland.",
+        "textbook_references": {
+          "quotes": [
+            "«Um ein besseres Bild zu erhalten, muss der Wirtschaftskreislauf um die Teilnehmer Staat, Banken und Ausland erweitert werden.» (To get a better picture, the circular flow must be expanded to include the state, banks and foreign countries.)"
+          ],
+          "definitions": [
+            "Staat (State/Government): Plays a role in the economy through taxes, spending, and regulations.",
+            "Banken (Banks): Financial intermediaries connecting savers and borrowers.",
+            "Ausland (Foreign Sector): Represents international trade and financial flows."
+          ]
+        }
+      },
+      {
+        "subtopic": "Factors of Production",
+        "pages": [81],
+        "metaphors": [
+          "Factors of production are like the ingredients needed to bake a cake – land, labor, and capital.",
+          "Land/Environment is like the oven and the ingredients from nature.",
+          "Labor/Knowledge is like the baker's skills.",
+          "Capital is like the mixing bowls and tools."
+        ],
+        "interactive_element": "Which factor of production do you think is most important in today's economy: Land, Labor, or Capital? Why?",
+        "textbook_references": {
+          "quotes": [
+            "«Wie im einfachen Wirtschaftskreislauf gezeigt, braucht es den Einsatz der Produktionsfaktoren Boden, Arbeit und Kapital, um Güter und Dienstleistungen anbieten zu können.» (As shown in the simple circular flow, the use of the factors of production land, labor and capital is required to be able to offer goods and services.)"
+          ],
+          "definitions": [
+            "Produktionsfaktoren (Factors of Production): Basic inputs used in the production of goods and services: Land/Environment, Labor/Knowledge, and Capital."
+          ]
+        }
+      },
+      {
+        "subtopic": "Economic Sectors",
+        "pages": [82],
+        "metaphors": [
+          "Economic sectors are like slices of an economy pie – each representing a different type of economic activity.",
+          "The changing size of slices over time shows structural change."
+        ],
+        "interactive_element": "Think about your region in Switzerland. Which economic sector is most dominant there? Is it changing?",
+        "textbook_references": {
+          "quotes": [
+            "«Das Erwerbsleben hat sich in den letzten 170 Jahren grundlegend verändert: Die Schweiz entwickelte sich von der Agrargesellschaft zum Industriestaat und schliesslich zur Dienstleistungsgesellschaft von heute.» (Working life has fundamentally changed in the last 170 years: Switzerland developed from an agrarian society to an industrial state and finally to today's service society.)"
+          ],
+          "definitions": [
+            "Primärsektor (Primary Sector): Extraction of raw materials (e.g., agriculture, mining).",
+            "Sekundärsektor (Secondary Sector): Manufacturing and processing of goods (e.g., industry, construction).",
+            "Tertiärsektor (Tertiary Sector): Services (e.g., banking, healthcare, education)."
+          ]
+        }
+      }
+    ],
+    "recap": {
+      "summary": "Today we explored how prices are formed by supply and demand, the different types of needs and goods, the concept of market equilibrium, the circular flow of the economy, the factors of production, and the economic sectors. You should now understand the fundamental forces shaping our economy!",
+      "reflection_prompt": "Consider a product you use daily. How do the concepts we discussed today – supply, demand, factors of production, economic sectors – play a role in its price and availability?"
+    }
+  },
+  "educational_strategies": {
+    "analogies": [
+      "Shopping list (needs and demand)",
+      "Factory production (supply)",
+      "Balancing scale (market equilibrium)",
+      "Money river (circular flow)",
+      "Economy pie (economic sectors)",
+      "Cake ingredients (factors of production)",
+      "Stairs (Maslow's Hierarchy)"
+    ],
+    "real_world_examples": [
+      "Fluctuations in gasoline prices due to supply and demand.",
+      "The cost of smartphones and how it relates to production and consumer desire.",
+      "Housing market prices as an example of market equilibrium changes.",
+      "Swiss banking sector as part of the extended circular flow.",
+      "The shift from agriculture to service industries in Switzerland.",
+      "Impact of raw material scarcity on product prices (e.g., oil, metals)."
+    ],
+    "interactive_qna": [
+      "What is the difference between needs and wants?",
+      "Why does the supply curve slope upwards?",
+      "What happens to the equilibrium price if demand increases?",
+      "How do households and firms interact in the simple circular flow?",
+      "What role do banks play in the extended circular flow?",
+      "Which are the three factors of production?",
+      "In which economic sector do you think most people in Switzerland work today?"
+    ]
+  },
+  "duration_estimates": {
+    "introduction": "3_min",
+    "per_subtopic": "3-4_min",
+    "recap": "3_min"
+  }
+}
