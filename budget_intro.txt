@@ -1,0 +1,78 @@
+```json
+{
+  "podcast_instructions": {
+    "title": "Allgemeinbildung: Das Lehrmittel anders erzählt.",
+    "description": "Ein Podcast für Berufsschüler in der Schweiz, um Themen aus dem {Lehrmittel} auf lockere und verständliche Weise zu präsentieren. Ziel ist es, Interesse zu wecken und zum Weiterlernen zu motivieren, nicht umfassende Informationen zu liefern.",
+    "personalities": {
+      "host": {
+        "name": "Alex",
+        "persona": "Enthusiastisch, etwas kenntnisreicher, führt durch das Gespräch, verwendet einfache Sprache, erklärt komplexe Sachverhalte mit Storytelling und Analogien, freundlich und zugänglich."
+      },
+      "guest": {
+        "name": "Robin",
+        "persona": "Typischer Berufsschüler, anfänglich skeptisch oder uninteressiert an allgemeine Themen, stellt Fragen, äußert nachvollziehbare Bedenken, wird durch die Erklärungen des Hosts zunehmend engagiert, verwendet Jugendsprache und Slang."
+      }
+    },
+    "discussion_style": "Informell, jugendlich, dialogorientiert, kurze und dynamische Gesprächswechsel, humorvoll, alltagsnah, Verwendung von Fragen und Interjektionen."
+  },
+  "podcast_episode_plan": {
+    "episode_title": "Budget-Check: Dein Geld im Griff!",
+    "topics": [
+      {
+        "topic_title": "Budget als finanzieller Überblick",
+        "hooks": [
+          "Hast du dich jemals gefragt, wohin dein Lohn am Ende des Monats verschwindet? Wir lüften das Geheimnis!",
+          "Was wäre, wenn du genau wüsstest, wohin jeder Franken fliesst? Klingt gut? Mit einem Budget geht das!",
+          "Stell dir vor, du planst einen fetten Ausgang mit Freunden, aber plötzlich ist Ebbe in der Kasse.  Wie du das vermeidest, verraten wir dir!"
+        ],
+        "analogies": [
+          "Ein Budget ist wie ein Navi für deine Finanzen – es zeigt dir den Weg und hilft dir, nicht vom Kurs abzukommen.",
+          "Ein Budget ist wie ein Trainingsplan für Sportler – ohne Plan keine Fortschritte, weder im Sport noch mit deinem Geld.",
+          "Ein Budget ist wie ein Cheat-Sheet für dein Leben –  damit behältst du den Überblick und vermeidest böse Überraschungen."
+        ],
+        "real_life_examples": [
+          "Du willst dir das neue iPhone kaufen? Mit einem Budget siehst du, wie lange du dafür sparen musst.",
+          "Dein Mofa braucht Reparatur? Ein Budget hilft dir, unerwartete Kosten zu stemmen, ohne gleich ins Minus zu rutschen.",
+          "Du planst deine erste eigene Wohnung? Ein Budget zeigt dir, ob du dir das leisten kannst und wo du sparen musst."
+        ]
+      },
+      {
+        "topic_title": "Fixe Kosten",
+        "hooks": [
+          "Wusstest du, dass viele Jugendliche in der Schweiz mehr ausgeben als sie einnehmen? Fixe Kosten sind ein Grund dafür!",
+          "Benjamin Franklin sagte: 'Denkt daran, dass das kleine Ausgaben sind; ein kleines Leck kann ein grosses Schiff versenken.' Gilt auch für dein Budget!",
+          "Stell dir vor, du bist Vermieter. Die Miete muss jeden Monat pünktlich kommen, egal was passiert. So sind fixe Kosten – zuverlässig, aber unerbittlich."
+        ],
+        "analogies": [
+          "Fixe Kosten sind wie Abos – ob du Netflix schaust oder nicht, du zahlst jeden Monat.",
+          "Fixe Kosten sind wie die Jahreszeiten – sie kommen jedes Jahr, ob du willst oder nicht: Krankenkasse, Miete, die sind immer da.",
+          "Fixe Kosten sind wie die Grundausrüstung beim Sport – Fussballschuhe, Velo, die brauchst du immer, bevor du loslegen kannst."
+        ],
+        "real_life_examples": [
+          "Deine Krankenkassenprämie ist eine fixe Kosten – die kommt jeden Monat, planbar und fix.",
+          "Dein Handy-Abo ist auch fix –  selbst wenn du dein Handy mal nicht nutzt, die Rechnung kommt.",
+          "Die Miete für deine WG-Zimmer ist fix –  jeden Monat der gleiche Betrag, egal ob Party oder Lern-Marathon."
+        ]
+      },
+      {
+        "topic_title": "Variable Kosten",
+        "hooks": [
+          "Variable Kosten sind wie das Wetter – mal sonnig (wenig Ausgaben), mal stürmisch (viel Kohle weg). Aber du kannst den 'Finanz-Wetterbericht' beeinflussen!",
+          "Viele denken, fixe Kosten sind das Problem. Aber Achtung: Die wahren 'Budget-Killer' sind oft die variablen Kosten, die sich unbemerkt summieren!",
+          "Es gibt Kosten, die du lenken kannst wie ein Steuerrad. Welche das sind und wie du sie für dein Budget nutzt, erfährst du jetzt!"
+        ],
+        "analogies": [
+          "Variable Kosten sind wie dein Kleiderschrank – je nach Laune und Anlass wählst du was anderes aus, und die Kosten variieren.",
+          "Variable Kosten sind wie In-App-Käufe im Game –  manchmal gönnst du dir was, manchmal sparst du, je nachdem, wie du spielst.",
+          "Variable Kosten sind wie Zutaten beim Kochen –  je nachdem, was du kochst, brauchst du mehr oder weniger Zutaten und es wird teurer oder günstiger."
+        ],
+        "real_life_examples": [
+          "Ausgehen mit Freunden ist eine variable Kosten –  je öfter du unterwegs bist, desto mehr gibst du aus.",
+          "Kleidung kaufen ist variabel –  du entscheidest, ob du jeden Monat neue Sneaker brauchst oder nicht.",
+          "Essen gehen oder selber kochen ist variabel –  selber kochen ist günstiger, auswärts essen teurer, du hast die Wahl."
+        ]
+      }
+    ]
+  }
+}
+```
