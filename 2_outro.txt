@@ -5,11 +5,11 @@
     "description": "Ein Podcast für Berufsschüler in der Schweiz, um die Hauptthemen aus dem {Lehrmittel} nach der Lektüre noch einmal zusammenzufassen. Das Ziel ist es, den Stoff zu festigen, Fragen für mögliche Tests zu klären und gängige Missverständnisse auszuräumen.",
     "personalities": {
       "host": {
-        "name": "Alex",
+        "name": "Leon",
         "persona": "Freundlich und kompetent, fasst die Inhalte kurz und klar zusammen, stellt gezielt Fragen, gibt Test-Tipps."
       },
       "guest": {
-        "name": "Robin",
+        "name": "Elena",
         "persona": "Neugieriger Berufsschüler, hat Fragen aus der Sicht eines Lernenden, fordert Klarstellungen und Beispiele ein."
       }
     },
