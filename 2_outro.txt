@@ -1,0 +1,120 @@
+```json
+{
+  "podcast_instructions": {
+    "title": "Allgemeinbildung: Das Lehrmittel kompakt zusammengefasst.",
+    "description": "Ein Podcast für Berufsschüler in der Schweiz, um die Hauptthemen aus dem {Lehrmittel} nach der Lektüre noch einmal zusammenzufassen. Das Ziel ist es, den Stoff zu festigen, Fragen für mögliche Tests zu klären und gängige Missverständnisse auszuräumen.",
+    "personalities": {
+      "host": {
+        "name": "Alex",
+        "persona": "Freundlich und kompetent, fasst die Inhalte kurz und klar zusammen, stellt gezielt Fragen, gibt Test-Tipps."
+      },
+      "guest": {
+        "name": "Robin",
+        "persona": "Neugieriger Berufsschüler, hat Fragen aus der Sicht eines Lernenden, fordert Klarstellungen und Beispiele ein."
+      }
+    },
+    "discussion_style": "Informell, lernorientiert, interaktiv, mit kurzen Einwürfen und direkter Ansprache, motivierend und zusammenfassend."
+  },
+  "podcast_episode_plan": {
+    "episode_title": "Budget-Wissen kompakt: Fit für die Finanzprüfung!",
+    "topics": [
+      {
+        "topic_title": "Budget als finanzieller Überblick",
+        "key_takeaways": [
+          "Ein Budget ist dein persönlicher Finanzplan, der Einnahmen und Ausgaben gegenüberstellt.",
+          "Es hilft dir, deine finanzielle Situation zu überblicken und bewusste Entscheidungen zu treffen.",
+          "Regelmässige Budgeterstellung und -kontrolle sind wichtig, um finanzielle Ziele zu erreichen und Schulden zu vermeiden."
+        ],
+        "test_preparation_q_and_a": [
+          {
+            "question": "Was sind die vier wichtigsten 'Merkpunkte der Budgeterstellung' laut Lehrmittel?",
+            "answer_hint": "Denke an Realismus, Individualität, eigene Zahlen und die Reihenfolge von Einnahmen und Ausgaben."
+          },
+          {
+            "question": "Erkläre, warum ein Budget als 'finanzieller Überblick' bezeichnet wird.",
+            "answer_hint": "Es strukturiert Finanzen und zeigt, wohin das Geld fliesst, um Kontrolle zu ermöglichen."
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": "Ein Budget ist nur für Leute mit wenig Geld oder Schulden.",
+            "clarification": "Falsch! Ein Budget ist für jeden sinnvoll, um die Finanzen zu optimieren, Sparziele zu erreichen und finanzielle Freiheit zu gewinnen."
+          },
+          {
+            "misconception": "Einmal Budget erstellen reicht.",
+            "clarification": "Falsch! Das Budget muss regelmässig überprüft und an Veränderungen angepasst werden, um aktuell und wirksam zu bleiben."
+          }
+        ],
+        "real_life_application": [
+          "Als Lernende/r mit Lehrlingslohn: Ein Budget hilft dir, deinen Lohn sinnvoll einzuteilen, z.B. für Ausgang, Hobbys oder den Führerschein.",
+          "Für die WG-Kasse: Ein gemeinsames Budget in der WG sorgt für Transparenz und vermeidet Streit ums Geld, z.B. bei gemeinsamen Ausgaben für Essen oder Miete."
+        ]
+      },
+      {
+        "topic_title": "Fixe Kosten",
+        "key_takeaways": [
+          "Fixe Kosten sind Ausgaben, die regelmässig und in gleicher Höhe anfallen, wie Miete, Krankenkasse oder Abos.",
+          "Sie sind meistens nicht oder nur schwer beeinflussbar und müssen im Budget unbedingt berücksichtigt werden.",
+          "Das Wissen um fixe Kosten hilft, die monatlichen Grundausgaben zu planen und finanzielle Stabilität zu gewährleisten."
+        ],
+        "test_preparation_q_and_a": [
+          {
+            "question": "Nenne drei typische Beispiele für fixe Kosten, die Jugendliche in der Schweiz haben.",
+            "answer_hint": "Denke an Wohnen, Gesundheit und Verträge: Miete, Krankenkasse, Handy-Abo."
+          },
+          {
+            "question": "Warum ist es wichtig, fixe Kosten genau zu kennen?",
+            "answer_hint": "Sie bilden die Basis der monatlichen Ausgaben und sind fix eingeplant, um finanzielle Engpässe zu vermeiden."
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": "Fixe Kosten kann man einfach ignorieren, wenn man sparen will.",
+            "clarification": "Falsch! Fixe Kosten sind unumgänglich und müssen im Budget eingeplant werden. Sparpotenzial liegt eher bei den variablen Kosten."
+          },
+          {
+            "misconception": "Alle monatlichen Ausgaben sind fixe Kosten.",
+            "clarification": "Falsch! Variable Kosten wie Essen, Kleidung oder Freizeitaktivitäten schwanken und sind nicht fix."
+          }
+        ],
+        "real_life_application": [
+          "Beim Abschluss eines Handy-Abos: Bevor du dich für ein teures Abo entscheidest, prüfe, ob es in dein Budget für fixe Kosten passt.",
+          "Beim Umzug in eine eigene Wohnung: Kalkuliere alle fixen Kosten (Miete, Nebenkosten, etc.) genau, um zu sehen, ob du sie dauerhaft tragen kannst."
+        ]
+      },
+      {
+        "topic_title": "Variable Kosten",
+        "key_takeaways": [
+          "Variable Kosten sind Ausgaben, die schwanken und durch persönliches Verhalten beeinflusst werden können, wie Essen, Kleidung oder Freizeit.",
+          "Sie bieten das grösste Sparpotenzial im Budget, da man sie bewusster steuern kann.",
+          "Die Kontrolle und Anpassung variabler Kosten ist entscheidend, um finanzielle Ziele zu erreichen und unvorhergesehene Ausgaben aufzufangen."
+        ],
+        "test_preparation_q_and_a": [
+          {
+            "question": "Was unterscheidet variable Kosten von fixen Kosten?",
+            "answer_hint": "Variable Kosten sind beeinflussbar und schwanken, während fixe Kosten konstant und schwer zu ändern sind."
+          },
+          {
+            "question": "Nenne drei Beispiele, wie Jugendliche variable Kosten senken können.",
+            "answer_hint": "Denke an Konsumverhalten: Öfter selber kochen, weniger Kleidung kaufen, günstigere Freizeitaktivitäten wählen."
+          }
+        ],
+        "common_misconceptions": [
+          {
+            "misconception": "Variable Kosten sind unwichtig, weil sie ja 'variabel' sind.",
+            "clarification": "Falsch! Gerade weil sie variabel sind, bieten sie grosses Sparpotenzial und sind wichtig für die Budgetkontrolle."
+          },
+          {
+            "misconception": "Sparen bei variablen Kosten bedeutet Verzicht auf Lebensqualität.",
+            "clarification": "Nicht unbedingt! Bewusster Konsum und clevere Alternativen (z.B. Secondhand-Kleidung, Freizeit-Alternativen) können auch Spass machen und das Budget entlasten."
+          }
+        ],
+        "real_life_application": [
+          "Beim Essensplan für die Woche: Überlege, wie oft du auswärts essen gehst und wo du durch Selberkochen sparen kannst, um deine variablen Kosten zu senken.",
+          "Vor dem Shoppen: Frage dich, ob du die neuen Kleider wirklich brauchst oder ob es auch etwas aus dem Secondhand-Laden tut, um deine variablen Ausgaben im Griff zu behalten."
+        ]
+      }
+    ]
+  }
+}
+```
