@@ -103,7 +103,7 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Your Podcast Name. Powered by GitHub Pages & Markmap.</p>
+        <p>&copy; <span id="current-year"></span> Allgemeinbildung: das Lehrmittel anders Erzählt.</p>
     </footer>
 
     <script>
@@ -178,11 +178,9 @@
             audioElement.appendChild(sourceElement);
             
             const audioTitle = document.createElement('h2');
-            audioTitle.textContent = `Podcast: ${contentId}`; // You can customize this title
+            audioTitle.textContent = `Kapitel: ${contentId}`; // You can customize this title
             audioContainer.appendChild(audioTitle);
             audioContainer.appendChild(audioElement);
-            audioContainer.insertAdjacentHTML('beforeend', '<p class="mt-2 text-sm text-gray-500">If you have trouble playing the audio, please ensure your browser supports WAV files or try a different browser.</p>');
-
 
             // Create and append iframe for the mindmap
             const iframeElement = document.createElement('iframe');
