@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Mindmap Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+            color: #1f2937; /* Tailwind gray-800 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 2rem; /* Tailwind mt-8 */
+            margin-bottom: 2rem; /* Tailwind mb-8 */
+            background-color: #ffffff; /* White */
+            border-radius: 0.75rem; /* Tailwind rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-lg */
+            overflow: hidden; /* To contain the iframe border */
+        }
+        .audio-player-container {
+            padding: 1.5rem; /* Tailwind p-6 */
+            border-bottom: 1px solid #e5e7eb; /* Tailwind border-gray-200 */
+        }
+        .audio-player-container h2 {
+            font-size: 1.5rem; /* Tailwind text-2xl */
+            font-weight: 600; /* Tailwind font-semibold */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
+            color: #111827; /* Tailwind gray-900 */
+        }
+        audio {
+            width: 100%;
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            outline: none;
+        }
+        /* Customizing audio player controls for better appearance */
+        audio::-webkit-media-controls-panel {
+            background-color: #f9fafb; /* Tailwind gray-50 */
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+        }
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-mute-button {
+            background-color: #4f46e5; /* Tailwind indigo-600 */
+            border-radius: 50%;
+            color: white;
+        }
+        audio::-webkit-media-controls-timeline {
+            background-color: #d1d5db; /* Tailwind gray-300 */
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: #374151; /* Tailwind gray-700 */
+            font-size: 0.875rem; /* Tailwind text-sm */
+        }
+
+        .mindmap-container {
+            width: 100%;
+            /* Default height, adjust as needed or make it responsive */
+            height: 70vh; /* Make it a significant portion of the viewport height */
+            overflow: hidden; /* Ensures iframe fits well */
+        }
+        .mindmap-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove iframe border */
+        }
+        .message-box {
+            padding: 1.5rem; /* Tailwind p-6 */
+            text-align: center;
+            font-size: 1.125rem; /* Tailwind text-lg */
+            color: #4b5563; /* Tailwind gray-600 */
+        }
+        .footer {
+            margin-top: auto; /* Pushes footer to the bottom */
+            padding: 1rem; /* Tailwind p-4 */
+            text-align: center;
+            font-size: 0.875rem; /* Tailwind text-sm */
+            color: #6b7280; /* Tailwind gray-500 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content-area">
+            <div class="audio-player-container" id="audio-container">
+                </div>
+
+            <div class="mindmap-container" id="mindmap-embed-container">
+                </div>
+        </div>
+        <div id="message-box" class="message-box" style="display: none;"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Your Podcast Name. Powered by GitHub Pages & Markmap.</p>
+    </footer>
+
+    <script>
+        // Function to display messages to the user
+        function showMessage(message, isError = false) {
+            const messageBox = document.getElementById('message-box');
+            const contentArea = document.getElementById('content-area');
+            
+            messageBox.textContent = message;
+            messageBox.style.color = isError ? '#dc2626' : '#16a34a'; // Tailwind red-600 or green-600
+            messageBox.style.display = 'block';
+            contentArea.style.display = 'none'; // Hide content area when showing a message
+        }
+
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Main function to load content
+        function loadContent() {
+            const contentId = getQueryParam('id');
+            const audioContainer = document.getElementById('audio-container');
+            const mindmapContainer = document.getElementById('mindmap-embed-container');
+            const contentArea = document.getElementById('content-area');
+            const messageBox = document.getElementById('message-box');
+
+            // Clear previous content/messages
+            audioContainer.innerHTML = '';
+            mindmapContainer.innerHTML = '';
+            messageBox.style.display = 'none';
+            contentArea.style.display = 'block';
+
+
+            if (!contentId) {
+                showMessage("No content ID provided in the URL. Please add '?id=your_content_id' to the URL.", true);
+                // Display instructions if no ID is provided
+                audioContainer.innerHTML = `
+                    <h2 class="text-xl font-semibold">Welcome!</h2>
+                    <p class="text-gray-600">To view a podcast and its mindmap, please specify an ID in the URL.</p>
+                    <p class="text-gray-600 mt-2">For example: <code>your-page-url.html?id=episode1</code></p>
+                `;
+                mindmapContainer.innerHTML = `<p class="p-6 text-center text-gray-500">The mindmap will appear here once an ID is provided.</p>`;
+                return;
+            }
+
+            // --- Configuration for file paths ---
+            // IMPORTANT: Adjust these paths if your folder structure is different
+            const audioFolderPath = './audio/'; // Relative path to your audio folder
+            const mindmapsFolderPath = './mindmaps/'; // Relative path to your mindmaps folder
+            // --- End Configuration ---
+
+            const audioFileName = `${contentId}.wav`;
+            const mindmapFileName = `${contentId}.html`;
+
+            const audioFilePath = `${audioFolderPath}${audioFileName}`;
+            const mindmapFilePath = `${mindmapsFolderPath}${mindmapFileName}`;
+
+            // Create and append audio player
+            const audioElement = document.createElement('audio');
+            audioElement.setAttribute('controls', '');
+            audioElement.setAttribute('preload', 'metadata'); // Good for starting playback faster
+            audioElement.onerror = () => {
+                // Clear only audio if it fails, mindmap might still load
+                audioContainer.innerHTML = `<p class="text-red-500 p-4">Error: Could not load audio file: ${audioFileName}. Please check the file path and ensure it exists in the '${audioFolderPath}' directory.</p>`;
+            };
+
+            const sourceElement = document.createElement('source');
+            sourceElement.setAttribute('src', audioFilePath);
+            sourceElement.setAttribute('type', 'audio/wav');
+            audioElement.appendChild(sourceElement);
+            
+            const audioTitle = document.createElement('h2');
+            audioTitle.textContent = `Podcast: ${contentId}`; // You can customize this title
+            audioContainer.appendChild(audioTitle);
+            audioContainer.appendChild(audioElement);
+            audioContainer.insertAdjacentHTML('beforeend', '<p class="mt-2 text-sm text-gray-500">If you have trouble playing the audio, please ensure your browser supports WAV files or try a different browser.</p>');
+
+
+            // Create and append iframe for the mindmap
+            const iframeElement = document.createElement('iframe');
+            iframeElement.setAttribute('src', mindmapFilePath);
+            iframeElement.setAttribute('title', `Mindmap for ${contentId}`);
+            iframeElement.setAttribute('frameborder', '0'); // For older browsers
+            iframeElement.style.width = '100%';
+            iframeElement.style.height = '100%'; // Fill the container
+
+            // Check if iframe content loads, very basic check
+            iframeElement.onload = () => {
+                // console.log(`Mindmap ${mindmapFileName} loaded.`);
+                // You could try to access iframeElement.contentWindow.document.body but it might be blocked by CORS if on different subdomains
+                // For same-origin, you could check if content is empty: if (!iframeElement.contentWindow.document.body.innerHTML.trim()) { ... }
+            };
+            iframeElement.onerror = () => { // This might not always trigger for 404s on iframes depending on browser
+                 // Clear only mindmap if it fails
+                mindmapContainer.innerHTML = `<p class="text-red-500 p-4">Error: Could not load mindmap: ${mindmapFileName}. Please check the file path and ensure it exists in the '${mindmapsFolderPath}' directory.</p>`;
+            };
+            
+            // Fallback for iframe loading issues (e.g. 404)
+            // A more robust check involves trying to fetch the resource head
+            fetch(mindmapFilePath, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        // If HEAD request fails (e.g., 404), show an error for the mindmap
+                        mindmapContainer.innerHTML = `<p class="text-red-500 p-4">Error: Mindmap file not found: ${mindmapFileName} (Status: ${response.status}). Please check the file path and ensure it exists in the '${mindmapsFolderPath}' directory.</p>`;
+                    } else {
+                        // If HEAD request is OK, proceed to add the iframe
+                        mindmapContainer.appendChild(iframeElement);
+                    }
+                })
+                .catch(() => {
+                    // Network error or other issues during fetch
+                    mindmapContainer.innerHTML = `<p class="text-red-500 p-4">Error: Could not verify mindmap file: ${mindmapFileName}. There might be a network issue or the file is inaccessible.</p>`;
+                });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        }
+
+        // Load content when the page is ready
+        document.addEventListener('DOMContentLoaded', loadContent);
+
+        // Optional: Reload content if the hash changes (for SPAs, not strictly necessary here but good practice)
+        // window.addEventListener('hashchange', loadContent);
+    </script>
+</body>
+</html>
