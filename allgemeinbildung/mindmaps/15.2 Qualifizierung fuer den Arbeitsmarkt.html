@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Qualifizierung f&#xfc;r den Arbeitsmarkt","children":[{"content":"Angebotstypen Weiterbildung Schweiz","children":[{"content":"[Typ 1]","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"[Typ 2]","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"[Typ 3]","children":[],"payload":{"tag":"h3","lines":"9,10"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"H&#xf6;here Berufsbildung","children":[{"content":"Fach-/F&#xfc;hrungsverantwortung","children":[],"payload":{"tag":"h3","lines":"11,12"}},{"content":"eidg. Fachausweis/Diplom","children":[],"payload":{"tag":"h3","lines":"12,13"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"Berufsmaturit&#xe4;t (BM)","children":[{"content":"BM1","children":[],"payload":{"tag":"h3","lines":"14,15"}},{"content":"BM2","children":[{"content":"Zugangsvoraussetzungen","children":[],"payload":{"tag":"h4","lines":"16,17"}},{"content":"Ziel","children":[],"payload":{"tag":"h4","lines":"17,18"}}],"payload":{"tag":"h3","lines":"15,16"}}],"payload":{"tag":"h2","lines":"13,14"}},{"content":"Motivation &amp; Nutzen von Weiterbildung","children":[{"content":"Chancen Arbeitsmarkt","children":[],"payload":{"tag":"h3","lines":"19,20"}},{"content":"Kompetenzerweiterung","children":[],"payload":{"tag":"h3","lines":"20,21"}},{"content":"Lohn","children":[{"content":"Lohnentwicklung","children":[],"payload":{"tag":"h4","lines":"22,23"}}],"payload":{"tag":"h3","lines":"21,22"}}],"payload":{"tag":"h2","lines":"18,19"}},{"content":"Auswahlkriterien Weiterbildung","children":[{"content":"Berufliche Ziele definieren","children":[],"payload":{"tag":"h3","lines":"24,25"}},{"content":"Eigene Berufung/Leidenschaft/St&#xe4;rken finden","children":[],"payload":{"tag":"h3","lines":"25,26"}},{"content":"Arbeitsmarkt analysieren","children":[],"payload":{"tag":"h3","lines":"26,27"}}],"payload":{"tag":"h2","lines":"23,24"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

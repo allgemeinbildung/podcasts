@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Schulden und Betreibung","children":[{"content":"Verschuldung","children":[{"content":"Ursachen f&#xfc;r Verschuldung bei Jugendlichen","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Pr&#xe4;ventionsmassnahmen","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Vorgehen bei bestehenden Schulden","children":[],"payload":{"tag":"h3","lines":"9,10"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Betreibung (Grundlagen)","children":[{"content":"Gesetzliche Grundlage: SchKG","children":[],"payload":{"tag":"h3","lines":"11,12"}},{"content":"Wer kann betrieben werden?","children":[{"content":"handlungsf&#xe4;hige nat&#xfc;rliche und juristische Personen","children":[],"payload":{"tag":"h4","lines":"13,14"}},{"content":"bedingt handlungsf&#xe4;hige Personen im Rahmen ihres Lohnes","children":[],"payload":{"tag":"h4","lines":"14,15"}}],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Betreibungsarten","children":[{"content":"Betreibung auf Pf&#xe4;ndung","children":[{"content":"SchKG Art. 89 ff.","children":[],"payload":{"tag":"h5","lines":"17,18"}}],"payload":{"tag":"h4","lines":"16,17"}},{"content":"Betreibung auf Pfandverwertung","children":[{"content":"SchKG Art. 151 ff.","children":[],"payload":{"tag":"h5","lines":"19,20"}}],"payload":{"tag":"h4","lines":"18,19"}},{"content":"Betreibung auf Konkurs","children":[{"content":"SchKG Art. 159 ff.","children":[],"payload":{"tag":"h5","lines":"21,22"}}],"payload":{"tag":"h4","lines":"20,21"}}],"payload":{"tag":"h3","lines":"15,16"}},{"content":"Ablauf Betreibungsverfahren (Pf&#xe4;ndung)","children":[],"payload":{"tag":"h3","lines":"22,23"}}],"payload":{"tag":"h2","lines":"10,11"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

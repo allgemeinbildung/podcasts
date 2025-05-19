@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Globalisierung","children":[{"content":"Wirtschaft","children":[{"content":"Zunahme Warenhandel","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Globalisierung Finanzm&#xe4;rkte","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Handelsbl&#xf6;cke (mit Beispielen)","children":[],"payload":{"tag":"h3","lines":"9,10"}},{"content":"Folgen wirtsch. Globalisierung","children":[{"content":"Positive Aspekte","children":[],"payload":{"tag":"h4","lines":"11,12"}},{"content":"Negative Aspekte","children":[],"payload":{"tag":"h4","lines":"12,13"}},{"content":"Zunehmende Umweltbelastung","children":[],"payload":{"tag":"h4","lines":"13,14"}},{"content":"Situation der Entwicklungsl&#xe4;nder","children":[],"payload":{"tag":"h4","lines":"14,15"}}],"payload":{"tag":"h3","lines":"10,11"}},{"content":"Schweiz &amp; Globalisierung","children":[{"content":"Bedeutung des internationalen Handels f&#xfc;r CH","children":[],"payload":{"tag":"h4","lines":"16,17"}},{"content":"Wichtigste Importg&#xfc;ter der Schweiz","children":[],"payload":{"tag":"h4","lines":"17,18"}},{"content":"Wichtigste Exportg&#xfc;ter der Schweiz","children":[],"payload":{"tag":"h4","lines":"18,19"}},{"content":"Wichtigste Handelspartner der Schweiz (Fokus EU)","children":[],"payload":{"tag":"h4","lines":"19,20"}}],"payload":{"tag":"h3","lines":"15,16"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Politik","children":[{"content":"Notwendigkeit internationaler Kooperation (Grenz&#xfc;berschreitende Probleme)","children":[],"payload":{"tag":"h3","lines":"21,22"}},{"content":"Wichtige internationale Akteure/Foren","children":[{"content":"UNO-Sonderkonferenzen","children":[],"payload":{"tag":"h4","lines":"23,24"}},{"content":"G7-Gipfel","children":[],"payload":{"tag":"h4","lines":"24,25"}},{"content":"G20-Gipfel","children":[],"payload":{"tag":"h4","lines":"25,26"}},{"content":"WEF (World Economic Forum)","children":[],"payload":{"tag":"h4","lines":"26,27"}}],"payload":{"tag":"h3","lines":"22,23"}}],"payload":{"tag":"h2","lines":"20,21"}},{"content":"Kultur","children":[{"content":"Kultureller Austausch (Chancen &amp; Risiken)","children":[],"payload":{"tag":"h3","lines":"28,29"}},{"content":"Ph&#xe4;nomene der Kulturglokalisierung (z.B. McDonaldisierung, Kulturimperialismus)","children":[],"payload":{"tag":"h3","lines":"29,30"}},{"content":"Gegenbewegungen/Anpassungen (z.B. Glokalismus)","children":[],"payload":{"tag":"h3","lines":"30,31"}},{"content":"Globale soziale Bewegungen (Beispiel: Fridays for Future)","children":[],"payload":{"tag":"h3","lines":"31,32"}}],"payload":{"tag":"h2","lines":"27,28"}},{"content":"Umwelt","children":[{"content":"Grenz&#xfc;berschreitende Umweltprobleme (Beispiele: Treibhauseffekt, Meeresverschmutzung etc.)","children":[],"payload":{"tag":"h3","lines":"33,34"}},{"content":"Ursachen/Verst&#xe4;rker (z.B. Warentransporte, Konsumverhalten)","children":[],"payload":{"tag":"h3","lines":"34,35"}},{"content":"Herausforderungen (z.B. Wettbewerbsnachteile, Situation Schwellenl&#xe4;nder)","children":[],"payload":{"tag":"h3","lines":"35,36"}},{"content":"L&#xf6;sungsans&#xe4;tze/Positive Entwicklungen (z.B. internationale Abkommen, h&#xf6;heres Bewusstsein, NGOs)","children":[],"payload":{"tag":"h3","lines":"36,37"}}],"payload":{"tag":"h2","lines":"32,33"}},{"content":"Kommunikation","children":[{"content":"Globales Dorf (McLuhan) / Internet als Vernetzer","children":[],"payload":{"tag":"h3","lines":"38,39"}},{"content":"Vorteile (z.B. Wissenszugang, standortunabh&#xe4;ngiges Arbeiten)","children":[],"payload":{"tag":"h3","lines":"39,40"}},{"content":"Slacktivismus (Definition und Bewertung)","children":[],"payload":{"tag":"h3","lines":"40,41"}},{"content":"Risiken/Nachteile (z.B. Informations&#xfc;berflutung, Medienkonzentration)","children":[],"payload":{"tag":"h3","lines":"41,42"}}],"payload":{"tag":"h2","lines":"37,38"}},{"content":"Sprache","children":[{"content":"Englisch als Weltsprache/Lingua franca","children":[],"payload":{"tag":"h3","lines":"43,44"}},{"content":"Ph&#xe4;nomen Denglisch (Beispiele)","children":[],"payload":{"tag":"h3","lines":"44,45"}},{"content":"Bedrohung der Sprachenvielfalt / Sprachensterben (Ursachen, Folgen)","children":[],"payload":{"tag":"h3","lines":"45,46"}}],"payload":{"tag":"h2","lines":"42,43"}},{"content":"Definition","children":[],"payload":{"tag":"h2","lines":"46,47"}},{"content":"Ursachen","children":[{"content":"Technischer Fortschritt","children":[],"payload":{"tag":"h3","lines":"48,49"}},{"content":"Politische Liberalisierung","children":[],"payload":{"tag":"h3","lines":"49,50"}}],"payload":{"tag":"h2","lines":"47,48"}},{"content":"Historische Entwicklung","children":[{"content":"Bretton-Woods-Konferenz (Weltbank, IWF)","children":[],"payload":{"tag":"h3","lines":"51,52"}},{"content":"GATT","children":[],"payload":{"tag":"h3","lines":"52,53"}},{"content":"WTO","children":[],"payload":{"tag":"h3","lines":"53,54"}}],"payload":{"tag":"h2","lines":"50,51"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

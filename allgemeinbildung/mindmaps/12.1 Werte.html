@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Werte und Gesellschaft","children":[{"content":"Partnerschaft &amp; Rollenerwartungen","children":[{"content":"Entwicklung von Partnerschaften","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Erwartungen (innere/&#xe4;ussere Werte, Status)","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Krisen &amp; Kompromisse","children":[],"payload":{"tag":"h3","lines":"9,10"}},{"content":"Erich Fromm: &apos;Die Kunst des Liebens&apos;","children":[],"payload":{"tag":"h3","lines":"10,11"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Gleichstellung Mann/Frau","children":[{"content":"Historische Entwicklung (Frauenstimmrecht)","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Rechtliche Grundlage (BV Art. 8 Abs. 3)","children":[],"payload":{"tag":"h3","lines":"13,14"}},{"content":"Aspekte der Gleichstellung (Beispiele)","children":[],"payload":{"tag":"h3","lines":"14,15"}},{"content":"Traditionelle vs. moderne Rollenbilder","children":[],"payload":{"tag":"h3","lines":"15,16"}}],"payload":{"tag":"h2","lines":"11,12"}},{"content":"Sexualit&#xe4;t &amp; Sexuelle Orientierung","children":[{"content":"Individuelle sexuelle Entwicklung","children":[],"payload":{"tag":"h3","lines":"17,18"}},{"content":"Heterosexualit&#xe4;t","children":[],"payload":{"tag":"h3","lines":"18,19"}},{"content":"Homosexualit&#xe4;t (schwul/lesbisch)","children":[],"payload":{"tag":"h3","lines":"19,20"}},{"content":"Bisexualit&#xe4;t","children":[],"payload":{"tag":"h3","lines":"20,21"}},{"content":"Transgender/Transsexualit&#xe4;t","children":[],"payload":{"tag":"h3","lines":"21,22"}},{"content":"Intersexualit&#xe4;t","children":[],"payload":{"tag":"h3","lines":"22,23"}},{"content":"LGBT+","children":[],"payload":{"tag":"h3","lines":"23,24"}},{"content":"Coming-out","children":[],"payload":{"tag":"h3","lines":"24,25"}}],"payload":{"tag":"h2","lines":"16,17"}},{"content":"Sexualstrafrecht","children":[{"content":"Schutzalter (16 Jahre, StGB Art. 187)","children":[],"payload":{"tag":"h3","lines":"26,27"}},{"content":"Strafbare Handlungen (Beispiele)","children":[],"payload":{"tag":"h3","lines":"27,28"}},{"content":"Pornografie (Regelungen)","children":[],"payload":{"tag":"h3","lines":"28,29"}},{"content":"Sexuelle Bel&#xe4;stigung","children":[],"payload":{"tag":"h3","lines":"29,30"}},{"content":"Straffreie Jugendliebe (StGB Art. 187 Ziff. 3)","children":[],"payload":{"tag":"h3","lines":"30,31"}}],"payload":{"tag":"h2","lines":"25,26"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

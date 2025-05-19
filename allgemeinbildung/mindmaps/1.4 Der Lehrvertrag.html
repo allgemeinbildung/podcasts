@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Der Lehrvertrag","children":[{"content":"Abschluss und Inhalt","children":[{"content":"Vertragsparteien","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Form &amp; Genehmigung","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Mindestinhalt","children":[],"payload":{"tag":"h3","lines":"9,10"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Rechte Lernende","children":[{"content":"Lohnanspruch","children":[],"payload":{"tag":"h3","lines":"11,12"}},{"content":"Lohnfortzahlung","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Geregelte Arbeitszeit","children":[],"payload":{"tag":"h3","lines":"13,14"}},{"content":"Abgeltung &#xdc;berstunden","children":[],"payload":{"tag":"h3","lines":"14,15"}},{"content":"Ferienanspruch","children":[],"payload":{"tag":"h3","lines":"15,16"}},{"content":"Nur berufsbezogene Arbeiten","children":[],"payload":{"tag":"h3","lines":"16,17"}},{"content":"Besuch von Kursen/BM","children":[],"payload":{"tag":"h3","lines":"17,18"}},{"content":"Teilnahme am Qualifikationsverfahren (QV)","children":[],"payload":{"tag":"h3","lines":"18,19"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"Pflichten Lernende","children":[{"content":"Hauptpflicht","children":[],"payload":{"tag":"h3","lines":"20,21"}},{"content":"Besuch Berufsfachschule/&#xfc;K","children":[],"payload":{"tag":"h3","lines":"21,22"}},{"content":"Sorgfaltspflicht","children":[],"payload":{"tag":"h3","lines":"22,23"}},{"content":"Treuepflicht","children":[],"payload":{"tag":"h3","lines":"23,24"}},{"content":"Haftung bei Sch&#xe4;den","children":[],"payload":{"tag":"h3","lines":"24,25"}},{"content":"&#xdc;berstunden leisten","children":[],"payload":{"tag":"h3","lines":"25,26"}},{"content":"Lerndokumentation f&#xfc;hren","children":[],"payload":{"tag":"h3","lines":"26,27"}}],"payload":{"tag":"h2","lines":"19,20"}},{"content":"Probezeit &amp; Beendigung","children":[{"content":"Probezeit","children":[],"payload":{"tag":"h3","lines":"28,29"}},{"content":"Aufl&#xf6;sung nach Probezeit","children":[],"payload":{"tag":"h3","lines":"29,30"}},{"content":"Verl&#xe4;ngerung Lehrzeit","children":[],"payload":{"tag":"h3","lines":"30,31"}}],"payload":{"tag":"h2","lines":"27,28"}},{"content":"Pflichten Berufsbildende","children":[{"content":"Ausbildungspflicht","children":[],"payload":{"tag":"h3","lines":"32,33"}},{"content":"Lohnzahlungspflicht","children":[],"payload":{"tag":"h3","lines":"33,34"}},{"content":"Versicherungspflicht","children":[],"payload":{"tag":"h3","lines":"34,35"}},{"content":"Ferien gew&#xe4;hren","children":[],"payload":{"tag":"h3","lines":"35,36"}},{"content":"Jugendurlaub erm&#xf6;glichen","children":[],"payload":{"tag":"h3","lines":"36,37"}},{"content":"Freistellung f&#xfc;r Unterricht/&#xfc;K/QV","children":[],"payload":{"tag":"h3","lines":"37,38"}},{"content":"Ausstellung eines Lehrzeugnisses","children":[],"payload":{"tag":"h3","lines":"38,39"}}],"payload":{"tag":"h2","lines":"31,32"}},{"content":"Konfliktmanagement im Lehrbetrieb","children":[{"content":"H&#xe4;ufige Konfliktursachen","children":[],"payload":{"tag":"h3","lines":"40,41"}},{"content":"Empfohlene L&#xf6;sungswege im Konfliktfall","children":[],"payload":{"tag":"h3","lines":"41,42"}},{"content":"Vier Konfliktstrategien","children":[],"payload":{"tag":"h3","lines":"42,43"}},{"content":"Tipps zur Gespr&#xe4;chsf&#xfc;hrung bei Konflikten","children":[],"payload":{"tag":"h3","lines":"43,44"}}],"payload":{"tag":"h2","lines":"39,40"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>
