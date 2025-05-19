@@ -1,62 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Existing head content remains the same -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeinbildung Podcast Mindmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Add logo styling */
-        .logo-container {
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter background */
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            color: white;
+            padding: 1.5rem;
             text-align: center;
-            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        .logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 1rem;
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin: 0;
         }
-
-        /* Compact audio player */
+        
+        .tagline {
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .main-container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .decoration-graphic {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background-image: url('./images/img-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
         .audio-player-container {
-            padding: 1rem; /* Reduced from p-6 (1.5rem) */
-            border-bottom: 1px solid #e5e7eb;
-            max-width: 400px; /* Limit audio player width */
-            margin: 0 auto; /* Center the player */
-        }
-        .audio-player-container h2 {
-            font-size: 1.25rem; /* text-xl */
-            margin-bottom: 0.75rem;
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            background: linear-gradient(to right, #f8fafc, #ffffff);
         }
 
-        /* Make audio controls more compact */
+        .episode-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .episode-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 50%;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .episode-info h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem 0;
+            color: #1e293b;
+        }
+        
+        .episode-info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .player-wrapper {
+            background-color: #f1f5f9;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+        
         audio {
-            height: 40px; /* Reduce vertical space */
+            width: 100%;
+            border-radius: 0.5rem;
+            outline: none;
         }
+        
         audio::-webkit-media-controls-panel {
-            padding: 4px 8px;
+            background-color: #f8fafc;
         }
-        audio::-webkit-media-controls-current-time-display,
-        audio::-webkit-media-controls-time-remaining-display {
-            font-size: 0.75rem;
+        
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-mute-button {
+            background-color: #4f46e5;
+            border-radius: 50%;
+            color: white;
+        }
+        
+        audio::-webkit-media-controls-timeline {
+            background-color: #cbd5e1;
+            border-radius: 0.5rem;
+        }
+        
+        .mindmap-container {
+            width: 100%;
+            height: 65vh;
+            overflow: hidden;
+            border-top: 6px solid #e0e7ff;
+        }
+        
+        .mindmap-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .mindmap-header {
+            padding: 1rem 2rem;
+            background-color: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mindmap-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+            color: #334155;
+        }
+        
+        .mindmap-icon {
+            margin-right: 0.75rem;
+            color: #4f46e5;
+        }
+        
+        .message-box {
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.125rem;
+            color: #64748b;
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            margin: 2rem;
+        }
+        
+        .message-box.error {
+            border-left: 4px solid #ef4444;
+        }
+        
+        .footer {
+            margin-top: auto;
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        .footer a {
+            color: #a5b4fc;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                width: 95%;
+                margin: 1rem auto;
+            }
+            
+            .audio-player-container,
+            .mindmap-header {
+                padding: 1.25rem;
+            }
+            
+            .episode-icon {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .episode-info h2 {
+                font-size: 1.25rem;
+            }
+            
+            .mindmap-container {
+                height: 50vh;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Add logo above the container -->
-    <div class="logo-container">
-        <img src="./images/img-1.png" alt="Logo" class="logo rounded-lg">
-    </div>
+    <header class="header">
+        <h1>Allgemeinbildung</h1>
+        <p class="tagline">Das Lehrmittel anders Erzählt</p>
+    </header>
 
-    <div class="container">
+    <div class="main-container">
+        <div class="decoration-graphic"></div>
         <div id="content-area">
             <div class="audio-player-container" id="audio-container">
-                <!-- Existing audio content -->
+                <!-- Audio player will be injected here by JavaScript -->
             </div>
 
-            <!-- Existing mindmap container -->
+            <div id="mindmap-section">
+                <div class="mindmap-header">
+                    <div class="mindmap-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                    </div>
+                    <h3>Interaktive Mindmap</h3>
+                </div>
+                <div class="mindmap-container" id="mindmap-embed-container">
+                    <!-- Mindmap will be injected here by JavaScript -->
+                </div>
+            </div>
         </div>
-        <!-- Message box remains -->
+        <div id="message-box" class="message-box" style="display: none;"></div>
     </div>
 
-    <!-- Existing footer and script -->
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Allgemeinbildung: das Lehrmittel anders Erzählt.</p>
+        <p class="mt-2">Lernen Sie besser mit Podcasts und interaktiven Mindmaps.</p>
+    </footer>
+
+    <script>
+        // Function to display messages to the user
+        function showMessage(message, isError = false) {
+            const messageBox = document.getElementById('message-box');
+            const contentArea = document.getElementById('content-area');
+            
+            messageBox.textContent = message;
+            messageBox.className = isError ? 'message-box error' : 'message-box';
+            messageBox.style.display = 'block';
+            contentArea.style.display = 'none'; // Hide content area when showing a message
+        }
+
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to create audio player with episode info
+        function createAudioPlayer(contentId, audioFilePath) {
+            const audioContainer = document.getElementById('audio-container');
+            
+            // Create episode meta section with icon and info
+            const episodeMeta = document.createElement('div');
+            episodeMeta.className = 'episode-meta';
+            
+            // Add episode icon
+            const episodeIcon = document.createElement('div');
+            episodeIcon.className = 'episode-icon';
+            episodeIcon.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            `;
+            
+            // Add episode info
+            const episodeInfo = document.createElement('div');
+            episodeInfo.className = 'episode-info';
+            
+            const episodeTitle = document.createElement('h2');
+            episodeTitle.textContent = `Kapitel: ${contentId}`;
+            
+            const episodeDescription = document.createElement('p');
+            episodeDescription.textContent = 'Hören Sie zu und erforschen Sie die Mindmap unten.';
+            
+            episodeInfo.appendChild(episodeTitle);
+            episodeInfo.appendChild(episodeDescription);
+            
+            // Build episode meta
+            episodeMeta.appendChild(episodeIcon);
+            episodeMeta.appendChild(episodeInfo);
+            
+            // Create player wrapper
+            const playerWrapper = document.createElement('div');
+            playerWrapper.className = 'player-wrapper';
+            
+            // Create audio element
+            const audioElement = document.createElement('audio');
+            audioElement.setAttribute('controls', '');
+            audioElement.setAttribute('preload', 'metadata');
+            
+            const sourceElement = document.createElement('source');
+            sourceElement.setAttribute('src', audioFilePath);
+            sourceElement.setAttribute('type', 'audio/wav');
+            
+            audioElement.appendChild(sourceElement);
+            playerWrapper.appendChild(audioElement);
+            
+            // Error handling for audio
+            audioElement.onerror = () => {
+                playerWrapper.innerHTML = `
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-red-700">
+                                    Die Audiodatei '${audioFilePath}' konnte nicht geladen werden. Bitte überprüfen Sie den Dateipfad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            };
+            
+            // Add everything to the audio container
+            audioContainer.appendChild(episodeMeta);
+            audioContainer.appendChild(playerWrapper);
+        }
+
+        // Main function to load content
+        function loadContent() {
+            const contentId = getQueryParam('id');
+            const audioContainer = document.getElementById('audio-container');
+            const mindmapContainer = document.getElementById('mindmap-embed-container');
+            const contentArea = document.getElementById('content-area');
+            const messageBox = document.getElementById('message-box');
+            const mindmapSection = document.getElementById('mindmap-section');
+
+            // Clear previous content/messages
+            audioContainer.innerHTML = '';
+            mindmapContainer.innerHTML = '';
+            messageBox.style.display = 'none';
+            contentArea.style.display = 'block';
+
+            if (!contentId) {
+                // Display welcome message if no ID is provided
+                audioContainer.innerHTML = `
+                    <div class="episode-meta">
+                        <div class="episode-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="episode-info">
+                            <h2>Willkommen!</h2>
+                            <p>Wählen Sie ein Kapitel, um zu beginnen.</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4 rounded">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    Um einen Podcast und seine Mindmap anzuzeigen, fügen Sie bitte eine ID in die URL ein: <br>
+                                    <code class="bg-blue-100 p-1 rounded mt-2 inline-block">?id=episode1</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                mindmapSection.style.display = 'none';
+                return;
+            }
+
+            mindmapSection.style.display = 'block';
+
+            // Configuration for file paths
+            const audioFolderPath = './audio/';
+            const mindmapsFolderPath = './mindmaps/';
+
+            const audioFileName = `${contentId}.wav`;
+            const mindmapFileName = `${contentId}.html`;
+
+            const audioFilePath = `${audioFolderPath}${audioFileName}`;
+            const mindmapFilePath = `${mindmapsFolderPath}${mindmapFileName}`;
+
+            // Create and append audio player
+            createAudioPlayer(contentId, audioFilePath);
+
+            // Create and append iframe for the mindmap
+            const iframeElement = document.createElement('iframe');
+            iframeElement.setAttribute('src', mindmapFilePath);
+            iframeElement.setAttribute('title', `Mindmap for ${contentId}`);
+            iframeElement.setAttribute('frameborder', '0');
+            iframeElement.style.width = '100%';
+            iframeElement.style.height = '100%';
+
+            // Fallback for iframe loading issues
+            fetch(mindmapFilePath, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        // If HEAD request fails (e.g., 404), show an error for the mindmap
+                        mindmapContainer.innerHTML = `
+                            <div class="flex items-center justify-center h-full">
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded max-w-lg">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 text-red-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-red-700">
+                                                Die Mindmap-Datei '${mindmapFileName}' konnte nicht gefunden werden (Status: ${response.status}). Bitte überprüfen Sie den Dateipfad.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // If HEAD request is OK, proceed to add the iframe
+                        mindmapContainer.appendChild(iframeElement);
+                    }
+                })
+                .catch(() => {
+                    // Network error or other issues during fetch
+                    mindmapContainer.innerHTML = `
+                        <div class="flex items-center justify-center h-full">
+                            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded max-w-lg">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 text-red-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-red-700">
+                                            Die Mindmap-Datei '${mindmapFileName}' konnte nicht überprüft werden. Es könnte ein Netzwerkproblem vorliegen oder die Datei ist nicht zugänglich.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        }
+
+        // Load content when the page is ready
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
 </body>
 </html>
