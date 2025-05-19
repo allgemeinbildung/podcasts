@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Medienlandschaft Schweiz","children":[{"content":"Aufgaben &amp; Rolle der Medien","children":[{"content":"Hauptaufgaben","children":[{"content":"Information","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"Unterhaltung","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Kulturtr&#xe4;ger","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Kontrolle","children":[],"payload":{"tag":"li","lines":"11,12"}}],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Bedeutung f&#xfc;r Demokratie","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Medien als 4. Gewalt","children":[],"payload":{"tag":"h3","lines":"13,14"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Rechtliche Grundlagen","children":[{"content":"Meinungsfreiheit (BV Art. 16)","children":[],"payload":{"tag":"h3","lines":"15,16"}},{"content":"Informationsfreiheit (BV Art. 16)","children":[],"payload":{"tag":"h3","lines":"16,17"}},{"content":"Medienfreiheit (BV Art. 17)","children":[],"payload":{"tag":"h3","lines":"17,18"}},{"content":"Einschr&#xe4;nkungen der Freiheiten","children":[{"content":"Pers&#xf6;nlichkeitsschutz","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"Antirassismusgesetz","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Jugendschutz","children":[],"payload":{"tag":"li","lines":"21,22"}}],"payload":{"tag":"h3","lines":"18,19"}},{"content":"Service Public (BV Art. 93 Abs. 2)","children":[{"content":"Aufgaben des Service Public","children":[{"content":"Bildung","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"kulturelle Entfaltung","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"freie Meinungsbildung","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"Unterhaltung","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Ber&#xfc;cksichtigung der Besonderheiten des Landes","children":[],"payload":{"tag":"li","lines":"28,29"}}],"payload":{"tag":"h4","lines":"23,24"}},{"content":"Tr&#xe4;ger (SRG)","children":[],"payload":{"tag":"h4","lines":"29,30"}}],"payload":{"tag":"h3","lines":"22,23"}}],"payload":{"tag":"h2","lines":"14,15"}},{"content":"Massenmedien","children":[{"content":"Definition Massenmedien","children":[],"payload":{"tag":"h3","lines":"31,32"}},{"content":"Eigenschaften Massenmedien","children":[{"content":"erreichen schnell viele Menschen","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"Empf&#xe4;nger nicht bekannt","children":[],"payload":{"tag":"li","lines":"34,35"}}],"payload":{"tag":"h3","lines":"32,33"}},{"content":"Arten von Massenmedien","children":[{"content":"Printmedien","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"elektronische Medien","children":[],"payload":{"tag":"li","lines":"37,38"}},{"content":"Internet","children":[],"payload":{"tag":"li","lines":"38,39"}}],"payload":{"tag":"h3","lines":"35,36"}}],"payload":{"tag":"h2","lines":"30,31"}},{"content":"Medienkritik &amp; Schutz","children":[{"content":"Medienethik","children":[{"content":"Grundfragen","children":[],"payload":{"tag":"li","lines":"41,42"}}],"payload":{"tag":"h3","lines":"40,41"}},{"content":"Informationsselektion durch Redaktionen","children":[],"payload":{"tag":"h3","lines":"42,43"}},{"content":"Formen der Medienmanipulation","children":[{"content":"Gewichtung von Themen","children":[],"payload":{"tag":"h4","lines":"44,45"}},{"content":"Manipulative Sprache","children":[{"content":"Euphemismus","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"Pejoration","children":[],"payload":{"tag":"li","lines":"47,48"}}],"payload":{"tag":"h4","lines":"45,46"}},{"content":"Bildmanipulation","children":[{"content":"Bildaufbau","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"Symbolisierung","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"Retusche","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"Fotomontage","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"inszenierte Fotografie","children":[],"payload":{"tag":"li","lines":"53,54"}}],"payload":{"tag":"h4","lines":"48,49"}}],"payload":{"tag":"h3","lines":"43,44"}},{"content":"Zensur","children":[{"content":"Direkte Zensur","children":[],"payload":{"tag":"h4","lines":"55,56"}},{"content":"Indirekte Zensur","children":[],"payload":{"tag":"h4","lines":"56,57"}},{"content":"Zensurverbot Schweiz (BV Art. 17)","children":[],"payload":{"tag":"h4","lines":"57,58"}}],"payload":{"tag":"h3","lines":"54,55"}},{"content":"Schutzmassnahmen gegen Manipulation","children":[{"content":"Presserat","children":[],"payload":{"tag":"h4","lines":"59,60"}},{"content":"Rechtliche Grundlagen (erneut BV Art. 16, BV Art. 17)","children":[],"payload":{"tag":"h4","lines":"60,61"}},{"content":"Medienvielfalt (BAKOM, WEKO)","children":[],"payload":{"tag":"h4","lines":"61,62"}},{"content":"Selbstschutz der Konsumenten","children":[{"content":"Quellenvergleich","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"Vertrauensw&#xfc;rdigkeit pr&#xfc;fen","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"Erkennen von Fake News","children":[],"payload":{"tag":"li","lines":"65,66"}}],"payload":{"tag":"h4","lines":"62,63"}}],"payload":{"tag":"h3","lines":"58,59"}}],"payload":{"tag":"h2","lines":"39,40"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

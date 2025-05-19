@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Gesundheit und Sucht","children":[{"content":"Grundlagen der Gesundheit","children":[{"content":"Definition Gesundheit","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"K&#xf6;rperliches Wohlergehen","children":[{"content":"Richtige Ern&#xe4;hrung","children":[],"payload":{"tag":"h4","lines":"9,10"}},{"content":"Risikofaktoren","children":[{"content":"Falsche Ern&#xe4;hrung","children":[],"payload":{"tag":"h5","lines":"11,12"}},{"content":"Rauchen","children":[],"payload":{"tag":"h5","lines":"12,13"}}],"payload":{"tag":"h4","lines":"10,11"}}],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Geistiges Wohlergehen","children":[{"content":"Bedeutung","children":[],"payload":{"tag":"h4","lines":"14,15"}},{"content":"Psychologie","children":[],"payload":{"tag":"h4","lines":"15,16"}},{"content":"Hilfesuche","children":[],"payload":{"tag":"h4","lines":"16,17"}}],"payload":{"tag":"h3","lines":"13,14"}},{"content":"Soziales Wohlergehen","children":[{"content":"Pr&#xe4;gung durch Umfeld","children":[],"payload":{"tag":"h4","lines":"18,19"}},{"content":"Soziale Sicherheit","children":[],"payload":{"tag":"h4","lines":"19,20"}},{"content":"Wirtschaftliche Interessen","children":[],"payload":{"tag":"h4","lines":"20,21"}},{"content":"Social Networks","children":[],"payload":{"tag":"h4","lines":"21,22"}}],"payload":{"tag":"h3","lines":"17,18"}},{"content":"Reparaturmedizin vs. Gesundheitsf&#xf6;rderung","children":[],"payload":{"tag":"h3","lines":"22,23"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Gesundheitsf&#xf6;rderung &amp; Stress","children":[{"content":"Gesundheitsf&#xf6;rderung","children":[{"content":"Prinzipien (Selbstverantwortung, Selbstheilungskr&#xe4;fte)","children":[],"payload":{"tag":"h4","lines":"25,26"}}],"payload":{"tag":"h3","lines":"24,25"}},{"content":"Stress erkennen und bew&#xe4;ltigen","children":[{"content":"Definition Stress","children":[],"payload":{"tag":"h4","lines":"27,28"}},{"content":"Stressoren","children":[],"payload":{"tag":"h4","lines":"28,29"}},{"content":"Symptome","children":[],"payload":{"tag":"h4","lines":"29,30"}},{"content":"Strategien gegen Stress","children":[{"content":"Lebensstrategie/Ressourcen pflegen","children":[],"payload":{"tag":"h5","lines":"31,32"}},{"content":"Arbeitsverhalten","children":[],"payload":{"tag":"h5","lines":"32,33"}},{"content":"Bewegung","children":[],"payload":{"tag":"h5","lines":"33,34"}},{"content":"Entspannung","children":[],"payload":{"tag":"h5","lines":"34,35"}}],"payload":{"tag":"h4","lines":"30,31"}}],"payload":{"tag":"h3","lines":"26,27"}}],"payload":{"tag":"h2","lines":"23,24"}},{"content":"Konzentration und Leistungsf&#xe4;higkeit","children":[{"content":"Definition Konzentration","children":[],"payload":{"tag":"h3","lines":"36,37"}},{"content":"Voraussetzungen f&#xfc;r Konzentration","children":[],"payload":{"tag":"h3","lines":"37,38"}},{"content":"Konzentrationsf&#xf6;rdernde Massnahmen","children":[],"payload":{"tag":"h3","lines":"38,39"}}],"payload":{"tag":"h2","lines":"35,36"}},{"content":"Sexuelle Gesundheit","children":[{"content":"Definition Sexuelle Gesundheit","children":[],"payload":{"tag":"h3","lines":"40,41"}},{"content":"Verh&#xfc;tungsmittel und Schutzmassnahmen","children":[{"content":"Pille","children":[],"payload":{"tag":"h4","lines":"42,43"}},{"content":"Kondom","children":[],"payload":{"tag":"h4","lines":"43,44"}},{"content":"Spirale","children":[],"payload":{"tag":"h4","lines":"44,45"}},{"content":"Pflaster","children":[],"payload":{"tag":"h4","lines":"45,46"}},{"content":"Ring","children":[],"payload":{"tag":"h4","lines":"46,47"}},{"content":"Pille danach","children":[],"payload":{"tag":"h4","lines":"47,48"}},{"content":"HIV-Test","children":[],"payload":{"tag":"h4","lines":"48,49"}}],"payload":{"tag":"h3","lines":"41,42"}},{"content":"STI/Geschlechtskrankheiten","children":[],"payload":{"tag":"h3","lines":"49,50"}}],"payload":{"tag":"h2","lines":"39,40"}},{"content":"Sucht","children":[{"content":"Definition Sucht","children":[],"payload":{"tag":"h3","lines":"51,52"}},{"content":"Abh&#xe4;ngigkeitssyndrom (ICD-10 Kriterien)","children":[],"payload":{"tag":"h3","lines":"52,53"}},{"content":"Suchtmittel","children":[{"content":"Anabolika","children":[],"payload":{"tag":"h4","lines":"54,55"}},{"content":"Alkohol","children":[],"payload":{"tag":"h4","lines":"55,56"}},{"content":"Tabak","children":[],"payload":{"tag":"h4","lines":"56,57"}},{"content":"Cannabis","children":[{"content":"Wirkung/Risiken","children":[],"payload":{"tag":"h5","lines":"58,59"}},{"content":"Gesetzliche Bestimmungen","children":[],"payload":{"tag":"h5","lines":"59,60"}}],"payload":{"tag":"h4","lines":"57,58"}}],"payload":{"tag":"h3","lines":"53,54"}},{"content":"Pr&#xe4;vention","children":[],"payload":{"tag":"h3","lines":"60,61"}},{"content":"Anlaufstellen","children":[],"payload":{"tag":"h3","lines":"61,62"}}],"payload":{"tag":"h2","lines":"50,51"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

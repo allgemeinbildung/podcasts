@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Gewaltenteilung in der Schweiz","children":[{"content":"Legislative (Parlament)","children":[{"content":"Zusammensetzung (Nationalrat, St&#xe4;nderat)","children":[{"content":"Gr&#xf6;sse","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"Repr&#xe4;sentation","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Abgeordnete pro Kanton","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Wahlverfahren","children":[],"payload":{"tag":"li","lines":"11,12"}}],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Aufgaben","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Arbeitsweise (Sessionen, Fraktionen, Kommissionen, Vereinigte Bundesversammlung)","children":[],"payload":{"tag":"h3","lines":"13,14"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Exekutive (Bundesrat)","children":[{"content":"Zusammensetzung und Wahl (inkl. Konkordanz)","children":[],"payload":{"tag":"h3","lines":"15,16"}},{"content":"Aufgaben und Prinzipien (inkl. Kollegialit&#xe4;tsprinzip)","children":[],"payload":{"tag":"h3","lines":"16,17"}},{"content":"Bundespr&#xe4;sident/in und Bundeskanzlei","children":[],"payload":{"tag":"h3","lines":"17,18"}},{"content":"Bundesverwaltung (7 Departemente)","children":[],"payload":{"tag":"h3","lines":"18,19"}}],"payload":{"tag":"h2","lines":"14,15"}},{"content":"Judikative (Bundesgericht)","children":[{"content":"Oberste richterliche Instanz","children":[],"payload":{"tag":"h3","lines":"20,21"}},{"content":"Richterlicher Instanzenweg","children":[],"payload":{"tag":"h3","lines":"21,22"}},{"content":"Gerichts- und Prozessarten (Straf-, Zivil-, Verwaltungsgericht)","children":[],"payload":{"tag":"h3","lines":"22,23"}}],"payload":{"tag":"h2","lines":"19,20"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

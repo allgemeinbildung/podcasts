@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"9.1 Klima","children":[{"content":"Treibhauseffekt","children":[{"content":"Nat&#xfc;rlicher Treibhauseffekt","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Anthropogener Treibhauseffekt","children":[],"payload":{"tag":"h3","lines":"8,9"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Ozon/Ozonschicht","children":[{"content":"Definition Ozon (O3)","children":[],"payload":{"tag":"h3","lines":"10,11"}},{"content":"Funktion der Ozonschicht","children":[],"payload":{"tag":"h3","lines":"11,12"}},{"content":"Ursachen Ozonloch","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Folgen des Ozonlochs","children":[],"payload":{"tag":"h3","lines":"13,14"}}],"payload":{"tag":"h2","lines":"9,10"}},{"content":"Folgen des Klimawandels","children":[{"content":"Globale Folgen","children":[],"payload":{"tag":"h3","lines":"15,16"}},{"content":"Folgen f&#xfc;r die Schweiz","children":[{"content":"Folgen im Alpenraum","children":[{"content":"Gletscherschmelze","children":[],"payload":{"tag":"h5","lines":"18,19"}},{"content":"Permafrost","children":[],"payload":{"tag":"h5","lines":"19,20"}}],"payload":{"tag":"h4","lines":"17,18"}}],"payload":{"tag":"h3","lines":"16,17"}}],"payload":{"tag":"h2","lines":"14,15"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

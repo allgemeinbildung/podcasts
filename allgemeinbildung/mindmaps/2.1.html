@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"","children":[{"content":"Lohn","children":[{"content":"Bruttolohn","children":[{"content":"Lohnzus&#xe4;tze","children":[{"content":"&#xdc;berstunden","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"13. Monatslohn","children":[],"payload":{"tag":"li","lines":"9,10","listIndex":13}},{"content":"Gratifikation","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Naturallohn","children":[],"payload":{"tag":"li","lines":"11,12"}}],"payload":{"tag":"h3","lines":"7,8"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Nettolohn","children":[],"payload":{"tag":"h2","lines":"12,13"}},{"content":"Lohnabz&#xfc;ge","children":[{"content":"Sozialversicherungsbeitr&#xe4;ge (ab 18. LJ)","children":[{"content":"AHV","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"IV","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"EO","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"ALV","children":[],"payload":{"tag":"li","lines":"18,19"}}],"payload":{"tag":"h3","lines":"14,15"}},{"content":"Unfallversicherung (UVG)","children":[{"content":"NBU (Nichtberufsunfall)","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"BU (Berufsunfall)","children":[],"payload":{"tag":"li","lines":"21,22"}}],"payload":{"tag":"h3","lines":"19,20"}},{"content":"Spezialregelungen Lernende","children":[{"content":"Nicht abzugsf&#xe4;hige Kosten","children":[{"content":"BU","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"Schulbesuch","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"&#xfc;K","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"Qualifikationsverfahren","children":[],"payload":{"tag":"li","lines":"27,28"}}],"payload":{"tag":"li","lines":"23,28"}},{"content":"M&#xf6;gliche Abz&#xfc;ge (mit Lehrvertragsregelung)","children":[{"content":"Kost","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"Logis","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"Berufskleidung","children":[],"payload":{"tag":"li","lines":"31,32"}}],"payload":{"tag":"li","lines":"28,32"}}],"payload":{"tag":"h3","lines":"22,23"}},{"content":"Weitere m&#xf6;gliche Abz&#xfc;ge","children":[{"content":"BVG (Berufliche Vorsorge)","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"KTG (Krankentaggeldversicherung)","children":[],"payload":{"tag":"li","lines":"34,35"}}],"payload":{"tag":"h3","lines":"32,33"}}],"payload":{"tag":"h2","lines":"13,14"}},{"content":"Ausbezahlter Lohn","children":[{"content":"Nettolohn","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Spesenentsch&#xe4;digung","children":[],"payload":{"tag":"li","lines":"37,38"}},{"content":"Sozialzulagen (z.B. Kinder-, Familienzulage)","children":[],"payload":{"tag":"li","lines":"38,39"}}],"payload":{"tag":"h2","lines":"35,36"}}],"payload":{"tag":"h1","lines":"5,6"}},{"content":"Lohnabrechnung","children":[{"content":"Zweck","children":[],"payload":{"tag":"h2","lines":"40,41"}},{"content":"Typische Bestandteile (gem. Muster S. 47)","children":[{"content":"Monatslohn","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"Bruttolohn","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"AHV-Abzug","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"Nettolohn","children":[],"payload":{"tag":"li","lines":"45,46"}}],"payload":{"tag":"h2","lines":"41,42"}},{"content":"Wichtige Unterscheidungen","children":[],"payload":{"tag":"h2","lines":"46,47"}}],"payload":{"tag":"h1","lines":"39,40"}},{"content":"Kontoauszug","children":[{"content":"Zweck","children":[],"payload":{"tag":"h2","lines":"48,49"}},{"content":"Inhalt","children":[{"content":"Eing&#xe4;nge","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"Ausg&#xe4;nge","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"Saldo","children":[],"payload":{"tag":"li","lines":"52,53"}}],"payload":{"tag":"h2","lines":"49,50"}},{"content":"Formen","children":[{"content":"Papierform (schriftlich)","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"Elektronischer Kontoauszug","children":[],"payload":{"tag":"li","lines":"55,56"}}],"payload":{"tag":"h2","lines":"53,54"}}],"payload":{"tag":"h1","lines":"47,48"}}]},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

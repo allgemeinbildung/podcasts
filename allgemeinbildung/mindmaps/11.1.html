@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Schweiz &#x2013; EU","children":[{"content":"Entstehung der EU","children":[{"content":"Wichtigste Beweggr&#xfc;nde","children":[],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Initiativen und Pl&#xe4;ne","children":[],"payload":{"tag":"h3","lines":"8,9"}},{"content":"Fr&#xfc;he Gemeinschaften bzw. Vertr&#xe4;ge","children":[],"payload":{"tag":"h3","lines":"9,10"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Aufbau &amp; Ziele der EU","children":[{"content":"EU Heute","children":[{"content":"Vier Grundfreiheiten","children":[],"payload":{"tag":"h4","lines":"12,13"}},{"content":"Euro-Zone (inkl. EZB)","children":[],"payload":{"tag":"h4","lines":"13,14"}},{"content":"Anzahl der Mitgliedsstaaten/Erweiterung","children":[],"payload":{"tag":"h4","lines":"14,15"}}],"payload":{"tag":"h3","lines":"11,12"}},{"content":"EU-Organe","children":[{"content":"Europ&#xe4;ischer Rat","children":[],"payload":{"tag":"h4","lines":"16,17"}},{"content":"Rat der EU","children":[],"payload":{"tag":"h4","lines":"17,18"}},{"content":"Europ&#xe4;isches Parlament","children":[],"payload":{"tag":"h4","lines":"18,19"}},{"content":"Europ&#xe4;ische Kommission","children":[],"payload":{"tag":"h4","lines":"19,20"}},{"content":"Gerichtshof der EU","children":[],"payload":{"tag":"h4","lines":"20,21"}},{"content":"EZB","children":[],"payload":{"tag":"h4","lines":"21,22"}}],"payload":{"tag":"h3","lines":"15,16"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"Beziehungen Schweiz-EU","children":[{"content":"Wichtigste Stationen","children":[],"payload":{"tag":"h3","lines":"23,24"}},{"content":"Bilaterale Vertr&#xe4;ge","children":[{"content":"Bilaterale I","children":[{"content":"Personenfreiz&#xfc;gigkeit","children":[],"payload":{"tag":"h5","lines":"26,27"}},{"content":"Technische Handelshemmnisse","children":[],"payload":{"tag":"h5","lines":"27,28"}},{"content":"Landverkehr","children":[],"payload":{"tag":"h5","lines":"28,29"}}],"payload":{"tag":"h4","lines":"25,26"}},{"content":"Bilaterale II","children":[{"content":"Schengen/Dublin","children":[],"payload":{"tag":"h5","lines":"30,31"}},{"content":"Zinsbesteuerung","children":[],"payload":{"tag":"h5","lines":"31,32"}}],"payload":{"tag":"h4","lines":"29,30"}}],"payload":{"tag":"h3","lines":"24,25"}}],"payload":{"tag":"h2","lines":"22,23"}},{"content":"Herausforderungen der EU","children":[{"content":"Fl&#xfc;chtlingspolitik","children":[],"payload":{"tag":"h3","lines":"33,34"}},{"content":"Brexit","children":[],"payload":{"tag":"h3","lines":"34,35"}},{"content":"Staatsverschuldung","children":[],"payload":{"tag":"h3","lines":"35,36"}},{"content":"Terrorismus","children":[],"payload":{"tag":"h3","lines":"36,37"}},{"content":"Verteidigungspolitik","children":[],"payload":{"tag":"h3","lines":"37,38"}},{"content":"Beziehungen zu Russland/T&#xfc;rkei","children":[],"payload":{"tag":"h3","lines":"38,39"}},{"content":"Interne Differenzen","children":[],"payload":{"tag":"h3","lines":"39,40"}}],"payload":{"tag":"h2","lines":"32,33"}},{"content":"Internationale Zusammenarbeit (ausser EU)","children":[{"content":"UNO","children":[],"payload":{"tag":"h3","lines":"41,42"}},{"content":"WTO","children":[],"payload":{"tag":"h3","lines":"42,43"}},{"content":"NATO","children":[],"payload":{"tag":"h3","lines":"43,44"}}],"payload":{"tag":"h2","lines":"40,41"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>

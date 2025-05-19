@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>((r) => {
+          setTimeout(r);
+        })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Verantwortung im Strassenverkehr","children":[{"content":"Unfallgeschehen Schweiz (Allgemein)","children":[{"content":"Schl&#xfc;sselzahlen von 2020","children":[{"content":"Unf&#xe4;lle mit Personenschaden","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"Get&#xf6;tete","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Schwerverletzte","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Leichtverletzte","children":[],"payload":{"tag":"li","lines":"11,12"}}],"payload":{"tag":"h3","lines":"7,8"}},{"content":"Langzeittrend","children":[],"payload":{"tag":"h3","lines":"12,13"}},{"content":"Gr&#xfc;nde","children":[{"content":"versch&#xe4;rfte Bussenordnungen","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"verkehrsberuhigende Massnahmen","children":[],"payload":{"tag":"li","lines":"15,16"}}],"payload":{"tag":"h3","lines":"13,14"}},{"content":"&#xd6;ffentlicher Strassenverkehr Unf&#xe4;lle 2020","children":[{"content":"Anzahl Unf&#xe4;llen","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"Verletzten","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"Get&#xf6;teten","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"beteiligte Verkehrsmittel","children":[],"payload":{"tag":"li","lines":"20,21"}}],"payload":{"tag":"h3","lines":"16,17"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Jugendliche im Strassenverkehr","children":[{"content":"Statistiken 15-17 J&#xe4;hrige","children":[{"content":"Get&#xf6;tete","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"Schwerverletzte","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"Leichtverletzte","children":[],"payload":{"tag":"li","lines":"25,26"}}],"payload":{"tag":"h3","lines":"22,23"}},{"content":"Risikovergleich Altersgruppen","children":[],"payload":{"tag":"h3","lines":"26,27"}},{"content":"Jugendspezifische Risikofaktoren","children":[{"content":"Neigung zu riskantem Verhalten","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"St&#xe4;rkere Beeinflussbarkeit durch Gleichaltrige","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"Alkohol (ab 16 Jahren erh&#xe4;ltlich)","children":[],"payload":{"tag":"li","lines":"30,31"}}],"payload":{"tag":"h3","lines":"27,28"}},{"content":"Spezifische Gefahrenquellen Jugendlicher","children":[{"content":"Risiko Motorradfahren","children":[{"content":"Unfallzahlen","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"Regelung f&#xfc;r 125 cm&#xb3; Maschinen","children":[],"payload":{"tag":"li","lines":"34,35"}}],"payload":{"tag":"h4","lines":"32,33"}},{"content":"Risiko Mitfahren im Auto","children":[{"content":"Unfallzahlen","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Risiko durch junge Fahrer","children":[],"payload":{"tag":"li","lines":"37,38"}}],"payload":{"tag":"h4","lines":"35,36"}}],"payload":{"tag":"h3","lines":"31,32"}}],"payload":{"tag":"h2","lines":"21,22"}},{"content":"Pr&#xe4;vention &amp; Verantwortung","children":[{"content":"Polizeiliche Massnahmen","children":[],"payload":{"tag":"h3","lines":"39,40"}},{"content":"Individuelle Sicherheitsregeln","children":[{"content":"Gurt","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"kein Substanzeinfluss","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"angepasste Geschwindigkeit","children":[],"payload":{"tag":"li","lines":"43,44"}}],"payload":{"tag":"h3","lines":"40,41"}},{"content":"Technische Hilfsmittel","children":[{"content":"Notbremsassistent","children":[],"payload":{"tag":"li","lines":"45,46"}}],"payload":{"tag":"h3","lines":"44,45"}},{"content":"Pers&#xf6;nliche Verantwortung &#xfc;bernehmen","children":[],"payload":{"tag":"h3","lines":"46,47"}}],"payload":{"tag":"h2","lines":"38,39"}}],"payload":{"tag":"h1","lines":"5,6"}},{"initialExpandLevel":2,"maxWidth":200})</script>
+</body>
+</html>
