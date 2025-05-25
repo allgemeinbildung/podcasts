@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synced Audio and Video Display</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex; /* Use flex to center the main container if needed, or just for the media container */
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Optional page background */
+        }
+        .main-container {
+            display: flex;
+            align-items: center; /* Vertically align audio and video */
+            justify-content: center; /* Horizontally center the pair */
+            gap: 15px; /* Space between audio and video elements */
+            padding: 10px;
+            border: 1px solid #ccc; /* Optional border for the container */
+            border-radius: 5px;
+            background-color: white; /* Background for the media area */
+        }
+        .audio-wrapper {
+            /* Audio player takes its default size */
+        }
+        .video-wrapper {
+            width: 600px; /* Desired width for video area */
+            height: 200px; /* Desired height for video area */
+            background-color: black; /* Background for the video area, visible if video has letterboxing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            max-width: 100%;
+            max-height: 100%;
+            display: block; /* Remove extra space below video */
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mediaDisplay" class="main-container" style="display:none;">
+        <div class="audio-wrapper">
+            <audio id="myAudio" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="video-wrapper">
+            <video id="myVideo" autoplay loop muted playsinline>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div id="errorMessage" class="error-message" style="display:none;"></div>
+
+    <script>
+        function loadMedia() {
+            const params = new URLSearchParams(window.location.search);
+            const videoId = params.get('videoId');
+
+            const audioElement = document.getElementById('myAudio');
+            const videoElement = document.getElementById('myVideo');
+            const mediaDisplayElement = document.getElementById('mediaDisplay');
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            // Clear previous sources
+            clearSources(audioElement);
+            clearSources(videoElement);
+
+            if (videoId) {
+                // **IMPORTANT**: Adjust the path if your files are not in a 'media/' subfolder
+                // If in the same folder as index.html, use:
+                // const audioPath = `${videoId}.wav`;
+                // const videoPath = `${videoId}.mp4`;
+                const audioPath = `media/${videoId}.wav`;
+                const videoPath = `media/${videoId}.mp4`;
+
+                let audioError = false;
+                let videoError = false;
+
+                // Setup Audio
+                const audioSource = document.createElement('source');
+                audioSource.setAttribute('src', audioPath);
+                audioSource.setAttribute('type', 'audio/wav');
+                audioElement.appendChild(audioSource);
+                audioElement.load(); // Important to call load after changing source
+
+                audioElement.onerror = () => {
+                    console.error(`Error loading audio: ${audioPath}`);
+                    audioError = true;
+                    checkAllMediaLoaded();
+                };
+                audioElement.oncanplaythrough = () => { // Or onloadeddata
+                     checkAllMediaLoaded();
+                };
+
+
+                // Setup Video
+                const videoSource = document.createElement('source');
+                videoSource.setAttribute('src', videoPath);
+                videoSource.setAttribute('type', 'video/mp4');
+                videoElement.appendChild(videoSource);
+                videoElement.load(); // Important to call load
+                videoElement.play().catch(error => {
+                    console.warn("Video autoplay was prevented:", error);
+                    // Autoplay might be blocked. User interaction might be needed.
+                });
+
+                videoElement.onerror = () => {
+                    console.error(`Error loading video: ${videoPath}`);
+                    videoError = true;
+                    checkAllMediaLoaded();
+                };
+                 videoElement.onloadeddata = () => { // Or oncanplaythrough
+                    checkAllMediaLoaded();
+                };
+
+                function checkAllMediaLoaded() {
+                    if (audioError || videoError) {
+                        let errorMsg = "Error loading media. Missing: ";
+                        if (audioError) errorMsg += `audio (${videoId}.wav) `;
+                        if (videoError) errorMsg += `video (${videoId}.mp4)`;
+                        showError(errorMsg);
+                    } else if ((audioElement.readyState >= 2 || audioElement.networkState === 2) && videoElement.readyState >= 3) { // Basic checks for loaded metadata/data
+                        mediaDisplayElement.style.display = 'flex';
+                        errorMessageElement.style.display = 'none';
+                    }
+                }
+
+
+            } else {
+                showError("No 'videoId' provided in the URL. Please add ?videoId=filename to the URL (e.g., ?videoId=1.1).");
+            }
+        }
+
+        function clearSources(mediaElement) {
+            while (mediaElement.firstChild) {
+                mediaElement.removeChild(mediaElement.firstChild);
+            }
+        }
+
+        function showError(message) {
+            const mediaDisplayElement = document.getElementById('mediaDisplay');
+            const errorMessageElement = document.getElementById('errorMessage');
+            mediaDisplayElement.style.display = 'none';
+            errorMessageElement.textContent = message;
+            errorMessageElement.style.display = 'block';
+        }
+
+        window.onload = loadMedia;
+    </script>
+
+</body>
+</html>
