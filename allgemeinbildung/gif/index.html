@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Looping Video</title>
+<style>
+  body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+  video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+  }
+  .error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<video id="myVideo" autoplay loop muted playsinline>
+  Your browser does not support the video tag.
+</video>
+<div id="errorMessage" class="error-message" style="display:none;"></div>
+
+<script>
+  function getVideoIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('videoId');
+  }
+
+  function loadVideo() {
+    const videoId = getVideoIdFromURL();
+    const videoElement = document.getElementById('myVideo');
+    const errorMessageElement = document.getElementById('errorMessage');
+    
+    // Clear previous source if any
+    while (videoElement.firstChild) {
+        videoElement.removeChild(videoElement.firstChild);
+    }
+
+    if (videoId) {
+      const videoPath = `video/${videoId}.mp4`; // Assumes videoId is the filename without extension
+      
+      // Create a new source element
+      const sourceElement = document.createElement('source');
+      sourceElement.setAttribute('src', videoPath);
+      sourceElement.setAttribute('type', 'video/mp4');
+      
+      videoElement.appendChild(sourceElement);
+      
+      // Attempt to load and play the video
+      videoElement.load(); // Call load() after changing source
+      videoElement.play().catch(error => {
+        // Autoplay might be blocked, or video might not exist
+        console.error("Error playing video:", error);
+        // You could show a user-initiated play button here if autoplay fails
+      });
+      
+      // Optional: Check if the video can be loaded (basic check)
+      // More robust error handling for "video not found" would require server-side logic
+      // or more complex client-side event listeners for errors on the video element.
+      videoElement.onerror = function() {
+        errorMessageElement.textContent = `Error: Could not load video "${videoId}.mp4". Please check the videoId.`;
+        errorMessageElement.style.display = 'block';
+        videoElement.style.display = 'none'; // Hide the broken video player
+      };
+      videoElement.onloadeddata = function() {
+        errorMessageElement.style.display = 'none'; // Hide error if successfully loaded
+        videoElement.style.display = 'block';
+      };
+
+
+    } else {
+      console.log("No videoId found in URL.");
+      errorMessageElement.textContent = "No video specified. Please add ?videoId=filename to the URL (e.g., ?videoId=1.1).";
+      errorMessageElement.style.display = 'block';
+      videoElement.style.display = 'none'; // Hide the video player if no ID
+    }
+  }
+
+  // Load the video when the page loads
+  window.onload = loadVideo;
+</script>
+
+</body>
+</html>
