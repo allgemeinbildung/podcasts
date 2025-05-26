@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Looping Video</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Make body and html take full width of iframe */
+    height: 100%; /* Make body and html take full height of iframe */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    overflow: hidden; /* Hide any potential scrollbars if video is slightly off */
+    background-color: black; /* Optional: background for letterboxing */
+  }
+  video {
+    max-width: 100%; /* Video should not exceed the width of its container (the body) */
+    max-height: 100%; /* Video should not exceed the height of its container */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    /* For a more robust "fit inside and maintain aspect ratio": */
+    /* object-fit: contain; */ /* Uncomment this and set width/height to 100% below if preferred */
+    /* width: 100%; */
+    /* height: 100%; */
+  }
+  .error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    z-index: 10; /* Ensure error message is on top */
+  }
+</style>
+</head>
+<body>
+
+<video id="myVideo" autoplay loop muted playsinline>
+  Your browser does not support the video tag.
+</video>
+<div id="errorMessage" class="error-message" style="display:none;"></div>
+
+<script>
+  function getVideoIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('videoId');
+  }
+
+  function loadVideo() {
+    const videoElement = document.getElementById('myVideo');
+    const errorMessageElement = document.getElementById('errorMessage');
+    const videoId = getVideoIdFromURL();
+
+    while (videoElement.firstChild) {
+        videoElement.removeChild(videoElement.firstChild);
+    }
+    errorMessageElement.style.display = 'none'; // Hide error by default
+    videoElement.style.display = 'block'; // Show video by default
+
+    if (videoId) {
+      const videoPath = `video/${videoId}.mp4`;
+      const sourceElement = document.createElement('source');
+      sourceElement.setAttribute('src', videoPath);
+      sourceElement.setAttribute('type', 'video/mp4');
+      videoElement.appendChild(sourceElement);
+      
+      videoElement.load();
+      videoElement.play().catch(error => {
+        console.error("Error playing video:", error);
+        // Autoplay might be blocked without user interaction or if not muted
+        // Consider adding a play button that the user can click.
+      });
+
+      videoElement.onerror = function() {
+        console.error(`Error loading video: ${videoPath}`);
+        errorMessageElement.textContent = `Error: Could not load video "${videoId}.mp4". Check ID or file.`;
+        errorMessageElement.style.display = 'block';
+        videoElement.style.display = 'none';
+      };
+      videoElement.onloadeddata = function() {
+        errorMessageElement.style.display = 'none';
+        videoElement.style.display = 'block'; // Ensure it's visible if hidden by a previous error
+      };
+
+    } else {
+      console.log("No videoId found in URL.");
+      errorMessageElement.textContent = "No video specified. Add ?videoId=filename to URL.";
+      errorMessageElement.style.display = 'block';
+      videoElement.style.display = 'none';
+    }
+  }
+  window.onload = loadVideo;
+</script>
+
+</body>
+</html>
