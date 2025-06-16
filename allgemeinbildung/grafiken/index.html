@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUDIO-Erklärungen</title>
+    <title>Image and Audio Player</title>
     <style>
         body {
             display: flex;
@@ -17,20 +17,19 @@
         #media-container {
             text-align: center;
             max-width: 90%;
-            width: 600px; /* You can adjust this width */
+            width: 600px;
         }
         #image-to-play {
             cursor: pointer;
-            display: block; /* Ensures the image is a block element */
+            display: block;
             max-width: 100%;
             border: 2px solid #ccc;
             border-radius: 10px;
-            margin: 0 auto; /* Center the image */
+            margin: 0 auto;
         }
-        /* Style for the audio player */
         #audio-player {
-            width: 100%; /* Make the player take the full width of the container */
-            margin-top: 15px; /* Add some space between the image and the player */
+            width: 100%;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -57,15 +56,28 @@
                 imageElement.alt = `Image for ${fileId}`;
                 audioElement.src = audioPath;
 
-                // --- MODIFIED CLICK LOGIC ---
+                // --- ROBUST CLICK LOGIC WITH DEBUGGING ---
                 imageElement.addEventListener('click', () => {
-                    // This function now toggles play and pause
+                    console.log("--- Image Clicked ---");
+                    // The .paused property is the most reliable check.
+                    // A currentTime > 0 check helps detect if the audio has been played before.
                     if (audioElement.paused) {
-                        audioElement.play();
+                        console.log("Audio is paused. Attempting to PLAY.");
+                        // The play() method returns a Promise, we can use it for debugging.
+                        const playPromise = audioElement.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(_ => {
+                                console.log("Playback started successfully.");
+                            }).catch(error => {
+                                console.error("Error starting playback:", error);
+                            });
+                        }
                     } else {
+                        console.log("Audio is playing. Attempting to PAUSE.");
                         audioElement.pause();
                     }
                 });
+
             } else {
                 document.getElementById('media-container').innerHTML = '<p>No file ID specified. Please provide an ID in the URL, for example: index.html?Id=yourfilename</p>';
             }
