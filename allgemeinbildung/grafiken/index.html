@@ -41,8 +41,10 @@
                 const imageElement = document.getElementById('image-to-play');
                 const audioElement = document.getElementById('audio-player');
 
-                const imagePath = `grafiken/${fileId}.png`;
-                const audioPath = `grafiken/${fileId}.mp3`;
+                // --- CHANGE IS HERE ---
+                // Paths are now relative to the current folder, since index.html is inside 'grafiken'
+                const imagePath = `${fileId}.png`;
+                const audioPath = `${fileId}.mp3`;
 
                 imageElement.src = imagePath;
                 imageElement.alt = `Image for ${fileId}`;
