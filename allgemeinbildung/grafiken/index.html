@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,19 @@
             width: 100%;
             margin-top: 15px;
         }
+        /* Style for the source information */
+        #source-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        #source-info a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        #source-info a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +51,8 @@
     <div id="media-container">
         <img id="image-to-play" alt="Image to play audio">
         <audio id="audio-player" controls></audio>
+        
+        <p id="source-info"></p>
     </div>
 
     <script>
@@ -48,6 +63,7 @@
             if (fileId) {
                 const imageElement = document.getElementById('image-to-play');
                 const audioElement = document.getElementById('audio-player');
+                const sourceElement = document.getElementById('source-info'); // Get the new source element
 
                 const imagePath = `${fileId}.png`;
                 const audioPath = `${fileId}.mp3`;
@@ -56,27 +72,22 @@
                 imageElement.alt = `Image for ${fileId}`;
                 audioElement.src = audioPath;
 
-                // --- ROBUST CLICK LOGIC WITH DEBUGGING ---
                 imageElement.addEventListener('click', () => {
-                    console.log("--- Image Clicked ---");
-                    // The .paused property is the most reliable check.
-                    // A currentTime > 0 check helps detect if the audio has been played before.
                     if (audioElement.paused) {
-                        console.log("Audio is paused. Attempting to PLAY.");
-                        // The play() method returns a Promise, we can use it for debugging.
-                        const playPromise = audioElement.play();
-                        if (playPromise !== undefined) {
-                            playPromise.then(_ => {
-                                console.log("Playback started successfully.");
-                            }).catch(error => {
-                                console.error("Error starting playback:", error);
-                            });
-                        }
+                        audioElement.play();
                     } else {
-                        console.log("Audio is playing. Attempting to PAUSE.");
                         audioElement.pause();
                     }
                 });
+
+                // --- NEW LOGIC TO DISPLAY SOURCE ---
+                // Extracts the page number from the file ID (e.g., "211" from "211_Inflation")
+                const pageNumber = fileId.split('_')[0];
+
+                if (pageNumber) {
+                    // Using innerHTML to create the hyperlink
+                    sourceElement.innerHTML = `Quelle: <a href="https://www.hep-verlag.ch/allgemeinbildung-zuerich" target="_blank" rel="noopener noreferrer">Allgemeinbildung. hep-Verlag</a>, Seite: ${pageNumber}`;
+                }
 
             } else {
                 document.getElementById('media-container').innerHTML = '<p>No file ID specified. Please provide an ID in the URL, for example: index.html?Id=yourfilename</p>';
