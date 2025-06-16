@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Audio Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #media-container {
+            text-align: center;
+        }
+        #image-to-play {
+            cursor: pointer;
+            max-width: 80%;
+            max-height: 80vh;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="media-container">
+        <img id="image-to-play" alt="Image to play audio">
+        <audio id="audio-player"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileId = urlParams.get('Id');
+
+            if (fileId) {
+                const imageElement = document.getElementById('image-to-play');
+                const audioElement = document.getElementById('audio-player');
+
+                const imagePath = `grafiken/${fileId}.png`;
+                const audioPath = `grafiken/${fileId}.mp3`;
+
+                imageElement.src = imagePath;
+                imageElement.alt = `Image for ${fileId}`;
+                audioElement.src = audioPath;
+
+                imageElement.addEventListener('click', () => {
+                    audioElement.play();
+                });
+            } else {
+                document.getElementById('media-container').innerHTML = '<p>No file ID specified. Please provide an ID in the URL, for example: index.html?Id=yourfilename</p>';
+            }
+        });
+    </script>
+
+</body>
+</html>
