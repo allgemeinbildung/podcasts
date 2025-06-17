@@ -1,0 +1,279 @@
+{
+  "title": "Verständnisfragen zur technischen Zeichnung: Lagerflansch",
+  "media": {
+    "type": "",
+    "url": "",
+    "source": ""
+  },
+  "customIntroText": "<p><strong>Lesen einer technischen Zeichnung: Der Lagerflansch</strong></p>\n\n<p>In diesem Beitrag analysieren wir eine technische Zeichnung eines Lagerflansches. Sie lernen, wie man die verschiedenen Angaben zu Massen, Passungen, Toleranzen und Werkstoffen korrekt interpretiert. Das Verständnis dieser Details ist für technische Berufe wie Polymechaniker/in essenziell, um Bauteile präzise fertigen zu können.</p>\n\n<p><strong>Lernziele:</strong></p>\n<ul>\n  <li>Sie können spezifische Mass- und Toleranzangaben (z.B. Ø50-0,2) auf einer technischen Zeichnung identifizieren und erklären.</li>\n  <li>Sie verstehen die Bedeutung von ISO-Passungstoleranzen wie H7 und k6 für Bohrungen und Wellen.</li>\n  <li>Sie können Werkstoffangaben und allgemeine Toleranznormen (z.B. ISO 2768-m) korrekt zuordnen.</li>\n  <li>Sie sind in der Lage, den Zweck verschiedener geometrischer Elemente wie Gewinde, Bohrungen und Senkungen zu erkennen.</li>\n</ul>",
+  "questions": [
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welcher Werkstoff wird für den Lagerflansch verwendet, wie in der Zeichnung angegeben?</p>",
+      "options": [
+        {
+          "text": "11SMn30+C, ein gut zerspanbarer Automatenstahl.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Die Zeichnung spezifiziert den <strong>Automatenstahl 11SMn30+C</strong>, der für seine gute Bearbeitbarkeit bekannt ist."
+        },
+        {
+          "text": "Ein hochfester Edelstahl, der für besonders korrosionsbeständige Anwendungen eingesetzt werden muss.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Obwohl Edelstahl in vielen Anwendungen vorkommt, ist hier der <strong>Automatenstahl 11SMn30+C</strong> angegeben."
+        },
+        {
+          "text": "Eine spezielle Aluminiumlegierung, die vor allem wegen ihres geringen Gewichts ausgewählt wurde.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. In der Zeichnung ist klar der <strong>Stahl 11SMn30+C</strong> als Werkstoff definiert und keine Aluminiumlegierung."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welche Bedeutung hat die Angabe „M6“ in der technischen Zeichnung?</p>",
+      "options": [
+        {
+          "text": "Es handelt sich um ein metrisches Innengewinde.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! <strong>M6</strong> steht für ein genormtes <strong>metrisches Gewinde</strong> mit einem Nenndurchmesser von 6 mm."
+        },
+        {
+          "text": "Es ist eine Passungsangabe für eine Welle mit einem speziellen Übermass von sechs Mikrometern.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Angabe M6 ist keine Passungsangabe, sondern die Normbezeichnung für ein <strong>metrisches Gewinde</strong>."
+        },
+        {
+          "text": "Es beschreibt eine Bohrung mit einem exakten Durchmesser von sechs Millimetern ohne jegliche Toleranz.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. M6 bezeichnet kein einfaches Bohrloch, sondern ein spezifisches <strong>metrisches Gewinde</strong> mit Steigung und Profil."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>In welchem Maßstab ist die technische Zeichnung des Lagerflansches dargestellt?</p>",
+      "options": [
+        {
+          "text": "Der Maßstab ist 1:1.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der <strong>Maßstab 1:1</strong> bedeutet, dass das Bauteil in seiner Originalgrösse gezeichnet wurde."
+        },
+        {
+          "text": "Der Maßstab beträgt 2:1, das heisst, die Zeichnung ist doppelt so gross wie das eigentliche Bauteil.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Laut dem Schriftfeld der Zeichnung ist der <strong>Maßstab 1:1</strong> und nicht 2:1."
+        },
+        {
+          "text": "Der Maßstab ist 1:2, die Zeichnung stellt das Bauteil also in halber Grösse dar, um Platz auf dem Papier zu sparen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Angabe im Schriftfeld lautet <strong>1:1</strong>, was einer Darstellung in Originalgrösse entspricht."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Was gibt die Toleranzklasse „ISO 2768-m“ an?</p>",
+      "options": [
+        {
+          "text": "Mittlere Allgemeintoleranzen für Maße ohne spezifische Angabe.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. <strong>ISO 2768-m</strong> definiert <strong>Allgemeintoleranzen</strong> der mittleren Klasse für Längen- und Winkelmasse, die nicht direkt toleriert sind."
+        },
+        {
+          "text": "Besonders enge Toleranzen für hochpräzise Passflächen, die eine spezielle Fertigung erfordern.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Diese Norm bezieht sich auf <strong>Allgemeintoleranzen</strong> für nicht explizit tolerierte Masse, nicht auf hochpräzise Passungen."
+        },
+        {
+          "text": "Die spezifischen Toleranzen für alle Gewinde auf dem Bauteil, um die korrekte Montage zu sichern.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. ISO 2768-m ist eine allgemeine Norm und nicht spezifisch für Gewindetoleranzen. Diese haben ihre eigenen Normen."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welches zulässige Größtmaß hat die zentrale Bohrung mit der Angabe ø50-0,2?</p>",
+      "options": [
+        {
+          "text": "Das zulässige Höchstmaß beträgt 50,0 mm.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Die Toleranz -0,2 gibt nur eine Abweichung nach unten an. Das <strong>Größtmaß</strong> ist somit das Nennmaß <strong>50,0 mm</strong>."
+        },
+        {
+          "text": "Das zulässige Größtmaß der Bohrung liegt bei 50,2 mm, da die Toleranz zum Nennmaß addiert wird.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das Vorzeichen ist negativ (-0,2), was bedeutet, dass das Maß nur kleiner werden darf, nicht grösser als das <strong>Nennmaß 50,0 mm</strong>."
+        },
+        {
+          "text": "Das zulässige Höchstmaß beträgt 49,8 mm, was dem kleinsten erlaubten Durchmesser der Bohrung entspricht.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 49,8 mm ist das zulässige Kleinstmaß. Gefragt war nach dem <strong>Größtmaß</strong>, welches bei <strong>50,0 mm</strong> liegt."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was ist die charakteristische Eigenschaft einer Passung „H7“ bei einer Bohrung wie „ø20H7“?</p>",
+      "options": [
+        {
+          "text": "Das Mindestmaß der Bohrung entspricht exakt dem Nennmaß.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Bei einer <strong>H-Passung</strong> für Bohrungen ist das untere Abmaß immer null. Das <strong>Mindestmaß</strong> ist also identisch mit dem Nennmaß (hier 20,0 mm)."
+        },
+        {
+          "text": "Die Bohrung ist immer etwas kleiner als das Nennmaß, um eine feste Presspassung zu garantieren.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Eine <strong>H-Passung</strong> hat das Nennmaß als Untergrenze und erlaubt kein Untermaß. Eine Presspassung würde durch andere Toleranzklassen erzeugt."
+        },
+        {
+          "text": "Sowohl das Höchst- als auch das Mindestmaß der Bohrung liegen symmetrisch um das angegebene Nennmaß.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Toleranzzone bei einer H-Passung liegt vollständig oberhalb des Nennmasses oder berührt es. Das <strong>Mindestmaß</strong> ist das Nennmaß."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wie unterscheidet sich die Passung „k6“ (z.B. bei ø40k6) von einer „H7“-Passung?</p>",
+      "options": [
+        {
+          "text": "„k6“ ist eine Toleranz für Wellen und kann zu einer leichten Presspassung führen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. 'k' ist eine typische <strong>Toleranz für Wellen</strong> und liegt im Übergangsbereich. In Kombination mit einer H-Bohrung kann es zu einer leichten <strong>Presspassung</strong> kommen."
+        },
+        {
+          "text": "„k6“ beschreibt eine sehr lose Spielpassung, während H7 immer eine sehr enge Passung für Bohrungen darstellt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. „k6“ erzeugt keine lose Spielpassung, sondern eine <strong>Übergangspassung</strong>, die auch ein leichtes Übermaß haben kann. H7 ist zwar eine gängige Passung, aber nicht per se extrem eng."
+        },
+        {
+          "text": "„k6“ und „H7“ sind identische Toleranzfelder, werden aber aus historischen Gründen unterschiedlich benannt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Es handelt sich um fundamental unterschiedliche Toleranzklassen. 'H' ist für <strong>Bohrungen</strong> (Grundbohrung), 'k' für <strong>Wellen</strong> im Übergangsbereich."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Warum ist die Angabe „11SMn30+C“ für einen Polymechaniker in der Fertigung eine wichtige Information?</p>",
+      "options": [
+        {
+          "text": "Weil sie auf einen Stahl mit sehr guter Zerspanbarkeit hinweist.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Dieser Werkstoff ist ein <strong>Automatenstahl</strong>, der speziell für eine <strong>gute Zerspanbarkeit</strong> (z.B. Drehen, Fräsen) optimiert ist, was die Fertigung erleichtert."
+        },
+        {
+          "text": "Weil dieser Stahl eine extrem hohe Härte und Verschleissfestigkeit ohne zusätzliche Wärmebehandlung besitzt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Automatenstähle sind nicht primär für ihre extreme Härte bekannt, sondern für ihre <strong>gute Zerspanbarkeit</strong>. Die Festigkeit wird durch den Zusatz „+C“ (kaltverfestigt) leicht erhöht."
+        },
+        {
+          "text": "Da diese Angabe bedeutet, dass das Material bereits rostfrei ist und keine Oberflächenbehandlung benötigt wird.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 11SMn30+C ist ein unlegierter Stahl und <strong>nicht rostfrei</strong>. Eine Oberflächenbehandlung zum Korrosionsschutz wäre bei Bedarf notwendig."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was bedeutet eine kleinere Toleranzgradzahl wie die „6“ in „k6“ im Vergleich zu einer größeren wie der „7“ in „H7“?</p>",
+      "options": [
+        {
+          "text": "Eine kleinere Zahl bedeutet eine engere und präzisere Toleranz.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Im ISO-System steht der <strong>Toleranzgrad</strong> (die Zahl) für die Grösse des Toleranzfeldes. Je kleiner die Zahl, desto <strong>enger die Toleranz</strong>."
+        },
+        {
+          "text": "Die Zahl gibt die Position des Toleranzfeldes relativ zur Nulllinie an, wobei 6 über und 7 unter der Linie liegt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Position des Toleranzfeldes wird durch den Buchstaben (z.B. k oder H) definiert, nicht durch die Zahl. Die Zahl bestimmt die <strong>Grösse der Toleranz</strong>."
+        },
+        {
+          "text": "Eine kleinere Zahl wie die 6 weist auf eine Allgemeintoleranz hin, während eine 7 eine spezifische Passtoleranz kennzeichnet.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Beide Zahlen sind Teil einer spezifischen Passtoleranzangabe. Die kleinere Zahl, hier die 6, steht dabei immer für eine <strong>präzisere Fertigungstoleranz</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Welchen Zweck hat die Tasche mit ø15, die das Durchgangsloch von ø10 umgibt?</p>",
+      "options": [
+        {
+          "text": "Sie dient wahrscheinlich als Senkung für einen Schraubenkopf oder ein Lager.",
+          "is_correct": true,
+          "feedback": "✅ Richtig. Eine solche Form ist typisch für eine <strong>Senkung</strong>, um beispielsweise den Kopf einer Zylinderschraube zu versenken oder ein kleines Lager aufzunehmen."
+        },
+        {
+          "text": "Sie ist eine rein optische Designentscheidung, die keine technische Funktion für das Bauteil hat.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. In technischen Zeichnungen haben solche geometrischen Formen fast immer eine <strong>technische Funktion</strong>, wie hier das Versenken eines Elements."
+        },
+        {
+          "text": "Es handelt sich um eine Markierung für einen späteren Bohrvorgang, der an dieser Stelle durchgeführt werden soll.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Masse sind klar definiert, was darauf hindeutet, dass es sich um ein fertiges Feature handelt, höchstwahrscheinlich eine <strong>Senkung</strong> für ein Bauteil."
+        }
+      ]
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Der Aussendurchmesser des Flansches beträgt laut Zeichnung 75 mm.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig. Der Aussendurchmesser beträgt nicht 75 mm, sondern 90 mm, wie in der Draufsicht bemasst.",
+      "feedback_incorrect": "Falsch. Die Zeichnung zeigt in der Draufsicht eine Bemassung von ø90 für den Aussendurchmesser."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Die Zeichnung wurde von den Herren Schulze und Meyer im September 2002 geprüft.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig. Diese Information ist korrekt aus dem Schriftfeld der Zeichnung entnommen.",
+      "feedback_incorrect": "Falsch. Laut den Angaben im Schriftfeld wurde die Zeichnung am 11.09.02 bearbeitet (Schulze) und am 12.09.02 geprüft (Meyer)."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Die Passung für die mittige Bohrung in der Draufsicht ist mit ø40k6 gekennzeichnet.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig. Die mittige Bohrung hat die Passung ø20H7. Die Angabe ø40k6 bezieht sich auf eine andere Passfläche des Bauteils.",
+      "feedback_incorrect": "Falsch. Die mittige Bohrung ist mit ø20H7 bezeichnet. Die Passung ø40k6 gehört zu dem zylindrischen Absatz."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Eine Bohrung, die mit „H7“ toleriert ist, darf im Durchmesser niemals kleiner sein als ihr Nennmaß.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig. Die Toleranzklasse „H“ für Bohrungen definiert das Nennmaß als untere Grenze (unteres Abmaß ist null).",
+      "feedback_incorrect": "Falsch. Genau das ist die Definition einer H-Bohrung. Das Toleranzfeld liegt vollständig über oder auf der Nulllinie, das Maß kann also nicht kleiner als das Nennmaß werden."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Die Allgemeintoleranz „ISO 2768-m“ wird für die Passung ø20H7 angewendet, da sie für das ganze Bauteil gilt.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig. Allgemeintoleranzen gelten nur für Maße, die keine eigene, spezifische Toleranzangabe haben. ø20H7 ist eine spezifische Passtoleranz und hat daher Vorrang.",
+      "feedback_incorrect": "Falsch. Für Maße mit einer expliziten Toleranzangabe wie ø20H7 gilt diese spezifische Angabe. Die Allgemeintoleranz ist hier nicht anzuwenden."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Die Angabe „k6“ für eine Welle deutet darauf hin, dass sie in einer entsprechenden H7-Bohrung immer ein leichtes Spiel haben wird.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig. Eine k-Welle in einer H-Bohrung erzeugt eine Übergangspassung. Das bedeutet, je nach Fertigungsergebnis kann es zu einem leichten Spiel oder einem leichten Übermaß (Pressung) kommen.",
+      "feedback_incorrect": "Falsch. Eine k-Passung ist eine Übergangspassung. Sie kann, abhängig von den genauen Ist-Maßen, sowohl ein Spiel als auch ein Übermaß zur Folge haben, nicht garantiert nur Spiel."
+    }
+  ]
+}
