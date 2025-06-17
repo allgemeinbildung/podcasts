@@ -1,0 +1,279 @@
+{
+  "title": "Bruttoninlandprodukt Quiz",
+  "media": {
+    "type": "",
+    "url": "",
+    "source": ""
+  },
+  "customIntroText": "<p><strong>Das Bruttoninlandprodukt (BIP) – Worum geht es?</strong></p>\n\n<p>In diesem Beitrag erfährst du, was das Bruttoninlandprodukt ist und wie es die wirtschaftliche Leistung der Schweiz misst. Das BIP ist wie ein grosses Preisschild für alle Waren und Dienstleistungen, die innerhalb eines Jahres in einem Land hergestellt werden. Es zeigt, wie die Wirtschaft funktioniert und wo das Geld herkommt und wofür es verwendet wird.</p>\n\n<p><strong>Lernziele:</strong></p>\n<ul>\n  <li>Du verstehst die Definition des Bruttoninlandprodukts und weisst, welche Leistungen darin enthalten sind und welche nicht.</li>\n  <li>Du kennst die drei Berechnungsansätze (Entstehung, Verwendung und Verteilung) und ihre jeweilige Bedeutung.</li>\n  <li>Du kannst die wichtigsten Komponenten der Schweizer Volkswirtschaft gemäss den drei Ansätzen benennen.</li>\n  <li>Du verstehst, warum die drei Ansätze zum selben Ergebnis führen und was dies über den Wirtschaftskreislauf aussagt.</li>\n</ul>",
+  "questions": [
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Was misst das Bruttoninlandprodukt?</p>",
+      "options": [
+        {
+          "text": "Den Marktwert aller Waren und Dienstleistungen, die innerhalb eines Jahres im Inland hergestellt wurden, abzüglich der Vorleistungen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Das ist die exakte Definition des <strong>Bruttoninlandprodukts</strong>. Es misst die gesamte <strong>Wertschöpfung</strong> eines Landes."
+        },
+        {
+          "text": "Das gesamte Einkommen aller privaten Haushalte eines Landes, einschliesslich aller unbezahlten Tätigkeiten wie Hausarbeit oder ehrenamtliche Hilfe.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das Bruttoninlandprodukt erfasst gerade <strong>nicht</strong> die <strong>unbezahlte Arbeit</strong>, da diese keinen offiziellen Marktwert hat und nicht gehandelt wird."
+        },
+        {
+          "text": "Den Gesamtwert aller Exporte und Importe eines Landes, einschliesslich der gesamten Staatsverschuldung und der Unternehmensgewinne.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Exporte und Importe sind zwar Teil der <strong>Verwendungsrechnung</strong>, aber das Bruttoninlandprodukt ist eine umfassendere Messgrösse der Inlandsproduktion."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welcher Sektor trug im Jahr 2021 laut Text am meisten zur Entstehung des Schweizer Bruttoninlandprodukts bei?</p>",
+      "options": [
+        {
+          "text": "Der Dienstleistungssektor.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der <strong>Dienstleistungssektor</strong> machte mit über <strong>sechzig Prozent</strong> den grössten Anteil an der Wertschöpfung aus."
+        },
+        {
+          "text": "Die Industrie und das Baugewerbe, da diese Sektoren alle materiellen Güter für den Konsum und die Investitionen herstellen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Obwohl die Industrie und das Baugewerbe wichtig sind, trugen sie zusammen nur rund <strong>zwanzig Prozent</strong> bei, also deutlich weniger als der Dienstleistungssektor."
+        },
+        {
+          "text": "Die Landwirtschaft, da sie die grundlegende Versorgung der Bevölkerung sicherstellt und eine lange wirtschaftliche Tradition in der Schweiz hat.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die <strong>Landwirtschaft</strong> hat im Vergleich zum Dienstleistungs- und Industriesektor nur einen sehr <strong>geringen Anteil</strong> an der gesamten Wertschöpfung."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welcher Posten dominiert auf der Verwendungsseite des Bruttoninlandprodukts?</p>",
+      "options": [
+        {
+          "text": "Der private Konsum.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der <strong>private Konsum</strong> macht mit über der Hälfte (<strong>52,9 %</strong>) den grössten Teil der Verwendung aus."
+        },
+        {
+          "text": "Die staatlichen Ausgaben, da der Staat für wichtige Bereiche wie Bildung, Sicherheit und Infrastruktur verantwortlich ist und dort viel investiert.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die <strong>staatlichen Ausgaben</strong> machten im genannten Jahr nur rund <strong>elf Prozent</strong> aus, also deutlich weniger als der private Konsum."
+        },
+        {
+          "text": "Die Nettoexporte, also der Überschuss der Exporte über die Importe, weil die Schweiz als eine sehr stark exportorientierte Nation bekannt ist.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Obwohl Exporte wichtig sind, ist der <strong>private Konsum</strong> der mit Abstand <strong>grösste Posten</strong> auf der Verwendungsseite des Bruttoninlandprodukts."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welcher Faktor erhält den grössten Anteil bei der Verteilung des Bruttoninlandprodukts?</p>",
+      "options": [
+        {
+          "text": "Die Löhne der Arbeitnehmenden.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Fast <strong>sechzig Prozent</strong> des erwirtschafteten Einkommens gingen als <strong>Löhne</strong> an die Arbeitnehmenden."
+        },
+        {
+          "text": "Die Unternehmensgewinne, da diese als entscheidender Motor für zukünftige Innovationen und Investitionen in der Wirtschaft gelten.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die <strong>Unternehmensgewinne</strong> machten nur etwa <strong>zweiundzwanzig Prozent</strong> aus und lagen damit weit hinter dem Anteil der Löhne."
+        },
+        {
+          "text": "Die Abschreibungen, also die Wertverluste von Maschinen und Anlagen, da der Kapitalstock einer modernen Volkswirtschaft ständig erneuert werden muss.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. <strong>Abschreibungen</strong> sind zwar ein Bestandteil der Verteilungsrechnung, ihr Anteil ist aber <strong>deutlich kleiner</strong> als der der Löhne."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welche der folgenden Tätigkeiten wird im Bruttoninlandprodukt NICHT erfasst?</p>",
+      "options": [
+        {
+          "text": "Ehrenamtliche Tätigkeiten.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! <strong>Ehrenamtliche Tätigkeiten</strong>, Schwarzarbeit, Hausarbeit und illegale Geschäfte werden <strong>nicht erfasst</strong>, da sie keinen offiziellen Marktpreis haben."
+        },
+        {
+          "text": "Ein Friseurbesuch in Luzern, da es sich hierbei um eine alltägliche Dienstleistung für Privatpersonen handelt und nicht um ein produziertes Gut.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Auch <strong>Dienstleistungen</strong> wie ein Friseurbesuch werden im Bruttoninlandprodukt erfasst, solange sie <strong>offiziell bezahlt</strong> werden."
+        },
+        {
+          "text": "Der Bau einer neuen Maschine in Zürich, die anschliessend zur Produktion von weiteren Gütern in derselben Firma verwendet wird.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Herstellung einer Maschine ist eine <strong>wirtschaftliche Leistung</strong> (Investitionsgut) und wird im Rahmen der <strong>Entstehungsrechnung</strong> erfasst."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Warum wird unbezahlte Hausarbeit bei der Berechnung des Bruttoninlandprodukts nicht berücksichtigt?</p>",
+      "options": [
+        {
+          "text": "Weil sie keinen offiziellen Marktpreis hat und nicht gehandelt wird.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Das Bruttoninlandprodukt erfasst nur <strong>wirtschaftliche Aktivitäten</strong>, die auf einem <strong>Markt</strong> gehandelt werden und somit einen messbaren Preis haben."
+        },
+        {
+          "text": "Weil die Regierung entschieden hat, dass diese Art von Arbeit keinen relevanten ökonomischen Wert für die Volkswirtschaft darstellt und somit ignoriert werden kann.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Es geht nicht um eine politische Wertung, sondern um das methodische Problem, dass es für diese Arbeit <strong>keinen Marktpreis</strong> gibt und sie daher <strong>nicht messbar</strong> ist."
+        },
+        {
+          "text": "Weil die statistische Erfassung dieser vielfältigen Tätigkeiten zu kompliziert wäre und die Ergebnisse das Gesamtbild der offiziellen Wirtschaft verzerren würden.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Hauptgrund ist nicht die Komplexität der Erfassung, sondern das Fehlen eines <strong>Marktpreises</strong>, was eine Grundvoraussetzung für die Berechnung des <strong>Bruttoninlandprodukts</strong> ist."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was zeigt der Entstehungsansatz des Bruttoninlandprodukts im Wesentlichen?</p>",
+      "options": [
+        {
+          "text": "Er zeigt die Wirtschaftsstruktur eines Landes nach Branchen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der <strong>Entstehungsansatz</strong> schlüsselt auf, welcher <strong>Wirtschaftssektor</strong> (z.B. Dienstleistungen, Industrie) wie viel zur gesamten <strong>Wertschöpfung</strong> beiträgt."
+        },
+        {
+          "text": "Er zeigt, wie das gesamte erwirtschaftete Einkommen auf Löhne, Unternehmensgewinne und den Staat aufgeteilt wird.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das ist die Perspektive des <strong>Verteilungsansatzes</strong>. Der Entstehungsansatz fragt, <strong>wo</strong> die Wertschöpfung entsteht, nicht wer das Einkommen erhält."
+        },
+        {
+          "text": "Er zeigt, wofür die produzierten Güter und Dienstleistungen hauptsächlich verwendet werden, also zum Beispiel für Konsum oder für Investitionen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das ist die Perspektive des <strong>Verwendungsansatzes</strong>. Der Entstehungsansatz konzentriert sich auf die <strong>Produktionsseite</strong> der Wirtschaft."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was ist die Kernaussage dahinter, dass die drei Berechnungswege (Entstehung, Verwendung, Verteilung) zum selben Ergebnis führen?</p>",
+      "options": [
+        {
+          "text": "Der Gesamtwert der Produktion muss dem gesamten Einkommen und den gesamten Ausgaben entsprechen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Dies spiegelt den grundlegenden <strong>Wirtschaftskreislauf</strong> wider: Die <strong>Produktion</strong> (Entstehung) schafft <strong>Einkommen</strong> (Verteilung), das wiederum für <strong>Ausgaben</strong> (Verwendung) genutzt wird."
+        },
+        {
+          "text": "Es handelt sich hierbei um eine rein zufällige statistische Übereinstimmung, die in der Realität oft erhebliche Abweichungen aufweist und korrigiert werden muss.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Es ist kein Zufall, sondern das <strong>logische Fundament</strong> der volkswirtschaftlichen Gesamtrechnung. Die drei Ansätze betrachten denselben <strong>Wirtschaftskreislauf</strong> aus unterschiedlichen Blickwinkeln."
+        },
+        {
+          "text": "Die Methode wurde bewusst so entwickelt, dass durch verschiedene mathematische Anpassungen und statistische Korrekturen am Ende immer das gleiche Resultat herauskommt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Gleichheit der Ergebnisse ist keine künstliche Anpassung, sondern eine <strong>konzeptionelle Notwendigkeit</strong>, die den geschlossenen <strong>Wirtschaftskreislauf</strong> abbildet."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wenn eine Baufirma einen neuen Kran kauft, um Häuser zu bauen, wie wird dieser Kauf im Bruttoninlandprodukt behandelt?</p>",
+      "options": [
+        {
+          "text": "Als Investition.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der Kran ist ein <strong>Investitionsgut</strong>, da er zur Herstellung anderer Güter und Dienstleistungen verwendet wird. Dies wird auf der <strong>Verwendungsseite</strong> erfasst."
+        },
+        {
+          "text": "Als Vorleistung, die direkt vom Wert der gebauten Häuser abgezogen wird und daher nicht separat im Bruttoninlandprodukt erscheint.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Kran ist keine <strong>Vorleistung</strong> (wie Zement oder Ziegel), sondern ein langlebiges <strong>Investitionsgut</strong>. Sein Wertverlust wird über Jahre als Abschreibung berücksichtigt."
+        },
+        {
+          "text": "Als privater Konsum der Baufirma, da das Unternehmen den Kran für seine geschäftlichen Zwecke nutzt und somit als Endverbraucher gilt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Käufe von Unternehmen, die zur Produktion dienen, gelten als <strong>Investitionen</strong>, nicht als privater Konsum. <strong>Privater Konsum</strong> wird von Haushalten getätigt."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wenn die Unternehmensgewinne in der Schweiz stark ansteigen, während die Löhne gleich bleiben, welche Seite des Bruttoninlandprodukts wäre davon am direktesten betroffen?</p>",
+      "options": [
+        {
+          "text": "Die Verteilungsseite.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die <strong>Verteilungsseite</strong> zeigt, wie sich das Volkseinkommen auf die verschiedenen Faktoren aufteilt, also auf <strong>Löhne</strong> und <strong>Unternehmensgewinne</strong>."
+        },
+        {
+          "text": "Die Entstehungsseite, da die Gewinne direkt die Produktion in den einzelnen Branchen beeinflussen und somit die Wertschöpfung verändern.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Entstehungsseite misst die <strong>Wertschöpfung</strong> der Branchen. Eine Veränderung bei den Gewinnen ist eine Folge der Wertschöpfung, nicht die Messung selbst."
+        },
+        {
+          "text": "Die Verwendungsseite, da höhere Gewinne automatisch zu mehr staatlichen Ausgaben und Konsum der Bevölkerung führen müssen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Ob höhere Gewinne zu mehr Investitionen (Teil der Verwendungsseite) führen, ist eine mögliche Folge, aber die direkte Abbildung der Gewinnveränderung erfolgt auf der <strong>Verteilungsseite</strong>."
+        }
+      ]
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Gemäss der Verteilungsrechnung geht der grösste Teil des in der Schweiz erwirtschafteten Einkommens an die Unternehmensgewinne.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Der grösste Anteil geht an die Arbeitnehmenden in Form von Löhnen, nämlich fast sechzig Prozent.",
+      "feedback_incorrect": "Falsch. Laut Text gehen fast sechzig Prozent an die Löhne, während die Unternehmensgewinne etwa zweiundzwanzig Prozent ausmachen."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Das Bruttoninlandprodukt misst den Marktwert aller innerhalb eines Jahres im Inland hergestellten Waren und Dienstleistungen, abzüglich der Vorleistungen.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig! Das ist die genaue Definition des Bruttoninlandprodukts, wie sie im Text erläutert wird.",
+      "feedback_incorrect": "Falsch. Dies ist die korrekte Definition des Bruttoninlandprodukts. Es misst die Wertschöpfung innerhalb eines Landes."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Die staatlichen Ausgaben machen auf der Verwendungsseite einen grösseren Anteil aus als der private Konsum.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Der private Konsum macht mit über fünfzig Prozent den grössten Teil der Verwendung aus, staatliche Ausgaben liegen bei rund elf Prozent.",
+      "feedback_incorrect": "Falsch. Der private Konsum ist mit über fünfzig Prozent der mit Abstand grösste Posten auf der Verwendungsseite."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Die drei Berechnungsansätze (Entstehung, Verwendung, Verteilung) sind so konzipiert, dass sie zwangsläufig zum selben Ergebnis führen müssen.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig! Die drei Ansätze sind unterschiedliche Perspektiven auf denselben Wirtschaftskreislauf, weshalb das Ergebnis identisch sein muss.",
+      "feedback_incorrect": "Falsch. Es ist kein Zufall. Im Text wird betont, dass die drei Wege zum selben Resultat führen, wie drei Wanderwege auf denselben Gipfel."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wenn die Schweizer Bevölkerung mehr ehrenamtliche Arbeit leisten würde, würde das offiziell gemessene Bruttoninlandprodukt ansteigen.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Ehrenamtliche Tätigkeiten werden im Bruttoninlandprodukt nicht erfasst, da sie keinen Marktpreis haben und nicht offiziell gehandelt werden.",
+      "feedback_incorrect": "Falsch. Da ehrenamtliche Arbeit unbezahlt ist und nicht auf einem Markt gehandelt wird, fliesst sie nicht in die Berechnung des Bruttoninlandprodukts ein."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Der Entstehungsansatz ist vor allem nützlich, um zu sehen, welche Bevölkerungsgruppen am meisten vom Wirtschaftswachstum profitieren.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Dafür ist die Verteilungsseite zuständig, die zeigt, wie das Einkommen auf Löhne und Gewinne aufgeteilt wird. Der Entstehungsansatz zeigt die Beiträge der Branchen.",
+      "feedback_incorrect": "Falsch. Der Entstehungsansatz zeigt den Beitrag der verschiedenen Wirtschaftssektoren (z.B. Dienstleistungen, Industrie). Die Verteilung des Einkommens wird auf der Verteilungsseite abgebildet."
+    }
+  ]
+}
