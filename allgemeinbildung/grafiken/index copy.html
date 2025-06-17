@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Audio Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+        #media-container {
+            text-align: center;
+            max-width: 90%;
+            width: 600px;
+        }
+        #image-to-play {
+            cursor: pointer;
+            display: block;
+            max-width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+        #audio-player {
+            width: 100%;
+            margin-top: 15px;
+        }
+        /* Style for the source information */
+        #source-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        #source-info a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        #source-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="media-container">
+        <img id="image-to-play" alt="Image to play audio">
+        <audio id="audio-player" controls></audio>
+        
+        <p id="source-info"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileId = urlParams.get('Id');
+
+            if (fileId) {
+                const imageElement = document.getElementById('image-to-play');
+                const audioElement = document.getElementById('audio-player');
+                const sourceElement = document.getElementById('source-info'); // Get the new source element
+
+                const imagePath = `${fileId}.png`;
+                const audioPath = `${fileId}.mp3`;
+
+                imageElement.src = imagePath;
+                imageElement.alt = `Image for ${fileId}`;
+                audioElement.src = audioPath;
+
+                imageElement.addEventListener('click', () => {
+                    if (audioElement.paused) {
+                        audioElement.play();
+                    } else {
+                        audioElement.pause();
+                    }
+                });
+
+                // --- NEW LOGIC TO DISPLAY SOURCE ---
+                // Extracts the page number from the file ID (e.g., "211" from "211_Inflation")
+                const pageNumber = fileId.split('_')[0];
+
+                if (pageNumber) {
+                    // Using innerHTML to create the hyperlink
+                    sourceElement.innerHTML = `Quelle: <a href="https://www.hep-verlag.ch/allgemeinbildung-zuerich" target="_blank" rel="noopener noreferrer">Allgemeinbildung. hep-Verlag</a>, Seite: ${pageNumber}`;
+                }
+
+            } else {
+                document.getElementById('media-container').innerHTML = '<p>No file ID specified. Please provide an ID in the URL, for example: index.html?Id=yourfilename</p>';
+            }
+        });
+    </script>
+
+</body>
+</html>
