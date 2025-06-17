@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeinbildung - Mindmap Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .main-container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 2rem auto; /* Adjusted margin for better spacing */
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .decoration-graphic {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background-image: url('./images/img-1.png'); /* Note: This path might need adjustment */
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .mindmap-container {
+            width: 100%;
+            height: 75vh; /* Increased height for better viewing */
+            overflow: hidden;
+        }
+        
+        .mindmap-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .mindmap-header {
+            padding: 1.25rem 2rem;
+            background-color: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .mindmap-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+            color: #334155;
+        }
+        
+        .mindmap-icon {
+            margin-right: 0.75rem;
+            color: #4f46e5;
+        }
+        
+        .message-box {
+            padding: 3rem; /* Increased padding */
+            text-align: center;
+            font-size: 1.125rem;
+            color: #475569; /* Adjusted color */
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            margin: 2rem;
+            border-left: 4px solid #3b82f6; /* Blue border for info */
+        }
+        
+        .message-box code {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: auto;
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        .footer a {
+            color: #a5b4fc;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                width: 95%;
+                margin: 1rem auto;
+            }
+            .mindmap-header {
+                padding: 1.25rem;
+            }
+            .mindmap-header h3 {
+                font-size: 1.1rem;
+            }
+            .mindmap-container {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Allgemeinbildung Mindmap</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="decoration-graphic"></div>
+        <div id="content-area">
+            <div id="mindmap-section">
+                <div class="mindmap-header">
+                    <div class="mindmap-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 id="mindmap-title">Interaktive Mindmap</h3>
+                </div>
+                <div class="mindmap-container" id="mindmap-embed-container">
+                    </div>
+            </div>
+        </div>
+        <div id="message-box-container" style="display: none;"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Allgemeinbildung, das Lehrmittel anders erzählt.</p>
+        <p class="mt-2">Lernen Sie besser mit interaktiven Mindmaps.</p>
+    </footer>
+
+    <script>
+        // Function to display messages to the user, hiding the main content
+        function showMessage(messageHtml) {
+            const messageBoxContainer = document.getElementById('message-box-container');
+            const contentArea = document.getElementById('content-area');
+            
+            messageBoxContainer.innerHTML = `<div class="message-box">${messageHtml}</div>`;
+            messageBoxContainer.style.display = 'block';
+            contentArea.style.display = 'none';
+        }
+
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Main function to load content
+        function loadContent() {
+            const contentId = getQueryParam('id');
+            const mindmapContainer = document.getElementById('mindmap-embed-container');
+            const mindmapTitle = document.getElementById('mindmap-title');
+            const contentArea = document.getElementById('content-area');
+            const messageBoxContainer = document.getElementById('message-box-container');
+
+            // Hide message box and show content area by default
+            messageBoxContainer.style.display = 'none';
+            contentArea.style.display = 'block';
+
+            if (!contentId) {
+                // Display a welcome/instruction message if no ID is provided
+                const instructionMessage = `
+                    <h2>Willkommen!</h2>
+                    <p class="mt-4">Um eine Mindmap anzuzeigen, fügen Sie bitte eine ID in die URL ein.</p>
+                    <p class="mt-2">Zum Beispiel: <code>?id=episode1</code></p>
+                `;
+                showMessage(instructionMessage);
+                return;
+            }
+
+            // Update the H3 title with the content ID
+            mindmapTitle.textContent = `Mindmap: ${contentId}`;
+
+            // Configuration for file paths
+            const mindmapsFolderPath = './mindmaps/';
+            const mindmapFileName = `${contentId}.html`;
+            const mindmapFilePath = `${mindmapsFolderPath}${mindmapFileName}`;
+
+            // Create and prepare the iframe for the mindmap
+            const iframeElement = document.createElement('iframe');
+            iframeElement.setAttribute('src', mindmapFilePath);
+            iframeElement.setAttribute('title', `Mindmap for ${contentId}`);
+            iframeElement.setAttribute('frameborder', '0');
+            iframeElement.style.width = '100%';
+            iframeElement.style.height = '100%';
+
+            // Check if the mindmap file exists before trying to embed it
+            fetch(mindmapFilePath, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        // If HEAD request fails (e.g., 404), show an error for the mindmap
+                        mindmapContainer.innerHTML = `
+                            <div class="flex items-center justify-center h-full p-4">
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded max-w-lg text-left">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0 text-red-500 mt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h3 class="text-md font-bold text-red-800">Fehler beim Laden</h3>
+                                            <p class="text-sm text-red-700 mt-2">
+                                                Die Mindmap-Datei <strong>'${mindmapFileName}'</strong> konnte nicht gefunden werden. Bitte überprüfen Sie die ID in der URL.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // If HEAD request is OK, append the iframe to the container
+                        mindmapContainer.innerHTML = ''; // Clear any previous content
+                        mindmapContainer.appendChild(iframeElement);
+                    }
+                })
+                .catch(() => {
+                    // Handle network errors or other fetch issues
+                    mindmapContainer.innerHTML = `
+                        <div class="flex items-center justify-center h-full p-4">
+                            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded max-w-lg text-left">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 text-red-500 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                             <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                         <h3 class="text-md font-bold text-red-800">Netzwerkfehler</h3>
+                                        <p class="text-sm text-red-700 mt-2">
+                                            Die Mindmap <strong>'${mindmapFileName}'</strong> konnte nicht geladen werden. Bitte überprüfen Sie Ihre Netzwerkverbindung.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+        }
+
+        // Set current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Load content when the page is ready
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>
