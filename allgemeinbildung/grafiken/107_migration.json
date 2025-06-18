@@ -1,0 +1,279 @@
+{
+  "title": "Weltweite Migrationsströme Quiz",
+  "media": {
+    "type": "",
+    "url": "",
+    "source": ""
+  },
+  "customIntroText": "<p><strong>Weltweite Migrationsströme – Worum geht es?</strong></p>\n\n<p>In diesem Beitrag analysieren Sie eine Grafik zu den weltweiten Migrationsströmen im Jahr 2019. Die Darstellung zeigt, wie viele Menschen zwischen und innerhalb grosser Weltregionen wie Europa, Nordamerika und Asien gewandert sind. Es wird deutlich, dass Migration ein globales Phänomen ist, das von vielfältigen Wünschen und Notwendigkeiten angetrieben wird, wie der Suche nach Sicherheit, Arbeit oder Bildung.</p>\n\n<p><strong>Lernziele:</strong></p>\n<ul>\n  <li>Sie können die wichtigsten Migrationsrouten und die Anzahl der Zuwanderer in den dargestellten Weltregionen benennen.</li>\n  <li>Sie verstehen die zentralen Begriffe wie interregionale (zwischen Regionen) und intraregionale (innerhalb einer Region) Migration anhand der Grafik.</li>\n  <li>Sie können die in der Grafik dargestellten Zahlen interpretieren und miteinander in Beziehung setzen.</li>\n  <li>Sie kennen die im Text genannten Hauptgründe für Migration und können diese in den Kontext der Grafik einordnen.</li>\n</ul>",
+  "questions": [
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welche Weltregion hatte im Jahr 2019 mit 82,3 Millionen die höchste Anzahl an Zuwanderern?</p>",
+      "options": [
+        {
+          "text": "Europa",
+          "is_correct": true,
+          "feedback": "✅ Richtig! <strong>Europa</strong> hat mit <strong>82,3 Millionen</strong> die meisten Zuwanderer aufgenommen."
+        },
+        {
+          "text": "Nordamerika, das zwar auch eine sehr hohe Zahl aufweist, aber knapp hinter der führenden Region liegt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Nordamerika ist mit 58,6 Millionen Zuwanderern die Region mit der zweithöchsten Anzahl, aber <strong>Europa</strong> liegt an <strong>erster Stelle</strong>."
+        },
+        {
+          "text": "Asien, welches aufgrund seiner Grösse zwar viele Migranten hat, aber nicht die höchste absolute Zuwandererzahl verzeichnet.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Asien hatte 37,9 Millionen Zuwanderer und damit deutlich weniger als <strong>Europa</strong> mit <strong>82,3 Millionen</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Wie viele Menschen sind laut der Grafik von Lateinamerika und der Karibik nach Nordamerika zugewandert?</p>",
+      "options": [
+        {
+          "text": "26,6 Millionen",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der Pfeil von Lateinamerika nach Nordamerika zeigt eine Zuwanderung von <strong>26,6 Millionen</strong> Menschen an."
+        },
+        {
+          "text": "15,4 Millionen, was der Zahl der Zuwanderer von Asien nach Nordamerika entspricht und nicht der aus Lateinamerika.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 15,4 Millionen Menschen sind von Asien nach Nordamerika zugewandert, aber aus Lateinamerika kamen <strong>26,6 Millionen</strong>."
+        },
+        {
+          "text": "8,2 Millionen, was die Anzahl der Menschen ist, die innerhalb der Region Lateinamerika in ein anderes Land gezogen sind.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 8,2 Millionen Menschen sind innerhalb Lateinamerikas umgezogen. Nach Nordamerika waren es <strong>26,6 Millionen</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welche Zahl beschreibt die Zuwanderung aus einer anderen Weltregion nach Afrika?</p>",
+      "options": [
+        {
+          "text": "18,3 Millionen",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Laut der Legende und dem Pfeil kamen <strong>18,3 Millionen</strong> Menschen aus einer anderen Weltregion nach Afrika."
+        },
+        {
+          "text": "23,6 Millionen, was die Gesamtzahl aller Zuwanderer in Afrika darstellt, einschliesslich der Migration innerhalb der Region.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 23,6 Millionen ist die Gesamtzahl der Zuwanderer in Afrika. Die Zuwanderung aus <strong>anderen Weltregionen</strong> betrug <strong>18,3 Millionen</strong>."
+        },
+        {
+          "text": "13,1 Millionen, diese Zahl repräsentiert die Abwanderung von Afrika nach Europa und nicht die Zuwanderung nach Afrika.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 13,1 Millionen Menschen wanderten von Afrika nach Europa ab. Die Zuwanderung nach Afrika aus anderen Regionen betrug <strong>18,3 Millionen</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Wie viele Zuwanderer verzeichneten Australien und Ozeanien im Jahr 2019 insgesamt?</p>",
+      "options": [
+        {
+          "text": "8,9 Millionen",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die Gesamtzahl der Zuwanderer in Australien und Ozeanien betrug <strong>8,9 Millionen</strong>."
+        },
+        {
+          "text": "3,5 Millionen, was nur die Zuwanderung aus Asien in diese Region darstellt und nicht die Gesamtzahl aller Zuwanderer.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 3,5 Millionen Menschen kamen allein aus Asien. Die <strong>Gesamtzahl</strong> der Zuwanderer betrug <strong>8,9 Millionen</strong>."
+        },
+        {
+          "text": "1,1 Millionen, was sich auf die Zuwanderer innerhalb der Region selbst bezieht und somit nur einen Teil der Gesamtzahl ausmacht.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. 1,1 Millionen Menschen sind innerhalb der Region umgezogen. Die <strong>Gesamtzahl</strong> inklusive Zuwanderer aus anderen Regionen war <strong>8,9 Millionen</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Aus welcher Region kam mit 22,8 Millionen Menschen ein besonders grosser Teil der Zuwanderer nach Europa?</p>",
+      "options": [
+        {
+          "text": "Nordafrika/Westasien",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der Pfeil von <strong>Nordafrika/Westasien</strong> nach Europa ist mit <strong>22,8 Millionen</strong> beschriftet, was einen Hauptmigrationsstrom darstellt."
+        },
+        {
+          "text": "Asien, obwohl es eine wichtige Herkunftsregion ist, war der Migrationsstrom von dort nach Europa geringer als der aus Nordafrika.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Aus Asien kamen 4,7 Millionen Menschen nach Europa. Aus <strong>Nordafrika/Westasien</strong> kamen mit <strong>22,8 Millionen</strong> deutlich mehr."
+        },
+        {
+          "text": "Nordamerika, aus dieser Region wanderten zwar Menschen nach Europa aus, die Zahl war aber signifikant kleiner als die aus Nordafrika.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Aus Nordamerika wanderten 5,0 Millionen Menschen nach Europa. Aus <strong>Nordafrika/Westasien</strong> waren es <strong>22,8 Millionen</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was bedeutet der Begriff „intraregionale Migration“ im Kontext dieser Grafik?</p>",
+      "options": [
+        {
+          "text": "Menschen ziehen von einem Land in ein anderes innerhalb derselben Weltregion.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die Grafik zeigt dies z.B. für Lateinamerika (8,2 Mio.) und Afrika (18,3 Mio.). Es handelt sich um <strong>Migration innerhalb</strong> einer geografischen <strong>Grossregion</strong>."
+        },
+        {
+          "text": "Menschen ziehen von einem Kontinent zu einem völlig anderen, weit entfernten Kontinent, um dort zu leben.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das beschreibt die interregionale Migration, also die Wanderung <strong>zwischen den Regionen</strong>. Intraregional bedeutet <strong>innerhalb einer Region</strong>."
+        },
+        {
+          "text": "Menschen verlassen ihre Heimatregion, um nach einer kurzen Zeit wieder dorthin zurückzukehren, wie zum Beispiel bei Saisonarbeit.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das wäre eine zirkuläre Migration. Intraregionale Migration beschreibt den dauerhaften oder langfristigen Umzug <strong>innerhalb derselben Weltregion</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Welchen Schluss lässt der im Begleittext erwähnte Grund „bessere Jobs“ über die globalen Migrationsströme zu?</p>",
+      "options": [
+        {
+          "text": "Wirtschaftliche Ungleichheiten sind ein wesentlicher Antrieb für die Migration.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die Suche nach <strong>besseren Jobs</strong> deutet darauf hin, dass Menschen aus Regionen mit geringeren <strong>wirtschaftlichen Chancen</strong> in solche mit besseren Perspektiven ziehen."
+        },
+        {
+          "text": "Die meisten Menschen migrieren ausschliesslich wegen politischer Verfolgung und ignorieren dabei die wirtschaftlichen Bedingungen vollständig.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Obwohl politische Verfolgung ein wichtiger Grund ist, ist die Suche nach <strong>besseren Jobs</strong> ein ebenso zentraler, <strong>wirtschaftlicher Faktor</strong>."
+        },
+        {
+          "text": "Menschen ziehen es vor, in Länder mit schwächeren Volkswirtschaften zu migrieren, da dort die Konkurrenz auf dem Arbeitsmarkt geringer ist.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. In der Regel ist das Gegenteil der Fall: Menschen migrieren in Regionen mit <strong>stärkeren Volkswirtschaften</strong> in der Hoffnung auf <strong>bessere Jobs</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wenn man die Zuwanderung nach Nordamerika (58,6 Mio.) mit der Zuwanderung nach Asien (37,9 Mio.) vergleicht, was fällt auf?</p>",
+      "options": [
+        {
+          "text": "Nordamerika zieht absolut gesehen mehr Zuwanderer an als Asien.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Mit <strong>58,6 Millionen</strong> Zuwanderern liegt die Zahl in <strong>Nordamerika</strong> deutlich höher als in <strong>Asien</strong> mit <strong>37,9 Millionen</strong>."
+        },
+        {
+          "text": "Asien ist ein deutlich attraktiveres Ziel für Zuwanderer aus aller Welt als Nordamerika, was die Zahlen eindeutig belegen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Zahlen zeigen das Gegenteil: <strong>Nordamerika</strong> (58,6 Mio.) hat eine <strong>höhere Zuwandererzahl</strong> als <strong>Asien</strong> (37,9 Mio.)."
+        },
+        {
+          "text": "Die Zuwanderung nach Asien und Nordamerika ist fast identisch, es gibt nur einen sehr geringfügigen, kaum messbaren Unterschied.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Unterschied zwischen <strong>58,6 Millionen</strong> (Nordamerika) und <strong>37,9 Millionen</strong> (Asien) ist mit über 20 Millionen Menschen <strong>sehr deutlich</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Warum wird Migration im Begleittext als „Spiegel globaler Ungleichheit“ bezeichnet?</p>",
+      "options": [
+        {
+          "text": "Weil die grossen Migrationsströme oft von Regionen mit weniger Stabilität und Chancen in reichere, stabilere Regionen fliessen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die Hoffnung auf ein besseres Leben, Sicherheit und Arbeit treibt Menschen an, was die <strong>Ungleichheit</strong> der Lebensbedingungen <strong>weltweit widerspiegelt</strong>."
+        },
+        {
+          "text": "Weil Migration ausschliesslich zwischen Ländern stattfindet, die den exakt gleichen wirtschaftlichen und politischen Entwicklungsstand aufweisen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das Gegenteil ist der Fall. Migration reflektiert gerade die <strong>Unterschiede</strong> in Stabilität und Wohlstand und ist somit ein Spiegel der <strong>globalen Ungleichheit</strong>."
+        },
+        {
+          "text": "Weil durch Migration globale Ungleichheiten vollständig beseitigt werden, da alle Menschen gleichmässig über den Globus verteilt werden.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Migration ist eine Folge von <strong>Ungleichheit</strong> und löst diese nicht automatisch auf, sondern <strong>macht sie sichtbar</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Welche Aussage vergleicht die intraregionale Migration in Afrika und Lateinamerika korrekt?</p>",
+      "options": [
+        {
+          "text": "In Afrika ist die Zahl der Menschen, die innerhalb der Region migrieren, mehr als doppelt so hoch wie in Lateinamerika.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! In Afrika migrierten <strong>18,3 Millionen</strong> Menschen innerhalb der Region, in Lateinamerika waren es <strong>8,2 Millionen</strong>. 18,3 ist mehr als das Doppelte von 8,2."
+        },
+        {
+          "text": "In Lateinamerika migrieren deutlich mehr Menschen innerhalb ihrer Region als in Afrika, was die engeren kulturellen Verbindungen dort zeigt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. In Afrika (<strong>18,3 Mio.</strong>) ist die intraregionale Migration zahlenmässig <strong>stärker</strong> als in Lateinamerika (<strong>8,2 Mio.</strong>)."
+        },
+        {
+          "text": "Die intraregionale Migration ist in beiden Regionen exakt gleich hoch, was auf sehr ähnliche soziale und wirtschaftliche Bedingungen hindeutet.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Zahlen sind mit <strong>18,3 Millionen</strong> in Afrika und <strong>8,2 Millionen</strong> in Lateinamerika <strong>deutlich unterschiedlich</strong>."
+        }
+      ]
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Im Jahr 2019 hatte Nordamerika eine Gesamtzahl von 58,6 Millionen Zuwanderern.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig. Die Grafik weist für Nordamerika eine Gesamtzahl von 58,6 Millionen Zuwanderern aus.",
+      "feedback_incorrect": "Falsch. Die Grafik gibt die Gesamtzahl der Zuwanderer in Nordamerika mit genau 58,6 Millionen an."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Die Zuwanderung von Asien nach Europa betrug 22,8 Millionen Menschen.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig. Diese Aussage ist falsch. 22,8 Millionen Menschen kamen aus Nordafrika/Westasien nach Europa. Aus Asien kamen 4,7 Millionen.",
+      "feedback_incorrect": "Falsch. 22,8 Millionen Menschen kamen aus Nordafrika/Westasien nach Europa. Aus Asien betrug die Zuwanderung 4,7 Millionen."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>In Lateinamerika und der Karibik wanderten 8,2 Millionen Menschen aus einem Land der Region in ein anderes Land derselben Region.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig. Der Kreis mit der Beschriftung „aus einem Land innerhalb der Region zugewandert“ zeigt für Lateinamerika und die Karibik genau diesen Wert an.",
+      "feedback_incorrect": "Falsch. Der Wert von 8,2 Millionen bezieht sich laut Grafik exakt auf die Zuwanderung innerhalb der Region Lateinamerika und Karibik."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Die Grafik zeigt, dass Migration ausschliesslich in eine Richtung stattfindet, nämlich von ärmeren zu reicheren Kontinenten.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig, diese Aussage ist falsch. Die Grafik zeigt auch Migrationsströme zwischen wirtschaftlich starken Regionen, wie z.B. von Nordamerika nach Europa (5,0 Mio.) oder von Europa nach Asien (1,1 Mio.).",
+      "feedback_incorrect": "Falsch. Die Grafik widerlegt diese Annahme, indem sie auch Ströme zwischen wohlhabenden Regionen darstellt, z.B. von Nordamerika nach Europa (5,0 Mio.). Migration ist multidirektional."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Anhand der Daten lässt sich schliessen, dass Europa nicht nur ein Hauptziel für Zuwanderer ist, sondern auch eine Herkunftsregion für Migranten, die in andere Teile der Welt ziehen.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig. Die Pfeile, die von Europa ausgehen (z.B. nach Asien, Nordafrika/Westasien und Nordamerika), belegen, dass Menschen auch aus Europa in andere Regionen abwandern.",
+      "feedback_incorrect": "Falsch. Die Grafik zeigt mehrere Pfeile, die von Europa wegführen, zum Beispiel 4,9 Millionen nach Nordafrika/Westasien. Europa ist also auch eine Herkunftsregion."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Aus den Daten kann man ableiten, dass Naturkatastrophen oder der Klimawandel die einzigen Gründe für die weltweite Migration sind.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig, diese Aussage ist falsch. Der Begleittext nennt explizit auch andere wichtige Gründe wie bewaffnete Konflikte, politische Verfolgung, wirtschaftliche Chancen und Bildung.",
+      "feedback_incorrect": "Falsch. Der Text erwähnt eine Vielzahl von Gründen. Neben Naturkatastrophen sind auch Kriege, politische Verfolgung und die Suche nach Arbeit oder Bildung zentrale Motive für Migration."
+    }
+  ]
+}
