@@ -101,6 +101,7 @@
 <body>
 
     <div id="media-container">
+        <p id="audio-instruction"></p> <!-- Add this line -->
         <img id="image-to-play" alt="Image to play audio">
         <audio id="audio-player" controls></audio>
         <p id="source-info"></p>
@@ -158,6 +159,11 @@
                 if (pageNumber) {
                     sourceElement.innerHTML = `Quelle: <a href="https://www.hep-verlag.ch/allgemeinbildung-zuerich" target="_blank" rel="noopener noreferrer">Allgemeinbildung. hep-Verlag</a>, Seite: ${pageNumber}`;
                 }
+
+                const audioInstruction = document.getElementById('audio-instruction');
+                // Extract the page number from fileId (before the first underscore)
+                const pageNumber = fileId.split('_')[0];
+                audioInstruction.textContent = `Hören Sie die Erklärung zur Grafik auf Seite ${pageNumber}`;
 
                 // --- NEW QUIZ LOGIC ---
                 let quizData = null;
