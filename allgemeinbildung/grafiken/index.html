@@ -156,16 +156,13 @@
                 });
                 
                 const pageNumber = fileId.split('_')[0];
+                const audioInstruction = document.getElementById('audio-instruction');
+                
                 if (pageNumber) {
                     sourceElement.innerHTML = `Quelle: <a href="https://www.hep-verlag.ch/allgemeinbildung-zuerich" target="_blank" rel="noopener noreferrer">Allgemeinbildung. hep-Verlag</a>, Seite: ${pageNumber}`;
-                    const audioInstruction = document.getElementById('audio-instruction');
                     audioInstruction.textContent = `Hören Sie die Erklärung zur Grafik auf Seite ${pageNumber}`;
                 }
 
-                const audioInstruction = document.getElementById('audio-instruction');
-                // Extract the page number from fileId (before the first underscore)
-                const pageNumber = fileId.split('_')[0];
-                audioInstruction.textContent = `Hören Sie die Erklärung zur Grafik auf Seite ${pageNumber}`;
 
                 // --- NEW QUIZ LOGIC ---
                 let quizData = null;
