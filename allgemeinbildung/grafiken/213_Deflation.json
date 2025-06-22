@@ -1,0 +1,279 @@
+{
+  "title": "Verständnisfragen zur Deflation",
+  "media": {
+    "type": "",
+    "url": "",
+    "source": ""
+  },
+  "customIntroText": "<p><strong>Der Wirtschaftskreislauf bei Deflation – Worum geht es?</strong></p>\n\n<p>In diesem Beitrag lernst du, was Deflation ist und wie sie den Wirtschaftskreislauf beeinflusst. Anhand einer Infografik wird erklärt, wie das Gleichgewicht zwischen dem Geldstrom (Konsumenten zu Produzenten) und dem Güterstrom (Produzenten zu Konsumenten) gestört wird. Es wird verdeutlicht, warum sinkende Preise, die zunächst positiv klingen, für eine Volkswirtschaft gefährlich sein können.</p>\n\n<p><strong>Lernziele:</strong></p>\n<ul>\n  <li>Du verstehst das Konzept des einfachen Wirtschaftskreislaufs mit Geld- und Güterstrom.</li>\n  <li>Du kannst den Begriff Deflation definieren und erklären, wie sie entsteht.</li>\n  <li>Du kennst die negativen Folgen einer Deflation für Konsumenten, Produzenten und den Arbeitsmarkt.</li>\n  <li>Du kannst die Argumente nachvollziehen, warum Deflation als schwer bekämpfbares wirtschaftliches Problem gilt.</li>\n</ul>",
+  "questions": [
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welcher der beiden Ströme ist in der beschriebenen Deflation-Situation übermässig stark?</p>",
+      "options": [
+        {
+          "text": "Der hellrote Güterstrom.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Bei einer Deflation gibt es ein <strong>Überangebot an Waren</strong>, weshalb der Güterstrom stärker ist als der Geldstrom."
+        },
+        {
+          "text": "Der dunkelrote Geldstrom, weil die Konsumenten mehr Geld ausgeben als üblich.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Bei einer Deflation ist der <strong>Geldstrom schwach</strong>, da die Konsumenten ihr Geld zurückhalten und weniger ausgeben."
+        },
+        {
+          "text": "Beide Ströme sind gleich stark, aber fliessen in die entgegengesetzte Richtung.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Dass die Ströme entgegengesetzt fliessen, ist normal. Bei einer Deflation ist aber das <strong>Gleichgewicht gestört</strong> und der Güterstrom ist deutlich stärker."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Was passiert laut Text mit dem Wert des Geldes während einer Deflation?</p>",
+      "options": [
+        {
+          "text": "Das Geld gewinnt an Wert.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Da das Geld knapp ist und die Waren im Überfluss vorhanden sind, <strong>gewinnt das Geld an Wert</strong>."
+        },
+        {
+          "text": "Der Wert des Geldes sinkt rapide, was man als Inflation bezeichnet und nicht als Deflation.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das Sinken des Geldwertes wird als Inflation bezeichnet. Bei einer Deflation ist das Gegenteil der Fall: Der <strong>Geldwert steigt</strong>."
+        },
+        {
+          "text": "Der Wert des Geldes bleibt völlig unverändert, nur die Preise der Güter verändern sich.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Wert des Geldes und die Preise der Güter sind direkt miteinander verknüpft. Wenn die Preise sinken, <strong>steigt der Wert des Geldes</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Wann trat in der Schweiz, neben der Finanzkrise 2008, letztmals eine Deflation auf?</p>",
+      "options": [
+        {
+          "text": "In den dreissiger Jahren des zwanzigsten Jahrhunderts.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der Text erwähnt, dass die Schweiz <strong>in den 1930er-Jahren</strong> und nach der Finanzkrise 2008 eine Deflation erlebte."
+        },
+        {
+          "text": "Während des grossen Wirtschaftsbooms der Nachkriegszeit in den 1950er-Jahren.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Nachkriegszeit war von starkem Wirtschaftswachstum geprägt, nicht von einer Deflation, welche eine <strong>sich abkühlende Volkswirtschaft</strong> kennzeichnet."
+        },
+        {
+          "text": "Zu Beginn des neuen Jahrtausends um das Jahr 2000 herum, ausgelöst durch die Dotcom-Blase.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Text nennt explizit die <strong>1930er-Jahre</strong> und die Zeit nach der Finanzkrise 2008 als Perioden der Deflation in der Schweiz."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Welche Farbe symbolisiert in der beschriebenen Infografik den Geldstrom?</p>",
+      "options": [
+        {
+          "text": "Dunkelrot.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Der <strong>Geldstrom</strong>, der von den Konsumenten zu den Produzenten fliesst, wird in der Farbe <strong>Dunkelrot</strong> dargestellt."
+        },
+        {
+          "text": "Hellrot, da diese Farbe für die Bewegung der Konsumgüter zu den Haushalten steht.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Farbe Hellrot symbolisiert den <strong>Güterstrom</strong>, also die Waren und Dienstleistungen, nicht den Geldstrom."
+        },
+        {
+          "text": "Die Farbe wird im Text nicht genannt und kann daher nicht eindeutig zugeordnet werden.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Text beschreibt die Farben explizit: Der <strong>Geldstrom ist dunkelrot</strong> und der Güterstrom hellrot."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Erinnern",
+      "question": "<p>Wie ist das Verhältnis von Geld- und Güterstrom in einem gesunden Wirtschaftskreislauf?</p>",
+      "options": [
+        {
+          "text": "Sie sind normalerweise im Gleichgewicht.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! In einer gesunden Wirtschaft halten sich <strong>Geld- und Güterstrom die Waage</strong> und sind im Gleichgewicht."
+        },
+        {
+          "text": "Der Güterstrom ist immer etwas stärker, um das Wirtschaftswachstum zu garantieren.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Wenn der Güterstrom dauerhaft stärker ist, führt dies zu einem Preisverfall und dem Risiko einer <strong>Deflation</strong>."
+        },
+        {
+          "text": "Der Geldstrom muss immer stärker sein als der Güterstrom, um eine Inflation zu erzeugen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Ein gesunder Wirtschaftskreislauf zeichnet sich durch ein <strong>Gleichgewicht</strong> aus, nicht durch eine ständige Inflation."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Warum verschieben Konsumenten ihre Käufe während einer Deflation, obwohl die Produkte günstiger werden?</p>",
+      "options": [
+        {
+          "text": "Weil sie erwarten, dass die Preise in Zukunft noch weiter fallen werden.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die <strong>Erwartung weiter sinkender Preise</strong> führt dazu, dass Konsumenten auf noch bessere Angebote hoffen und ihre Käufe aufschieben."
+        },
+        {
+          "text": "Weil die Qualität der Produkte während einer Deflation abnimmt und die Konsumenten dies bemerken.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Der Hauptgrund für die Kaufzurückhaltung ist nicht die Produktqualität, sondern die <strong>Erwartungshaltung</strong> bezüglich der zukünftigen Preisentwicklung."
+        },
+        {
+          "text": "Weil die Regierung während einer Deflation höhere Steuern auf Konsumgüter erhebt, um die Wirtschaft anzukurbeln.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das zentrale Problem ist das Verhalten der Konsumenten, die auf <strong>noch tiefere Preise spekulieren</strong> und deshalb mit dem Kaufen warten."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Was ist die wahrscheinlichste Folge für Unternehmen, wenn eine Deflation länger andauert?</p>",
+      "options": [
+        {
+          "text": "Sie entlassen Mitarbeitende, da sie weniger verkaufen und produzieren.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Sinkende Nachfrage und sinkende Einnahmen zwingen Unternehmen dazu, ihre <strong>Produktion zu drosseln</strong> und Personal zu entlassen, was die Arbeitslosigkeit erhöht."
+        },
+        {
+          "text": "Sie stellen mehr Mitarbeitende ein, um die Produktion zu erhöhen und die Lager schnell wieder aufzufüllen.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Bei sinkender Nachfrage und vollen Lagern wäre eine Produktionssteigerung wirtschaftlich unsinnig. Unternehmen müssen ihre <strong>Kosten senken</strong>."
+        },
+        {
+          "text": "Sie investieren in neue Technologien, um die Preise für ihre Produkte noch weiter erhöhen zu können.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. In einer Deflation können Unternehmen die Preise nicht erhöhen. Sie sind mit sinkenden Einnahmen konfrontiert, was <strong>Investitionen erschwert</strong>."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Welche Aussage beschreibt die Gefahr einer Deflation am treffendsten?</p>",
+      "options": [
+        {
+          "text": "Sie kann eine Abwärtsspirale aus Preissenkungen, Kaufzurückhaltung und Arbeitslosigkeit auslösen.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Dies fasst die zentrale Gefahr zusammen: Eine sich <strong>selbst verstärkende Abwärtsspirale</strong>, die die gesamte Volkswirtschaft lähmt."
+        },
+        {
+          "text": "Sie führt dazu, dass Importgüter teurer werden, was die heimische Wirtschaft übermässig stark stimuliert.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Bei einer Deflation wertet die eigene Währung auf, was Importgüter tendenziell verbilligt und die heimische Wirtschaft zusätzlich unter <strong>Druck</strong> setzt."
+        },
+        {
+          "text": "Sie zwingt die Zentralbank, die Zinsen stark zu erhöhen, was Kredite für Unternehmen unbezahlbar macht.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Bei einer Deflation sind die Zinsen bereits sehr tief. Die Zentralbank kann sie kaum weiter senken, was die <strong>Bekämpfung erschwert</strong>. Zinserhöhungen sind ein Mittel gegen Inflation."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Wie veranschaulicht die Infografik das Problem der Deflation auf einfache Weise?</p>",
+      "options": [
+        {
+          "text": "Indem sie einen viel dickeren Güterstrom als Geldstrom zeigt.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Die visuelle Darstellung des <strong>Ungleichgewichts</strong> – ein dicker Güterstrom und ein dünner Geldstrom – macht das Kernproblem der Deflation sofort verständlich."
+        },
+        {
+          "text": "Indem sie zeigt, wie der Geldstrom die gleiche Richtung wie der Güterstrom einschlägt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Ströme fliessen auch bei einer Deflation in entgegengesetzte Richtungen. Das Problem ist das <strong>Grössenverhältnis</strong> der beiden Ströme."
+        },
+        {
+          "text": "Indem sie darstellt, wie die Produzenten aufhören, Waren herzustellen, wodurch der Güterstrom versiegt.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Die Grafik zeigt das anfängliche Problem: Der Güterstrom ist zu stark, weil die <strong>Waren nicht gekauft werden</strong>. Das Versiegen der Produktion ist eine spätere Folge."
+        }
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "bloom_level": "Verstehen",
+      "question": "<p>Warum gilt Deflation als schwer bekämpfbar im Vergleich zur Inflation?</p>",
+      "options": [
+        {
+          "text": "Weil die Zentralbank die Zinsen nicht beliebig weit senken kann, um den Geldstrom anzukurbeln.",
+          "is_correct": true,
+          "feedback": "✅ Richtig! Während bei Inflation eine Zinserhöhung ein wirksames Mittel ist, stösst die <strong>Zinssenkung bei Deflation an eine natürliche Grenze</strong> (die Nullzinsgrenze), was die Handlungsmöglichkeiten einschränkt."
+        },
+        {
+          "text": "Weil Unternehmen bei Deflation ihre Preise nicht senken wollen und die Regierung sie dazu zwingen müsste.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Das Problem ist nicht, dass die Unternehmen die Preise nicht senken wollen – sie werden durch den Markt dazu gezwungen. Die Herausforderung ist, die <strong>Nachfrage wieder zu beleben</strong>."
+        },
+        {
+          "text": "Weil die Bekämpfung von Deflation immer zu einer Hyperinflation führt, was politisch sehr unbeliebt ist.",
+          "is_correct": false,
+          "feedback": "❌ Falsch. Obwohl die Ankurbelung der Geldmenge ein Ziel ist, führt sie nicht zwangsläufig zu einer Hyperinflation. Das Hauptproblem ist, dass die Massnahmen oft <strong>nicht schnell genug wirken</strong>."
+        }
+      ]
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Laut der Beschreibung im Text bedeutet Deflation, dass zu viele Waren für zu wenig Geld im Umlauf sind.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig! Der Text definiert Deflation genau so: Ein Überangebot an Gütern trifft auf eine zu geringe Geldmenge.",
+      "feedback_incorrect": "Falsch. Diese Aussage ist korrekt. Der Text beschreibt Deflation als eine Situation, in der ein Überangebot an Gütern auf eine knappe Geldmenge trifft."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>In der beschriebenen Grafik ist der Güterstrom, der von den Produzenten zu den Konsumenten fliesst, dunkelrot eingefärbt.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Diese Aussage ist falsch. Der Güterstrom ist hellrot, während der Geldstrom dunkelrot ist.",
+      "feedback_incorrect": "Falsch. Der Text beschreibt den Güterstrom als hellrot. Der dunkelrote Pfeil symbolisiert den Geldstrom."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Erinnern",
+      "question": "<p>Der Text besagt, dass Deflation ein sehr häufiges wirtschaftliches Phänomen in der Schweiz ist.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Diese Aussage ist falsch. Der Text betont, dass Deflation selten ist, aber gefährlich sein kann.",
+      "feedback_incorrect": "Falsch. Laut Text ist Deflation selten. Sie trat in der Schweiz zuletzt in den 1930er-Jahren und nach der Finanzkrise 2008 auf."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Ein Sinken der Preise während einer Deflation ist langfristig immer ein positives Zeichen für die Wirtschaft, da alles günstiger wird.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Diese Aussage ist falsch. Anhaltend sinkende Preise führen zu Kaufzurückhaltung, Produktionsrückgängen und Arbeitslosigkeit, was negativ für die Wirtschaft ist.",
+      "feedback_incorrect": "Falsch. Der Text erklärt, dass sinkende Preise eine gefährliche Abwärtsspirale auslösen können und daher ein Alarmzeichen für eine sich abkühlende Volkswirtschaft sind."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Eine steigende Arbeitslosigkeit kann eine direkte Folge der in einer Deflation sinkenden Nachfrage sein.</p>",
+      "correct_answer": true,
+      "feedback_correct": "Richtig! Wenn Unternehmen weniger verkaufen, müssen sie ihre Produktion reduzieren und entlassen infolgedessen oft Mitarbeitende.",
+      "feedback_incorrect": "Falsch. Diese Aussage ist korrekt. Die Abwärtsspirale der Deflation beinhaltet, dass geringere Einnahmen der Firmen zu Entlassungen und somit zu steigender Arbeitslosigkeit führen."
+    },
+    {
+      "type": "TrueFalse",
+      "bloom_level": "Verstehen",
+      "question": "<p>Ein starker Güterstrom in Kombination mit einem schwachen Geldstrom ist ein Zeichen für eine robuste und wachsende Wirtschaft.</p>",
+      "correct_answer": false,
+      "feedback_correct": "Richtig! Diese Aussage ist falsch. Dieses Ungleichgewicht ist das typische Kennzeichen einer Deflation und deutet auf eine schrumpfende Wirtschaft hin.",
+      "feedback_incorrect": "Falsch. Dieses Szenario beschreibt das Kernproblem der Deflation. Eine gesunde Wirtschaft zeichnet sich durch ein Gleichgewicht beider Ströme aus."
+    }
+  ]
+}
