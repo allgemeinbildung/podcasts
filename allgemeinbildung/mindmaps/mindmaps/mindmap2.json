@@ -1,0 +1,33 @@
+{
+  "id": "root",
+  "content": "Weekly Sprint",
+  "children": [
+    {
+      "id": "todo",
+      "content": "To Do",
+      "children": [
+        {
+          "id": "task1",
+          "content": "Write report",
+          "children": []
+        },
+        {
+          "id": "task2",
+          "content": "Review PRs",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "done",
+      "content": "Done",
+      "children": [
+        {
+          "id": "task3",
+          "content": "Deploy release",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
