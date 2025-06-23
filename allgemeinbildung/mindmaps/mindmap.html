@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>Mindmap with Focus</title>
-  <style>body,html,#map{width:100%;height:100%;margin:0}</style>
+  <meta charset="UTF-8" />
+  <title>Dynamic Markmap</title>
+  <style>
+    body, html, #map { width: 100%; height: 100%; margin: 0; }
+  </style>
 </head>
 <body>
   <svg id="map"></svg>
+
   <script type="module">
     import { Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.13.3/dist/index.browser.js';
 
-    // Recursively search for the node with a matching `id`
-    function findNode(tree, id) {
-      if (tree.id === id) return tree;
-      for (const c of tree.children || []) {
-        const found = findNode(c, id);
-        if (found) return found;
-      }
-      return null;
-    }
-
-    (async () => {
-      // 1. Get params
+    async function loadMindmap() {
       const params = new URLSearchParams(location.search);
       const mapId = params.get('id') || 'mindmap1';
       const focusId = params.get('focus');
 
-      // 2. Load your JSON
-      const res = await fetch(`./mindmaps/${mapId}.json`);
-      if (!res.ok) throw new Error(res.statusText);
-      const data = await res.json();
+      // 👉 JSON files live in the "mindmaps/" folder next to this HTML
+      const jsonPath = `mindmaps/${mapId}.json`;
 
-      // 3. Render at depth 2
-      const mm = Markmap.create('#map', { initialExpandLevel: 2 }, data);
+      try {
+        const res = await fetch(jsonPath);
+        if (!res.ok) throw new Error(`HTTP ${res.status} loading ${jsonPath}`);
+        const data = await res.json();
 
-      // 4. If focus specified, locate & pan to it
-      if (focusId) {
-        const node = findNode(data, focusId);
-        if (node) {
-          // centerNode will pan/zoom so this node sits in the middle
-          await mm.centerNode(node);               // :contentReference[oaicite:0]{index=0}
-          // highlight it (adds a soft glow)
-          await mm.setHighlight(node);
+        // render
+        const mm = Markmap.create('#map', { initialExpandLevel: 2 }, data);
+
+        // if you passed ?focus=someNodeId, pan & highlight
+        if (focusId) {
+          // recursive search
+          function findNode(node) {
+            if (node.id === focusId) return node;
+            for (const c of node.children || []) {
+              const found = findNode(c);
+              if (found) return found;
+            }
+          }
+          const target = findNode(data);
+          if (target) {
+            await mm.centerNode(target);
+            await mm.setHighlight(target);
+          }
         }
+      } catch (err) {
+        document.body.innerHTML = `
+          <div style="padding:2rem;font-family:sans-serif;color:#a00;">
+            <h2>Failed to load mindmap</h2>
+            <p>${err.message}</p>
+          </div>`;
+        console.error(err);
       }
-    })().catch(e => {
-      document.body.textContent = `Error loading map: ${e.message}`;
-    });
+    }
+
+    loadMindmap();
   </script>
 </body>
 </html>
