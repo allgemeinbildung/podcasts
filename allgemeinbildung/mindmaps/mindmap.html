@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Mindmap with Focus</title>
+  <style>body,html,#map{width:100%;height:100%;margin:0}</style>
+</head>
+<body>
+  <svg id="map"></svg>
+  <script type="module">
+    import { Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.13.3/dist/index.browser.js';
+
+    // Recursively search for the node with a matching `id`
+    function findNode(tree, id) {
+      if (tree.id === id) return tree;
+      for (const c of tree.children || []) {
+        const found = findNode(c, id);
+        if (found) return found;
+      }
+      return null;
+    }
+
+    (async () => {
+      // 1. Get params
+      const params = new URLSearchParams(location.search);
+      const mapId = params.get('id') || 'mindmap1';
+      const focusId = params.get('focus');
+
+      // 2. Load your JSON
+      const res = await fetch(`./mindmaps/${mapId}.json`);
+      if (!res.ok) throw new Error(res.statusText);
+      const data = await res.json();
+
+      // 3. Render at depth 2
+      const mm = Markmap.create('#map', { initialExpandLevel: 2 }, data);
+
+      // 4. If focus specified, locate & pan to it
+      if (focusId) {
+        const node = findNode(data, focusId);
+        if (node) {
+          // centerNode will pan/zoom so this node sits in the middle
+          await mm.centerNode(node);               // :contentReference[oaicite:0]{index=0}
+          // highlight it (adds a soft glow)
+          await mm.setHighlight(node);
+        }
+      }
+    })().catch(e => {
+      document.body.textContent = `Error loading map: ${e.message}`;
+    });
+  </script>
+</body>
+</html>
