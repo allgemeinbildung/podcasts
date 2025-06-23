@@ -18,8 +18,8 @@
       const mapId = params.get('id') || 'mindmap1';
       const focusId = params.get('focus');
 
-      // 👉 JSON files live in the "mindmaps/" folder next to this HTML
-      const jsonPath = `mindmaps/${mapId}.json`;
+      // 👉 JSON files are now expected to be in the SAME folder as this HTML file
+      const jsonPath = `${mapId}.json`;
 
       try {
         const res = await fetch(jsonPath);
