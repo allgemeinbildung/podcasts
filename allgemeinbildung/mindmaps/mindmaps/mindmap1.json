@@ -1,0 +1,38 @@
+{
+  "id": "root",
+  "content": "Project Alpha",
+  "children": [
+    {
+      "id": "overview",
+      "content": "Overview",
+      "children": [
+        {
+          "id": "goals",
+          "content": "Goals",
+          "children": []
+        },
+        {
+          "id": "scope",
+          "content": "Scope",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "content": "Timeline",
+      "children": [
+        {
+          "id": "phase1",
+          "content": "Phase 1",
+          "children": []
+        },
+        {
+          "id": "phase2",
+          "content": "Phase 2",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
