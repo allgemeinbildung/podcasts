@@ -11,15 +11,14 @@
   <svg id="map"></svg>
 
   <script type="module">
-    // 👇 This URL has been corrected to solve the 404 Not Found error
-    import { Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.15.4/dist/index.min.js';
+    // 👇 This new URL from esm.sh automatically handles dependencies
+    import { Markmap } from 'https://esm.sh/markmap-view@0.15.4';
 
     async function loadMindmap() {
       const params = new URLSearchParams(location.search);
       const mapId = params.get('id') || 'mindmap1';
       const focusId = params.get('focus');
 
-      // Expects mindmap1.json or mindmap2.json in the same folder
       const jsonPath = `${mapId}.json`;
 
       try {
@@ -27,10 +26,8 @@
         if (!res.ok) throw new Error(`HTTP ${res.status} loading ${jsonPath}`);
         const data = await res.json();
 
-        // render
         const mm = Markmap.create('#map', { initialExpandLevel: 2 }, data);
 
-        // if you passed ?focus=someNodeId, pan & highlight
         if (focusId) {
           function findNode(node) {
             if (node.id === focusId) return node;
@@ -50,7 +47,6 @@
           <div style="padding:2rem;font-family:sans-serif;color:#a00;">
             <h2>Failed to load mindmap</h2>
             <p>${err.message}</p>
-            <p><strong>Note:</strong> Make sure your JSON files (e.g., 'mindmap1.json') are in the same directory as this HTML file and are not malformed.</p>
           </div>`;
         console.error(err);
       }
