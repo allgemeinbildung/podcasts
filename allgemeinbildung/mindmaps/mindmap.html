@@ -11,7 +11,7 @@
   <svg id="map"></svg>
 
   <script type="module">
-    // 👇 I have updated this URL to a working version of the Markmap library
+    // 👇 This URL has been corrected to solve the 404 Not Found error
     import { Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.15.4/dist/index.min.js';
 
     async function loadMindmap() {
@@ -32,7 +32,6 @@
 
         // if you passed ?focus=someNodeId, pan & highlight
         if (focusId) {
-          // recursive search
           function findNode(node) {
             if (node.id === focusId) return node;
             for (const c of node.children || []) {
