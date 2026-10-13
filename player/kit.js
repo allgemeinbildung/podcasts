@@ -357,7 +357,6 @@ window.Kit = (function () {
       if (st === 'done') {
         const fs = fit(r.n.label, 24, 236), w = textW(r.n.label, fs) + 26; const q = el('g', { transform: 'translate(' + (NX - 40 + w / 2) + ',' + r.y + ')' }, g);
         piece(q, sheetPts(w, 42, rng(hash(r.n.label))), PAPER); txt(q, r.n.label, 0, fs * 0.36, { size: fs });
-        P(g, 'M' + (NX - 40 + w + 10) + ',' + r.y + ' l8,9 l15,-19', { stroke: COL.green, sw: 6 });
         return;
       }
       const fs = fit(r.n.label, 28, 250), w = textW(r.n.label, fs) + 30;
