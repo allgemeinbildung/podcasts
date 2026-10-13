@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podcast mit Animation</title>
+<link rel="icon" href="data:,">
+<style>
+@font-face { font-family: 'Caveat'; font-weight: 700; font-style: normal; font-display: block; src: url(caveat-700.woff2) format('woff2'); }
+:root { --ink:#22252e; --kraft:#eadfc8; --paper:#fffdf6; --line:#cfc3a8; --blue:#2d6cb0; --grey:#5f6471; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--kraft); color: var(--ink); font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+.player { max-width: 1280px; margin: 0 auto; }
+.screen { position: relative; }
+#stage { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; cursor: pointer; }
+#big { position: absolute; inset: 0; margin: auto; width: 17%; aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--paper); background: var(--ink); cursor: pointer; display: grid; place-items: center; box-shadow: 4px 6px 0 rgba(34,37,46,.25); }
+#big svg { width: 44%; margin-left: 8%; fill: var(--paper); }
+#big[hidden] { display: none; }
+#caps { min-height: 3.3em; padding: .4em 16px; text-align: center; font-weight: 600; font-size: clamp(14px, 2.3vw, 22px); line-height: 1.35; background: var(--paper); }
+#caps .w { opacity: .38; transition: opacity .12s; }
+#caps .w.on { opacity: 1; }
+#caps.off { display: none; }
+.bar { display: flex; align-items: center; gap: 10px; padding: 6px 16px 4px; }
+.bar button { font: inherit; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 999px; min-width: 44px; height: 44px; padding: 0 12px; cursor: pointer; font-weight: 700; }
+.bar button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.seek { position: relative; flex: 1; height: 44px; display: flex; align-items: center; }
+.seek input { width: 100%; margin: 0; accent-color: var(--blue); }
+.seek i { position: absolute; top: 9px; width: 3px; height: 26px; background: var(--ink); opacity: .35; pointer-events: none; border-radius: 2px; }
+#time { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; font-size: 15px; }
+.chapters { display: flex; gap: 8px; padding: 4px 16px 12px; overflow-x: auto; }
+.chapters button { flex: none; font: inherit; font-size: 14px; font-weight: 600; border: 1.5px solid var(--line); background: var(--paper); color: var(--grey); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.chapters button.on { border-color: var(--ink); color: var(--ink); }
+#msg { padding: 0 16px 8px; color: #b3261e; font-weight: 600; font-size: 14px; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="player">
+  <div class="screen">
+    <svg id="stage" viewBox="0 0 1600 900" role="img" aria-label="Animation zum Podcast"></svg>
+    <button id="big" aria-label="Abspielen"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg></button>
+  </div>
+  <div id="caps" class="off" aria-live="off"></div>
+  <div class="bar">
+    <button id="play" aria-label="Abspielen">▶</button>
+    <div class="seek"><input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Position"></div>
+    <span id="time">0:00 / 0:00</span>
+    <button id="cc" aria-pressed="false" aria-label="Untertitel">CC</button>
+  </div>
+  <div class="chapters" id="chapters"></div>
+  <div id="msg" hidden></div>
+  <audio id="audio" preload="metadata"></audio>
+</div>
+<script src="kit.js"></script>
+<script>
+/* Player shell: index.html?ep=10.1 loads ../episodes/10.1.json and plays its audio.
+   The picture is drawn from the audio position, so seeking and chapters stay in sync. */
+(async function () {
+  'use strict';
+  const $ = id => document.getElementById(id), q = new URLSearchParams(location.search);
+  const audio = $('audio'), seek = $('seek'), caps = $('caps'), big = $('big'), play = $('play');
+  const say = m => { $('msg').hidden = false; $('msg').textContent = m; };
+  const id = (q.get('ep') || '').replace(/[^\w.-]/g, '');
+  let D;
+  try { const r = await fetch('../episodes/' + id + '.json'); if (!r.ok) throw 0; D = await r.json(); }
+  catch (e) { say('Diese Folge wurde nicht gefunden: «' + id + '».'); return; }
+  document.title = D.title + ' – Podcast mit Animation';
+  $('stage').setAttribute('aria-label', 'Animation zum Podcast ' + D.title);
+
+  try { await Promise.race([document.fonts.load("700 40px 'Caveat'"), new Promise(r => setTimeout(r, 2500))]); } catch (e) { /* draw with the fallback font */ }
+  const A = Kit.build($('stage'), D);
+
+  // audio: the episode's file, or ?audio=<path | https url> for local tests
+  const over = q.get('audio');
+  audio.src = over && (/^https:\/\//.test(over) || !/^[a-z]+:/i.test(over)) ? over : D.audio;
+
+  const dur = D.duration, fmt = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+  const clamp = t => Math.max(0, Math.min(dur - 0.05, t));
+  seek.max = dur.toFixed(1);
+
+  const chBtns = A.chapters.map((c, i) => {
+    const b = document.createElement('button');
+    b.textContent = (i + 1) + ' · ' + c.title; b.onclick = () => go(c.t + 0.02); $('chapters').appendChild(b);
+    if (i) { const tick = document.createElement('i'); tick.style.left = 'calc(' + (c.t / dur * 100).toFixed(2) + '% - 1px)'; seek.parentNode.appendChild(tick); }
+    return b;
+  });
+
+  let capIdx = -1, capSpans = [];
+  function drawCaps(t) {
+    let i = -1;
+    for (let k = 0; k < D.caps.length; k++) { if (D.caps[k][0] <= t + 0.15) i = k; else break; }
+    if (i >= 0 && t > D.caps[i][1] + 1.2) i = -1;
+    if (i !== capIdx) {
+      capIdx = i; caps.textContent = ''; capSpans = [];
+      if (i >= 0) D.caps[i][2].forEach(w => { const s = document.createElement('span'); s.className = 'w'; s.textContent = w[0] + ' '; caps.appendChild(s); capSpans.push([s, w[1]]); });
+    }
+    for (const p of capSpans) p[0].classList.toggle('on', p[1] <= t + 0.05);
+  }
+
+  let lastCh = -1, seeking = false;
+  function frame(t) {
+    A.render(t); drawCaps(t);
+    if (!seeking) seek.value = t;
+    $('time').textContent = fmt(t) + ' / ' + fmt(dur);
+    let ch = 0; A.chapters.forEach((c, i) => { if (t >= c.t) ch = i; });
+    if (ch !== lastCh) { chBtns.forEach((b, i) => b.classList.toggle('on', i === ch)); lastCh = ch; }
+  }
+  function loop() { frame(audio.currentTime); if (!audio.paused && !audio.ended) requestAnimationFrame(loop); }
+  function go(t) { audio.currentTime = clamp(t); frame(clamp(t)); }
+  const audioErr = () => say('Das Audio konnte nicht geladen werden. Die Animation lässt sich trotzdem mit dem Regler ansehen.');
+  function toggle() { if (audio.paused) audio.play().catch(audioErr); else audio.pause(); }
+
+  seek.addEventListener('input', () => { seeking = true; frame(+seek.value); });
+  seek.addEventListener('change', () => { seeking = false; go(+seek.value); });
+  play.onclick = toggle; big.onclick = toggle; $('stage').onclick = toggle;
+  $('cc').onclick = e => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; e.currentTarget.setAttribute('aria-pressed', on); caps.classList.toggle('off', !on); };
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+    if (e.code === 'Space') { e.preventDefault(); toggle(); }
+    if (e.code === 'ArrowRight') go(audio.currentTime + 5);
+    if (e.code === 'ArrowLeft') go(audio.currentTime - 5);
+  });
+  audio.addEventListener('play', () => { big.hidden = true; play.textContent = '❚❚'; play.setAttribute('aria-label', 'Pause'); loop(); });
+  audio.addEventListener('pause', () => { play.textContent = '▶'; play.setAttribute('aria-label', 'Abspielen'); });
+  audio.addEventListener('seeked', () => frame(audio.currentTime));
+  audio.addEventListener('loadedmetadata', () => { if (isFinite(audio.duration) && Math.abs(audio.duration - dur) > 1.5) say('Achtung: Die Audiodatei ist ' + fmt(audio.duration) + ' lang, die Animation wurde für ' + fmt(dur) + ' gebaut.'); });
+  audio.addEventListener('error', audioErr);
+
+  const t0 = parseFloat(q.get('t'));
+  if (isFinite(t0)) { big.hidden = true; frame(clamp(t0)); const set = () => { audio.currentTime = clamp(t0); }; if (audio.readyState >= 1) set(); else audio.addEventListener('loadedmetadata', set, { once: true }); }
+  else frame(0);
+  window.renderAt = frame;
+})();
+</script>
+</body>
+</html>
