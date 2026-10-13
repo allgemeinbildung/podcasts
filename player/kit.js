@@ -5,7 +5,8 @@
  * handwritten. An episode is data only: chapters → shots → one template per shot,
  * every beat with a resolved time `at` (the build turns word anchors into seconds).
  *
- * Templates: statement · icons · split · cycle.   Kit.build(svg, episode) → { render, chapters }
+ * Templates: statement · icons · split · cycle · map (closing podcasts: a walk through the mindmap).
+ * Kit.build(svg, episode) → { render, chapters }
  */
 window.Kit = (function () {
   'use strict';
@@ -14,7 +15,8 @@ window.Kit = (function () {
   const COL = { ink: INK, white: PAPER, red: '#d8483f', blue: '#2d6cb0', green: '#2e9a6a', yellow: '#f3b72e', grey: GREY };
   const SANS = "'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif";
   const HAND = "'Caveat', 'Segoe Print', cursive";
-  const W = 1600, H = 900, AX0 = 60, AX1 = 1240, ACX = 650, AY1 = 860; // scene area left of the Merkzettel
+  const W = 1600, H = 900, AX0 = 60, AY1 = 860;
+  let AX1 = 1240, ACX = 650; // scene area: left of the Merkzettel, or the full stage when an episode has none
 
   // ---------- small helpers ----------
   function el(tag, attrs, parent) {
@@ -30,7 +32,7 @@ window.Kit = (function () {
   const outCubic = p => 1 - Math.pow(1 - p, 3);
   const light = c => c === PAPER || c === COL.yellow;
 
-  let STAGE, MEASURE, CUR, seedN;
+  let STAGE, MEASURE, CUR, seedN, EP, MAPT;
 
   function txt(p, str, x, y, o) {
     o = o || {};
@@ -310,6 +312,73 @@ window.Kit = (function () {
     },
   };
 
+  // ---------- closing podcasts: the mindmap on the left, a note card for the current node on the right ----------
+  function wrap(str, max) {
+    const out = []; let cur = '';
+    str.split(' ').forEach(w => { if (cur && (cur + ' ' + w).length > max) { out.push(cur); cur = w; } else cur = cur ? cur + ' ' + w : w; });
+    if (cur) out.push(cur);
+    return out;
+  }
+  TPL.map = function (g, d) {
+    const M = EP.map, t0 = CUR.t0, rows = [];
+    M.branches.forEach(b => b.nodes.forEach(n => rows.push({ b, n })));
+    const y0 = 170, y1 = 830, step = (y1 - y0) / Math.max(rows.length - 1, 1), RX = 118, RY = 500, BX = 318, NX = 566;
+    rows.forEach((r, i) => { r.y = y0 + i * step; });
+    const state = id => (d.node === id ? 'now' : (MAPT[id] != null && MAPT[id] < t0) || d.node == null ? 'done' : 'todo');
+    const curve = (x1, y1_, x2, y2) => 'M' + x1 + ',' + y1_ + ' C' + ((x1 + x2) / 2) + ',' + y1_ + ' ' + ((x1 + x2) / 2) + ',' + y2 + ' ' + x2 + ',' + y2;
+    // only what has been reached is on the map: finished nodes are static, the current branch and node come in on their cue
+    const brAt = d.branchAt == null ? t0 : d.branchAt, later = [];
+    M.branches.forEach(b => {
+      const mine = rows.filter(r => r.b === b), col = COL[b.color];
+      b.y = mine.reduce((a, r) => a + r.y, 0) / mine.length;
+      b.seen = mine.some(r => state(r.n.id) === 'done'); b.now = mine.some(r => state(r.n.id) === 'now');
+      if (b.seen) P(g, curve(RX, RY, BX, b.y), { stroke: col, sw: 7 });
+      else if (b.now) drawOn(g, curve(RX, RY, BX, b.y), brAt, { stroke: col, sw: 7 });
+      mine.forEach(r => {
+        const st = state(r.n.id);
+        if (st === 'done') P(g, curve(BX, b.y, NX - 40, r.y), { stroke: col, sw: 7 });
+        else if (st === 'now') drawOn(g, curve(BX, b.y, NX - 40, r.y), d.titleAt - 0.4, { stroke: col, sw: 7 });
+      });
+    });
+    const tagPiece = (q, label, col, size) => { const w = textW(label, size) + size * 1.1; piece(q, sheetPts(w, size * 1.7, rng(hash(label))), col); txt(q, label, 0, size * 0.35, { size, fill: light(col) ? INK : PAPER }); };
+    const root = el('g', { transform: 'translate(' + RX + ',' + RY + ')' }, g);
+    piece(root, blobPts(74, rng(5)), INK); let rs = 30; const rw = textW(M.root, rs); if (rw > 120) rs *= 120 / rw; txt(root, M.root, 0, rs * 0.35, { size: rs, fill: PAPER });
+    M.branches.forEach(b => {
+      if (b.seen) tagPiece(el('g', { transform: 'translate(' + BX + ',' + b.y + ') rotate(-2)' }, g), b.label, COL[b.color], 28);
+      else if (b.now) actor(g, BX, b.y, brAt + 0.3, { rot: -2 }, q => tagPiece(q, b.label, COL[b.color], 28));
+    });
+    rows.forEach(r => {
+      const st = state(r.n.id);
+      if (st === 'todo') return;
+      if (st === 'done') {
+        const w = textW(r.n.label, 24) + 26; const q = el('g', { transform: 'translate(' + (NX - 40 + w / 2) + ',' + r.y + ')' }, g);
+        piece(q, sheetPts(w, 42, rng(hash(r.n.label))), PAPER); txt(q, r.n.label, 0, 9, { size: 24 });
+        P(g, 'M' + (NX - 40 + w + 10) + ',' + r.y + ' l8,9 l15,-19', { stroke: COL.green, sw: 6 });
+        return;
+      }
+      const w = textW(r.n.label, 28) + 30;
+      actor(g, NX - 40 + w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(w, 50, rng(hash(r.n.label))), COL[r.b.color]); txt(q, r.n.label, 0, 10, { size: 28, fill: light(COL[r.b.color]) ? INK : PAPER }); });
+    });
+    // the note card
+    const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n.id === d.node), col = cur ? cur.b.color : 'ink';
+    const cardAt = Math.min(d.titleAt, d.lead ? d.lead.at : d.titleAt) - 0.5;
+    actor(g, CX, CY, cardAt, { kind: 'rise', rot: 0.8 }, q => { piece(q, sheetPts(CW, CH, rng(hash('card' + (d.node || 'sum')))), PAPER); tape(q, 0, -CH / 2 + 2, -3); });
+    if (cur) txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, 'Hauptast: ' + cur.b.label, left, CY - CH / 2 + 66, { size: 28, fill: COL[col], anchor: 'start', weight: 700 });
+    if (d.lead) hand(g, CX + 175, CY - CH / 2 + 56, d.lead.at, d.lead.text, { size: 46, maxW: 320, color: 'red' });
+    strip(g, CX, CY - CH / 2 + 140, d.titleAt, d.title, { size: 50, color: col, maxW: CW - 70 });
+    // facts: shrink type until the list fits between the title and the note strip
+    const room = CH - 240 - (d.note ? 72 : 30), facts = d.facts || [];
+    let k = 1, need = 0;
+    for (; k > 0.62; k -= 0.04) { need = facts.reduce((a, f) => a + wrap(f.text, Math.round(34 / k)).length * 42 * k + 18 * k, 0); if (need <= room) break; }
+    let y = CY - CH / 2 + 240;
+    facts.forEach(f => {
+      const lines = wrap(f.text, Math.round(34 / k)), yy = y;
+      actor(g, 0, 0, f.at, { kind: 'rise' }, q => { C(q, left + 8, yy - 12 * k, 8 * k, { fill: COL[col], stroke: 'none' }); lines.forEach((ln, i) => txt(q, ln, left + 32, yy + i * 42 * k, { size: 34 * k, anchor: 'start', weight: 700 })); });
+      y += (lines.length * 42 + 18) * k;
+    });
+    if (d.note) strip(g, CX, CY + CH / 2 - 8, d.note.at, 'Mindmap: ' + d.note.text, { size: 34, color: 'yellow', maxW: CW - 30 });
+  };
+
   // ---------- stage, Merkzettel, build ----------
   function backdrop() {
     R(STAGE, 0, 0, W, H, { fill: KRAFT, stroke: 'none' });
@@ -337,12 +406,14 @@ window.Kit = (function () {
   }
 
   function build(svg, ep) {
-    STAGE = svg; seedN = 0;
+    STAGE = svg; seedN = 0; EP = ep; MAPT = {};
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     backdrop();
     MEASURE = el('g', { visibility: 'hidden' }, STAGE);
-    const shots = [], chapters = [];
-    const notes = merkzettel(ep.terms || []);
+    const shots = [], chapters = [], side = ep.terms && ep.terms.length;
+    AX1 = side ? 1240 : 1540; ACX = side ? 650 : 800;
+    ep.chapters.forEach(ch => ch.shots.forEach(d => { if (d.tpl === 'map' && d.node && MAPT[d.node] == null) MAPT[d.node] = d.at; }));
+    const notes = side ? merkzettel(ep.terms) : () => {};
     ep.chapters.forEach((ch, ci) => {
       chapters.push({ t: ch.shots[0].at, title: ch.title });
       ch.shots.forEach(d => {

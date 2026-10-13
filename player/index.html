@@ -21,7 +21,7 @@ html, body { margin: 0; background: var(--kraft); color: var(--ink); font-family
 #caps .w.on { opacity: 1; }
 #caps.off { display: none; }
 .bar { display: flex; align-items: center; gap: 10px; padding: 6px 16px 4px; }
-.bar button { font: inherit; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 999px; min-width: 44px; height: 44px; padding: 0 12px; cursor: pointer; font-weight: 700; }
+.bar button { font: inherit; font-variant-numeric: tabular-nums; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 999px; min-width: 44px; height: 44px; padding: 0 12px; cursor: pointer; font-weight: 700; }
 .bar button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .seek { position: relative; flex: 1; height: 44px; display: flex; align-items: center; }
 .seek input { width: 100%; margin: 0; accent-color: var(--blue); }
@@ -45,6 +45,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
     <button id="play" aria-label="Abspielen">▶</button>
     <div class="seek"><input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Position"></div>
     <span id="time">0:00 / 0:00</span>
+    <button id="speed" aria-label="Wiedergabetempo">1×</button>
     <button id="cc" aria-pressed="false" aria-label="Untertitel">CC</button>
   </div>
   <div class="chapters" id="chapters"></div>
@@ -114,6 +115,10 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
   seek.addEventListener('change', () => { seeking = false; go(+seek.value); });
   play.onclick = toggle; big.onclick = toggle; $('stage').onclick = toggle;
   $('cc').onclick = e => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; e.currentTarget.setAttribute('aria-pressed', on); caps.classList.toggle('off', !on); };
+  // playback speed: the picture is drawn from the audio position, so it simply follows
+  const RATES = [1, 1.25, 1.5, 2]; let rate = 0;
+  $('speed').onclick = e => { rate = (rate + 1) % RATES.length; audio.playbackRate = RATES[rate]; e.currentTarget.textContent = String(RATES[rate]).replace('.', ',') + '×'; e.currentTarget.setAttribute('aria-pressed', rate > 0); };
+  audio.addEventListener('loadedmetadata', () => { audio.playbackRate = RATES[rate]; });
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
     if (e.code === 'Space') { e.preventDefault(); toggle(); }
@@ -123,6 +128,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outl
   audio.addEventListener('play', () => { big.hidden = true; play.textContent = '❚❚'; play.setAttribute('aria-label', 'Pause'); loop(); });
   audio.addEventListener('pause', () => { play.textContent = '▶'; play.setAttribute('aria-label', 'Abspielen'); });
   audio.addEventListener('seeked', () => frame(audio.currentTime));
+  audio.addEventListener('timeupdate', () => frame(audio.currentTime)); // keeps the picture moving where the browser throttles animation frames
   audio.addEventListener('loadedmetadata', () => { if (isFinite(audio.duration) && Math.abs(audio.duration - dur) > 1.5) say('Achtung: Die Audiodatei ist ' + fmt(audio.duration) + ' lang, die Animation wurde für ' + fmt(dur) + ' gebaut.'); });
   audio.addEventListener('error', audioErr);
 
