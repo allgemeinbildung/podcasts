@@ -324,7 +324,9 @@ window.Kit = (function () {
     M.branches.forEach(b => b.nodes.forEach(n => rows.push({ b, n })));
     const y0 = 170, y1 = 830, step = (y1 - y0) / Math.max(rows.length - 1, 1), RX = 118, RY = 500, BX = 318, NX = 566;
     rows.forEach((r, i) => { r.y = y0 + i * step; });
-    const state = id => (d.node === id ? 'now' : MAPT[id] != null && (MAPT[id] < t0 || d.node == null) ? 'done' : 'todo');
+    // a shot is about one node, about a whole branch (d.branch), or it is the summary (neither)
+    const summary = d.node == null && !d.branch;
+    const state = id => (d.node === id ? 'now' : MAPT[id] != null && (MAPT[id] < t0 || summary) ? 'done' : 'todo');
     const fit = (label, size, maxW) => { const w = textW(label, size); return w > maxW ? size * maxW / w : size; };
     const curve = (x1, y1_, x2, y2) => 'M' + x1 + ',' + y1_ + ' C' + ((x1 + x2) / 2) + ',' + y1_ + ' ' + ((x1 + x2) / 2) + ',' + y2 + ' ' + x2 + ',' + y2;
     // only what has been reached is on the map: finished nodes are static, the current branch and node come in on their cue
@@ -332,7 +334,7 @@ window.Kit = (function () {
     M.branches.forEach(b => {
       const mine = rows.filter(r => r.b === b), col = COL[b.color];
       b.y = mine.reduce((a, r) => a + r.y, 0) / mine.length;
-      b.seen = mine.some(r => state(r.n.id) === 'done'); b.now = mine.some(r => state(r.n.id) === 'now');
+      b.seen = mine.some(r => state(r.n.id) === 'done'); b.now = d.branch === b.label || mine.some(r => state(r.n.id) === 'now');
       if (b.seen) P(g, curve(RX, RY, BX, b.y), { stroke: col, sw: 7 });
       else if (b.now) drawOn(g, curve(RX, RY, BX, b.y), brAt, { stroke: col, sw: 7 });
       mine.forEach(r => {
@@ -362,7 +364,7 @@ window.Kit = (function () {
       actor(g, NX - 40 + w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(w, 50, rng(hash(r.n.label))), COL[r.b.color]); txt(q, r.n.label, 0, fs * 0.36, { size: fs, fill: light(COL[r.b.color]) ? INK : PAPER }); });
     });
     // the note card
-    const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n.id === d.node), col = cur ? cur.b.color : 'ink';
+    const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n.id === d.node), curB = cur ? cur.b : M.branches.find(b => b.label === d.branch), col = curB ? curB.color : 'ink';
     const cardAt = Math.min(d.titleAt, d.lead ? d.lead.at : d.titleAt) - 0.5;
     actor(g, CX, CY, cardAt, { kind: 'rise', rot: 0.8 }, q => { piece(q, sheetPts(CW, CH, rng(hash('card' + (d.node || 'sum')))), PAPER); tape(q, 0, -CH / 2 + 2, -3); });
     if (cur) { const where = d.sub ? cur.b.label + ' › ' + cur.n.label : 'Hauptast: ' + cur.b.label; txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, where, left, CY - CH / 2 + 66, { size: fit(where, 28, d.lead ? 330 : CW - 90), fill: COL[col], anchor: 'start', weight: 700 }); }
