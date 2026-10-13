@@ -324,7 +324,8 @@ window.Kit = (function () {
     M.branches.forEach(b => b.nodes.forEach(n => rows.push({ b, n })));
     const y0 = 170, y1 = 830, step = (y1 - y0) / Math.max(rows.length - 1, 1), RX = 118, RY = 500, BX = 318, NX = 566;
     rows.forEach((r, i) => { r.y = y0 + i * step; });
-    const state = id => (d.node === id ? 'now' : (MAPT[id] != null && MAPT[id] < t0) || d.node == null ? 'done' : 'todo');
+    const state = id => (d.node === id ? 'now' : MAPT[id] != null && (MAPT[id] < t0 || d.node == null) ? 'done' : 'todo');
+    const fit = (label, size, maxW) => { const w = textW(label, size); return w > maxW ? size * maxW / w : size; };
     const curve = (x1, y1_, x2, y2) => 'M' + x1 + ',' + y1_ + ' C' + ((x1 + x2) / 2) + ',' + y1_ + ' ' + ((x1 + x2) / 2) + ',' + y2 + ' ' + x2 + ',' + y2;
     // only what has been reached is on the map: finished nodes are static, the current branch and node come in on their cue
     const brAt = d.branchAt == null ? t0 : d.branchAt, later = [];
@@ -340,30 +341,31 @@ window.Kit = (function () {
         else if (st === 'now') drawOn(g, curve(BX, b.y, NX - 40, r.y), d.titleAt - 0.4, { stroke: col, sw: 7 });
       });
     });
-    const tagPiece = (q, label, col, size) => { const w = textW(label, size) + size * 1.1; piece(q, sheetPts(w, size * 1.7, rng(hash(label))), col); txt(q, label, 0, size * 0.35, { size, fill: light(col) ? INK : PAPER }); };
+    // branch tags keep the full wording of the mindmap and break into two lines when long
+    const tagPiece = (q, label, col, size) => { const ls = wrap(label, 16), w = Math.max.apply(null, ls.map(l => textW(l, size))) + size * 1.1, lh = size * 1.15; piece(q, sheetPts(w, size * 1.7 + (ls.length - 1) * lh, rng(hash(label))), col); ls.forEach((l, i) => txt(q, l, 0, size * 0.35 + (i - (ls.length - 1) / 2) * lh, { size, fill: light(col) ? INK : PAPER })); };
     const root = el('g', { transform: 'translate(' + RX + ',' + RY + ')' }, g);
-    piece(root, blobPts(74, rng(5)), INK); let rs = 30; const rw = textW(M.root, rs); if (rw > 120) rs *= 120 / rw; txt(root, M.root, 0, rs * 0.35, { size: rs, fill: PAPER });
+    piece(root, blobPts(94, rng(5)), INK); const rl = wrap(M.root, 12), rs = Math.min.apply(null, rl.map(l => fit(l, 30, 158))); rl.forEach((l, i) => txt(root, l, 0, rs * 0.35 + (i - (rl.length - 1) / 2) * rs * 1.15, { size: rs, fill: PAPER }));
     M.branches.forEach(b => {
-      if (b.seen) tagPiece(el('g', { transform: 'translate(' + BX + ',' + b.y + ') rotate(-2)' }, g), b.label, COL[b.color], 28);
-      else if (b.now) actor(g, BX, b.y, brAt + 0.3, { rot: -2 }, q => tagPiece(q, b.label, COL[b.color], 28));
+      if (b.seen) tagPiece(el('g', { transform: 'translate(' + BX + ',' + b.y + ') rotate(-2)' }, g), b.label, COL[b.color], 24);
+      else if (b.now) actor(g, BX, b.y, brAt + 0.3, { rot: -2 }, q => tagPiece(q, b.label, COL[b.color], 24));
     });
     rows.forEach(r => {
       const st = state(r.n.id);
       if (st === 'todo') return;
       if (st === 'done') {
-        const w = textW(r.n.label, 24) + 26; const q = el('g', { transform: 'translate(' + (NX - 40 + w / 2) + ',' + r.y + ')' }, g);
-        piece(q, sheetPts(w, 42, rng(hash(r.n.label))), PAPER); txt(q, r.n.label, 0, 9, { size: 24 });
+        const fs = fit(r.n.label, 24, 236), w = textW(r.n.label, fs) + 26; const q = el('g', { transform: 'translate(' + (NX - 40 + w / 2) + ',' + r.y + ')' }, g);
+        piece(q, sheetPts(w, 42, rng(hash(r.n.label))), PAPER); txt(q, r.n.label, 0, fs * 0.36, { size: fs });
         P(g, 'M' + (NX - 40 + w + 10) + ',' + r.y + ' l8,9 l15,-19', { stroke: COL.green, sw: 6 });
         return;
       }
-      const w = textW(r.n.label, 28) + 30;
-      actor(g, NX - 40 + w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(w, 50, rng(hash(r.n.label))), COL[r.b.color]); txt(q, r.n.label, 0, 10, { size: 28, fill: light(COL[r.b.color]) ? INK : PAPER }); });
+      const fs = fit(r.n.label, 28, 250), w = textW(r.n.label, fs) + 30;
+      actor(g, NX - 40 + w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(w, 50, rng(hash(r.n.label))), COL[r.b.color]); txt(q, r.n.label, 0, fs * 0.36, { size: fs, fill: light(COL[r.b.color]) ? INK : PAPER }); });
     });
     // the note card
     const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n.id === d.node), col = cur ? cur.b.color : 'ink';
     const cardAt = Math.min(d.titleAt, d.lead ? d.lead.at : d.titleAt) - 0.5;
     actor(g, CX, CY, cardAt, { kind: 'rise', rot: 0.8 }, q => { piece(q, sheetPts(CW, CH, rng(hash('card' + (d.node || 'sum')))), PAPER); tape(q, 0, -CH / 2 + 2, -3); });
-    if (cur) txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, 'Hauptast: ' + cur.b.label, left, CY - CH / 2 + 66, { size: 28, fill: COL[col], anchor: 'start', weight: 700 });
+    if (cur) { const where = d.sub ? cur.b.label + ' › ' + cur.n.label : 'Hauptast: ' + cur.b.label; txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, where, left, CY - CH / 2 + 66, { size: fit(where, 28, d.lead ? 330 : CW - 90), fill: COL[col], anchor: 'start', weight: 700 }); }
     if (d.lead) hand(g, CX + 175, CY - CH / 2 + 56, d.lead.at, d.lead.text, { size: 46, maxW: 320, color: 'red' });
     strip(g, CX, CY - CH / 2 + 140, d.titleAt, d.title, { size: 50, color: col, maxW: CW - 70 });
     // facts: shrink type until the list fits between the title and the note strip
