@@ -32,7 +32,7 @@ window.Kit = (function () {
   const outCubic = p => 1 - Math.pow(1 - p, 3);
   const light = c => c === PAPER || c === COL.yellow;
 
-  let STAGE, MEASURE, CUR, seedN, EP, MAPT;
+  let STAGE, MEASURE, CUR, seedN, EP, MAPT, MAPB;
 
   function txt(p, str, x, y, o) {
     o = o || {};
@@ -104,6 +104,23 @@ window.Kit = (function () {
     letter(g) { R(g, -54, -36, 108, 72, { rx: 4, fill: '#fff' }); P(g, 'M-54,-36 L0,8 L54,-36'); },
     megaphone(g) { R(g, -58, -14, 18, 28, { fill: '#fff', sw: 5 }); P(g, 'M-42,-16 L18,-46 V46 L-42,16 z', { fill: COL.yellow }); P(g, 'M32,-20 q14,20 0,40', { sw: 5 }); P(g, 'M46,-34 q24,34 0,68', { sw: 5 }); },
     leaf(g) { P(g, 'M-42,38 Q-46,-32 42,-46 Q46,32 -42,38 z', { fill: COL.green }); L(g, -42, 38, 16, -20, { sw: 4 }); },
+    // added 14.10.2026 for the bulk build (requests from the pilot)
+    shirt(g) { P(g, 'M-20,-46 L-56,-28 L-44,-2 L-30,-8 L-30,48 L30,48 L30,-8 L44,-2 L56,-28 L20,-46 Q0,-30 -20,-46 z', { fill: COL.blue }); },
+    film(g) { R(g, -56, -38, 112, 76, { rx: 4, fill: INK }); [-44, -22, 0, 22, 44].forEach(x => { R(g, x - 5, -32, 10, 9, { fill: '#fff', stroke: 'none' }); R(g, x - 5, 23, 10, 9, { fill: '#fff', stroke: 'none' }); }); R(g, -40, -18, 80, 36, { fill: '#fff', stroke: 'none' }); P(g, 'M-8,-12 L14,0 L-8,12 z', { fill: COL.red, stroke: 'none' }); },
+    screen(g) { R(g, -60, -44, 120, 76, { rx: 6, fill: INK }); R(g, -52, -36, 104, 60, { fill: COL.blue, stroke: 'none' }); P(g, 'M-10,-18 L16,-6 L-10,6 z', { fill: '#fff', stroke: 'none' }); L(g, 0, 32, 0, 46); L(g, -26, 48, 26, 48); },
+    umbrella(g) { P(g, 'M-60,4 Q-60,-54 0,-54 Q60,-54 60,4 Q45,-8 30,4 Q15,-8 0,4 Q-15,-8 -30,4 Q-45,-8 -60,4 z', { fill: COL.red }); L(g, 0, 4, 0, 42); P(g, 'M0,42 q0,14 -13,14 q-12,0 -12,-12'); },
+    house(g) { R(g, 22, -50, 14, 30, { fill: GREY }); R(g, -42, -12, 84, 60, { fill: COL.yellow }); P(g, 'M-60,-6 L0,-56 L60,-6 z', { fill: INK }); R(g, -12, 14, 24, 34, { fill: '#fff', sw: 4 }); R(g, -34, 2, 14, 14, { fill: '#fff', sw: 4 }); }, // dark roof, so it does not read as `school`
+    factory(g) { P(g, 'M-58,48 V-4 L-30,-24 V-4 L-2,-24 V-4 L26,-24 V-54 H48 V48 z', { fill: '#fff' }); [-44, -16, 12].forEach(x => R(g, x, 12, 16, 14, { fill: COL.blue, stroke: 'none' })); R(g, 30, 20, 14, 28, { fill: COL.red, sw: 4 }); },
+    calendar(g) { R(g, -50, -40, 100, 90, { rx: 6, fill: '#fff' }); R(g, -50, -40, 100, 24, { fill: COL.red }); L(g, -24, -52, -24, -30, { sw: 7 }); L(g, 24, -52, 24, -30, { sw: 7 }); for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) R(g, -36 + c * 20, -4 + r * 16, 10, 8, { fill: r === 1 && c === 2 ? COL.red : GREY, stroke: 'none' }); },
+    newspaper(g) { R(g, -52, -46, 104, 92, { rx: 4, fill: '#fff' }); R(g, -42, -36, 84, 16, { fill: INK, stroke: 'none' }); R(g, -42, -10, 36, 30, { fill: COL.blue, stroke: 'none' }); [-6, 6, 18].forEach(y => L(g, 4, y, 42, y, { sw: 4, stroke: GREY })); [30, 40].forEach(y => L(g, -42, y, 42, y, { sw: 4, stroke: GREY })); },
+    radio(g) { L(g, 30, -24, 50, -58, { sw: 5 }); R(g, -58, -24, 116, 68, { rx: 10, fill: COL.yellow }); C(g, -26, 10, 20, { fill: '#fff', sw: 5 }); C(g, -26, 10, 7, { fill: INK }); R(g, 8, -10, 36, 12, { fill: '#fff', sw: 3 }); C(g, 26, 24, 8, { fill: INK }); },
+    camera(g) { R(g, -24, -46, 40, 16, { rx: 4, fill: INK }); R(g, -58, -32, 116, 76, { rx: 10, fill: INK }); C(g, 0, 6, 27, { fill: '#fff', sw: 5 }); C(g, 0, 6, 14, { fill: COL.blue, stroke: 'none' }); C(g, 40, -18, 5, { fill: COL.yellow, stroke: 'none' }); },
+    magnifier(g) { L(g, 14, 14, 48, 48, { sw: 13 }); C(g, -12, -12, 34, { fill: '#dfeaf6', sw: 8 }); },
+    robot(g) { L(g, 0, -34, 0, -50, { sw: 5 }); C(g, 0, -54, 7, { fill: COL.red }); R(g, -54, -12, 12, 24, { rx: 3, fill: GREY }); R(g, 42, -12, 12, 24, { rx: 3, fill: GREY }); R(g, -42, -34, 84, 68, { rx: 12, fill: '#fff' }); C(g, -17, -6, 9, { fill: COL.blue }); C(g, 17, -6, 9, { fill: COL.blue }); L(g, -16, 18, 16, 18, { sw: 5 }); },
+    pillar(g) { R(g, -46, -54, 92, 14, { fill: '#fff' }); R(g, -28, -40, 56, 80, { fill: '#fff' }); [-12, 0, 12].forEach(x => L(g, x, -34, x, 34, { sw: 3, stroke: GREY })); R(g, -46, 40, 92, 14, { fill: '#fff' }); },
+    chart(g) { L(g, -52, -50, -52, 46); L(g, -52, 46, 56, 46); P(g, 'M-40,30 L-14,4 L8,18 L42,-30', { stroke: COL.green, sw: 9 }); P(g, 'M26,-32 L44,-32 L44,-14', { stroke: COL.green, sw: 9 }); },
+    clock(g) { C(g, 0, 0, 48, { fill: '#fff' }); [0, 90, 180, 270].forEach(d => { const r = d * Math.PI / 180; L(g, Math.cos(r) * 36, Math.sin(r) * 36, Math.cos(r) * 42, Math.sin(r) * 42, { sw: 4 }); }); L(g, 0, 0, 0, -30, { sw: 6 }); L(g, 0, 0, 22, 10, { sw: 6 }); C(g, 0, 0, 5, { fill: INK }); },
+    health(g) { R(g, -46, -46, 92, 92, { rx: 16, fill: '#fff' }); R(g, -12, -34, 24, 68, { fill: COL.red, stroke: 'none' }); R(g, -34, -12, 68, 24, { fill: COL.red, stroke: 'none' }); },
     ear(g) { P(g, 'M-20,30 Q-34,-50 6,-50 Q40,-50 36,-10 Q34,10 16,20 Q6,28 8,44', { sw: 7 }); P(g, 'M-4,-8 Q-6,-28 8,-28 Q20,-28 18,-12', { sw: 5 }); },
   };
 
@@ -321,12 +338,13 @@ window.Kit = (function () {
   }
   TPL.map = function (g, d) {
     const M = EP.map, t0 = CUR.t0, rows = [];
-    M.branches.forEach(b => b.nodes.forEach(n => rows.push({ b, n })));
+    // rows only for what this episode reaches, so a large mindmap stays readable; a branch covered without any of its nodes still takes a row
+    M.branches.forEach(b => { const ns = b.nodes.filter(n => MAPT[n.id] != null); if (ns.length) ns.forEach(n => rows.push({ b, n })); else if (MAPB[b.label] != null) rows.push({ b, n: null }); });
     const y0 = 170, y1 = 830, step = (y1 - y0) / Math.max(rows.length - 1, 1), RX = 118, RY = 500, BX = 318, NX = 566;
     rows.forEach((r, i) => { r.y = y0 + i * step; });
     // a shot is about one node, about a whole branch (d.branch), or it is the summary (neither)
     const summary = d.node == null && !d.branch;
-    const state = id => (d.node === id ? 'now' : MAPT[id] != null && (MAPT[id] < t0 || summary) ? 'done' : 'todo');
+    const state = id => (d.node === id ? 'now' : MAPT[id] != null && (MAPT[id] < t0 || summary) ? 'done' : 'todo'), stOf = r => (r.n ? state(r.n.id) : 'todo');
     const fit = (label, size, maxW) => { const w = textW(label, size); return w > maxW ? size * maxW / w : size; };
     const curve = (x1, y1_, x2, y2) => 'M' + x1 + ',' + y1_ + ' C' + ((x1 + x2) / 2) + ',' + y1_ + ' ' + ((x1 + x2) / 2) + ',' + y2 + ' ' + x2 + ',' + y2;
     // only what has been reached is on the map: finished nodes are static, the current branch and node come in on their cue
@@ -334,11 +352,11 @@ window.Kit = (function () {
     M.branches.forEach(b => {
       const mine = rows.filter(r => r.b === b), col = COL[b.color];
       b.y = mine.reduce((a, r) => a + r.y, 0) / mine.length;
-      b.seen = mine.some(r => state(r.n.id) === 'done'); b.now = d.branch === b.label || mine.some(r => state(r.n.id) === 'now');
+      b.seen = mine.some(r => stOf(r) === 'done') || (MAPB[b.label] != null && (MAPB[b.label] < t0 || summary)); b.now = d.branch === b.label || mine.some(r => stOf(r) === 'now');
       if (b.seen) P(g, curve(RX, RY, BX, b.y), { stroke: col, sw: 7 });
       else if (b.now) drawOn(g, curve(RX, RY, BX, b.y), brAt, { stroke: col, sw: 7 });
       mine.forEach(r => {
-        const st = state(r.n.id);
+        const st = stOf(r);
         if (st === 'done') P(g, curve(BX, b.y, NX - 40, r.y), { stroke: col, sw: 7 });
         else if (st === 'now') drawOn(g, curve(BX, b.y, NX - 40, r.y), d.titleAt - 0.4, { stroke: col, sw: 7 });
       });
@@ -351,29 +369,44 @@ window.Kit = (function () {
       if (b.seen) tagPiece(el('g', { transform: 'translate(' + BX + ',' + b.y + ') rotate(-2)' }, g), b.label, COL[b.color], 24);
       else if (b.now) actor(g, BX, b.y, brAt + 0.3, { rot: -2 }, q => tagPiece(q, b.label, COL[b.color], 24));
     });
+    // node tags keep the full wording too: the label breaks into as many lines as give the largest type that fits its row
+    const tagLines = (q, ls, fs, fill) => ls.forEach((l, i) => txt(q, l, 0, fs * 0.36 + (i - (ls.length - 1) / 2) * fs * 1.15, { size: fs, fill }));
+    const nodeFit = (label, base) => {
+      let best = null;
+      [14, 18, 24, 32, 99].forEach(m => { const ls = wrap(label, m), fs = Math.min.apply(null, ls.map(l => fit(l, base, 250)).concat([(step - 20) / (ls.length * 1.15)])); if (!best || fs > best.fs + 0.5) best = { ls, fs }; });
+      best.w = Math.max.apply(null, best.ls.map(l => textW(l, best.fs))) + 28; best.h = best.ls.length * best.fs * 1.15 + best.fs * 0.6;
+      return best;
+    };
     rows.forEach(r => {
-      const st = state(r.n.id);
+      const st = stOf(r);
       if (st === 'todo') return;
       if (st === 'done') {
-        const fs = fit(r.n.label, 24, 236), w = textW(r.n.label, fs) + 26; const q = el('g', { transform: 'translate(' + (NX - 40 + w / 2) + ',' + r.y + ')' }, g);
-        piece(q, sheetPts(w, 42, rng(hash(r.n.label))), PAPER); txt(q, r.n.label, 0, fs * 0.36, { size: fs });
+        const f = nodeFit(r.n.label, 24), q = el('g', { transform: 'translate(' + (NX - 40 + f.w / 2) + ',' + r.y + ')' }, g);
+        piece(q, sheetPts(f.w, f.h, rng(hash(r.n.label))), PAPER); tagLines(q, f.ls, f.fs, INK);
         return;
       }
-      const fs = fit(r.n.label, 28, 250), w = textW(r.n.label, fs) + 30;
-      actor(g, NX - 40 + w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(w, 50, rng(hash(r.n.label))), COL[r.b.color]); txt(q, r.n.label, 0, fs * 0.36, { size: fs, fill: light(COL[r.b.color]) ? INK : PAPER }); });
+      const f = nodeFit(r.n.label, 28);
+      actor(g, NX - 40 + f.w / 2, r.y, d.titleAt, { rot: -2, pulse: [d.titleAt + 0.9] }, q => { piece(q, sheetPts(f.w, f.h, rng(hash(r.n.label))), COL[r.b.color]); tagLines(q, f.ls, f.fs, light(COL[r.b.color]) ? INK : PAPER); });
     });
     // the note card
-    const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n.id === d.node), curB = cur ? cur.b : M.branches.find(b => b.label === d.branch), col = curB ? curB.color : 'ink';
+    const CX = 1178, CW = 724, CH = 730, CY = 480, left = CX - CW / 2 + 44, cur = rows.find(r => r.n && r.n.id === d.node), curB = cur ? cur.b : M.branches.find(b => b.label === d.branch), col = curB ? curB.color : 'ink';
     const cardAt = Math.min(d.titleAt, d.lead ? d.lead.at : d.titleAt) - 0.5;
     actor(g, CX, CY, cardAt, { kind: 'rise', rot: 0.8 }, q => { piece(q, sheetPts(CW, CH, rng(hash('card' + (d.node || 'sum')))), PAPER); tape(q, 0, -CH / 2 + 2, -3); });
-    if (cur) { const where = d.sub ? cur.b.label + ' › ' + cur.n.label : 'Hauptast: ' + cur.b.label; txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, where, left, CY - CH / 2 + 66, { size: fit(where, 28, d.lead ? 330 : CW - 90), fill: COL[col], anchor: 'start', weight: 700 }); }
-    if (d.lead) hand(g, CX + 175, CY - CH / 2 + 56, d.lead.at, d.lead.text, { size: 46, maxW: 320, color: 'red' });
-    strip(g, CX, CY - CH / 2 + 140, d.titleAt, d.title, { size: 50, color: col, maxW: CW - 70 });
+    // the path line and the guiding question share a row; when the path is too long for that, the question moves under it and the rest of the card moves down
+    const where = !cur ? '' : d.sub ? cur.b.label + ' › ' + cur.n.label : 'Hauptast: ' + cur.b.label, off = d.lead && where && textW(where, 28) > 330 ? 46 : 0;
+    if (cur) { txt(actor(g, 0, 0, cardAt + 0.2, { kind: 'rise' }, () => {}).inner, where, left, CY - CH / 2 + (off ? 52 : 66), { size: fit(where, 28, d.lead && !off ? 330 : CW - 90), fill: COL[col], anchor: 'start', weight: 700 }); }
+    if (d.lead) hand(g, CX + 175, CY - CH / 2 + (off ? 102 : 56), d.lead.at, d.lead.text, { size: 46, maxW: 320, color: 'red' });
+    if (textW(d.title, 50) + 55 <= (CW - 70) * 1.2) strip(g, CX, CY - CH / 2 + 140 + off, d.titleAt, d.title, { size: 50, color: col, maxW: CW - 70 });
+    else { // a long title takes two lines instead of shrinking
+      let m = Math.ceil(d.title.length / 2) + 2, tl = wrap(d.title, m); while (tl.length > 2) tl = wrap(d.title, ++m);
+      const ts = Math.min.apply(null, tl.map(l => fit(l, 38, CW - 120))), tw = Math.max.apply(null, tl.map(l => textW(l, ts))) + ts * 1.1, c = COL[col];
+      actor(g, CX, CY - CH / 2 + 148 + off, d.titleAt, { rot: -1 }, q => { piece(q, sheetPts(tw, tl.length * ts * 1.15 + ts * 0.6, rng(hash(d.title))), c); tagLines(q, tl, ts, light(c) ? INK : PAPER); });
+    }
     // facts: shrink type until the list fits between the title and the note strip
-    const room = CH - 240 - (d.note ? 72 : 30), facts = d.facts || [];
+    const room = CH - 240 - off - (d.note ? 72 : 30), facts = d.facts || [];
     let k = 1, need = 0;
     for (; k > 0.62; k -= 0.04) { need = facts.reduce((a, f) => a + wrap(f.text, Math.round(34 / k)).length * 42 * k + 18 * k, 0); if (need <= room) break; }
-    let y = CY - CH / 2 + 240;
+    let y = CY - CH / 2 + 240 + off;
     facts.forEach(f => {
       const lines = wrap(f.text, Math.round(34 / k)), yy = y;
       actor(g, 0, 0, f.at, { kind: 'rise' }, q => { C(q, left + 8, yy - 12 * k, 8 * k, { fill: COL[col], stroke: 'none' }); lines.forEach((ln, i) => txt(q, ln, left + 32, yy + i * 42 * k, { size: 34 * k, anchor: 'start', weight: 700 })); });
@@ -409,13 +442,13 @@ window.Kit = (function () {
   }
 
   function build(svg, ep) {
-    STAGE = svg; seedN = 0; EP = ep; MAPT = {};
+    STAGE = svg; seedN = 0; EP = ep; MAPT = {}; MAPB = {};
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     backdrop();
     MEASURE = el('g', { visibility: 'hidden' }, STAGE);
     const shots = [], chapters = [], side = ep.terms && ep.terms.length;
     AX1 = side ? 1240 : 1540; ACX = side ? 650 : 800;
-    ep.chapters.forEach(ch => ch.shots.forEach(d => { if (d.tpl === 'map' && d.node && MAPT[d.node] == null) MAPT[d.node] = d.at; }));
+    ep.chapters.forEach(ch => ch.shots.forEach(d => { if (d.tpl === 'map' && d.node && MAPT[d.node] == null) MAPT[d.node] = d.at; if (d.tpl === 'map' && d.branch && MAPB[d.branch] == null) MAPB[d.branch] = d.at; }));
     const notes = side ? merkzettel(ep.terms) : () => {};
     ep.chapters.forEach((ch, ci) => {
       chapters.push({ t: ch.shots[0].at, title: ch.title });
